@@ -61,6 +61,12 @@ namespace GielinorAdventures.Settings
         public static string EntitiesDirectory => Path.Combine(DataDirectory, "Entities");
 
         /// <summary>
+        /// The worlds directory.
+        /// </summary>
+        /// <value>The worlds directory.</value>
+        public static string WorldsDirectory => Path.Combine(ApplicationDirectory, "Worlds");
+
+        /// <summary>
         /// Gets the options file.
         /// </summary>
         /// <value>The options file.</value>
