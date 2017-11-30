@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DFA1E1E9-AFEB-4565-BA38-ECDBAFC9D47B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GielinorAdventures.DataAccess</RootNamespace>
+    <AssemblyName>GielinorAdventures.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataObjects\ItemLocationEntity.cs" />
+    <Compile Include="DataObjects\ModelEntity.cs" />
+    <Compile Include="DataObjects\NpcLocationEntity.cs" />
+    <Compile Include="DataObjects\GameObjectLocationEntity.cs" />
+    <Compile Include="IO\RsWorldFile.cs" />
+    <Compile Include="IO\XmlManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GameObjectLocationRepository.cs" />
+    <Compile Include="Repositories\ItemLocationRepository.cs" />
+    <Compile Include="Repositories\ItemRepository.cs" />
+    <Compile Include="Repositories\NpcLocationRepository.cs" />
+    <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="XmlDatabase.cs" />
+    <Compile Include="DataObjects\ItemEntity.cs" />
+    <Compile Include="Exceptions\DuplicateEntityException.cs" />
+    <Compile Include="Exceptions\EntityNotFoundException.cs" />
+    <Compile Include="Exceptions\InvalidEntityFieldException.cs" />
+    <Compile Include="Exceptions\InvalidTargetProvinceException.cs" />
+    <Compile Include="DataObjects\PrayerEntity.cs" />
+    <Compile Include="DataObjects\AnimationEntity.cs" />
+    <Compile Include="DataObjects\ElevationEntity.cs" />
+    <Compile Include="DataObjects\WorldObjectEntity.cs" />
+    <Compile Include="DataObjects\ItemDropEntity.cs" />
+    <Compile Include="DataObjects\NpcEntity.cs" />
+    <Compile Include="DataObjects\SpellEntity.cs" />
+    <Compile Include="DataObjects\GameTextureEntity.cs" />
+    <Compile Include="DataObjects\TileEntity.cs" />
+    <Compile Include="DataObjects\WallObjectEntity.cs" />
+    <Compile Include="Repositories\AnimationRepository.cs" />
+    <Compile Include="Repositories\ElevationRepository.cs" />
+    <Compile Include="Repositories\WorldObjectRepository.cs" />
+    <Compile Include="Repositories\ItemDropRepository.cs" />
+    <Compile Include="Repositories\NpcRepository.cs" />
+    <Compile Include="Repositories\PrayerRepository.cs" />
+    <Compile Include="Repositories\SpellRepository.cs" />
+    <Compile Include="Repositories\GameTextureRepository.cs" />
+    <Compile Include="Repositories\TileRepository.cs" />
+    <Compile Include="Repositories\WallObjectRepository.cs" />
+    <Compile Include="DataObjects\QuestEntity.cs" />
+    <Compile Include="Repositories\QuestRepository.cs" />
+    <Compile Include="DataObjects\WorldEntity.cs" />
+    <Compile Include="DataObjects\WorldLayerEntity.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

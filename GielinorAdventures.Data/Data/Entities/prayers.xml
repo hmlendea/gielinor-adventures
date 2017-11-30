@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPrayerEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PrayerEntity>
+    <Id>thick_skin</Id>
+    <Name>Thick skin</Name>
+    <Description>Increases your defense by 5%</Description>
+    <RequiredLevel>1</RequiredLevel>
+    <DrainRate>15</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>burst_of_strength</Id>
+    <Name>Burst of strength</Name>
+    <Description>Increases your strength by 5%</Description>
+    <RequiredLevel>4</RequiredLevel>
+    <DrainRate>15</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>clarity_of_thought</Id>
+    <Name>Clarity of thought</Name>
+    <Description>Increases your attack by 5%</Description>
+    <RequiredLevel>7</RequiredLevel>
+    <DrainRate>15</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>rock_skin</Id>
+    <Name>Rock skin</Name>
+    <Description>Increases your defense by 10%</Description>
+    <RequiredLevel>10</RequiredLevel>
+    <DrainRate>30</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>superhuman_strength</Id>
+    <Name>Superhuman strength</Name>
+    <Description>Increases your strength by 10%</Description>
+    <RequiredLevel>13</RequiredLevel>
+    <DrainRate>30</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>improved_reflexes</Id>
+    <Name>Improved reflexes</Name>
+    <Description>Increases your attack by 10%</Description>
+    <RequiredLevel>16</RequiredLevel>
+    <DrainRate>30</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>rapid_restore</Id>
+    <Name>Rapid restore</Name>
+    <Description>2x restore rate for all stats except hits</Description>
+    <RequiredLevel>19</RequiredLevel>
+    <DrainRate>5</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>rapid_heal</Id>
+    <Name>Rapid heal</Name>
+    <Description>2x restore rate for hitpoints stat</Description>
+    <RequiredLevel>22</RequiredLevel>
+    <DrainRate>10</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>protect_items</Id>
+    <Name>Protect items</Name>
+    <Description>Keep 1 extra item if you die</Description>
+    <RequiredLevel>25</RequiredLevel>
+    <DrainRate>10</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>steel_skin</Id>
+    <Name>Steel skin</Name>
+    <Description>Increases your defense by 15%</Description>
+    <RequiredLevel>28</RequiredLevel>
+    <DrainRate>60</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>ultimate_strength</Id>
+    <Name>Ultimate strength</Name>
+    <Description>Increases your strength by 15%</Description>
+    <RequiredLevel>31</RequiredLevel>
+    <DrainRate>60</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>incredible_reflexes</Id>
+    <Name>Incredible reflexes</Name>
+    <Description>Increases your attack by 15%</Description>
+    <RequiredLevel>34</RequiredLevel>
+    <DrainRate>60</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>paralyze_monster</Id>
+    <Name>Paralyze monster</Name>
+    <Description>Stops monsters from fighting back</Description>
+    <RequiredLevel>37</RequiredLevel>
+    <DrainRate>60</DrainRate>
+  </PrayerEntity>
+  <PrayerEntity>
+    <Id>protect_from_missiles</Id>
+    <Name>Protect from missiles</Name>
+    <Description>100% protection from ranged attack</Description>
+    <RequiredLevel>40</RequiredLevel>
+    <DrainRate>60</DrainRate>
+  </PrayerEntity>
+</ArrayOfPrayerEntity>

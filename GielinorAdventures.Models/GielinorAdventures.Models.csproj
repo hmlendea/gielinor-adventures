@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FB5C790-78F3-44EA-AF6C-2D5B7C8E82BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GielinorAdventures.Models</RootNamespace>
+    <AssemblyName>GielinorAdventures.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enumerations\GameObjectType.cs" />
+    <Compile Include="GameObjectLocation.cs" />
+    <Compile Include="InventoryItem.cs" />
+    <Compile Include="ItemLocation.cs" />
+    <Compile Include="NpcLocation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Animation.cs" />
+    <Compile Include="Elevation.cs" />
+    <Compile Include="Sector.cs" />
+    <Compile Include="WorldObject.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemDrop.cs" />
+    <Compile Include="Npc.cs" />
+    <Compile Include="Prayer.cs" />
+    <Compile Include="Spell.cs" />
+    <Compile Include="GameTexture.cs" />
+    <Compile Include="Tile.cs" />
+    <Compile Include="WallObject.cs" />
+    <Compile Include="Enumerations\Action.cs" />
+    <Compile Include="Enumerations\CombatStyle.cs" />
+    <Compile Include="Enumerations\Gender.cs" />
+    <Compile Include="Appearance.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="Quest.cs" />
+    <Compile Include="WorldTile.cs" />
+    <Compile Include="WalkPath.cs" />
+    <Compile Include="MobInstance.cs" />
+    <Compile Include="Enumerations\CombatState.cs" />
+    <Compile Include="Enumerations\AttackType.cs" />
+    <Compile Include="GameEntityInstance.cs" />
+    <Compile Include="PathHandler.cs" />
+    <Compile Include="TileValue.cs" />
+    <Compile Include="World.cs" />
+    <Compile Include="WorldLayer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">
+      <Project>{395f7f7f-f89e-43f4-96f0-6a6e20016b81}</Project>
+      <Name>GielinorAdventures.Primitives</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Infrastructure\GielinorAdventures.Infrastructure.csproj">
+      <Project>{A498B100-9B60-48F7-A2FB-2E6D214E520C}</Project>
+      <Name>GielinorAdventures.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

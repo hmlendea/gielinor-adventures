@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfQuestEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <QuestEntity>
+    <Id>0</Id>
+    <Name>Cook's Assistant</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>1</Id>
+    <Name>Sheep Shearer</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>2</Id>
+    <Name>Black Knight's Fortress</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>3</Id>
+    <Name>Imp Catcher</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>4</Id>
+    <Name>Vampire Slayer</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>5</Id>
+    <Name>Romeo and Julit</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>6</Id>
+    <Name>The Restless Ghost</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>7</Id>
+    <Name>Doric's Quest</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>8</Id>
+    <Name>The Knight's Sword</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>9</Id>
+    <Name>Witch's Potion</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>10</Id>
+    <Name>Goblin Diplomacy</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>11</Id>
+    <Name>Ernest the Chicken</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>12</Id>
+    <Name>Demon Slayer</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>13</Id>
+    <Name>Pirate's Treasure</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>14</Id>
+    <Name>Prince Ali Rescue</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>15</Id>
+    <Name>Shield of Arrav</Name>
+  </QuestEntity>
+  <QuestEntity>
+    <Id>16</Id>
+    <Name>Dragon Slayer</Name>
+  </QuestEntity>
+</ArrayOfQuestEntity>

@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSpellEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpellEntity>
+    <Id>wind_strike</Id>
+    <Name>Wind strike</Name>
+    <Description>A strength 1 missile attack</Description>
+    <RequiredLevel>1</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>33</int>
+      <int>35</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>1</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>confuse</Id>
+    <Name>Confuse</Name>
+    <Description>Reduces your opponents attack by 5%</Description>
+    <RequiredLevel>3</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>34</int>
+      <int>36</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>2</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>water_strike</Id>
+    <Name>Water strike</Name>
+    <Description>A strength 2 missile attack</Description>
+    <RequiredLevel>5</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>33</int>
+      <int>35</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>1</int>
+      <int>1</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>enchant_lvl-1_amulet</Id>
+    <Name>Enchant lvl-1 amulet</Name>
+    <Description>For use on sapphire amulets</Description>
+    <RequiredLevel>7</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>46</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>1</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>earth_strike</Id>
+    <Name>Earth strike</Name>
+    <Description>A strength 3 missile attack</Description>
+    <RequiredLevel>9</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>33</int>
+      <int>35</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>1</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>weaken</Id>
+    <Name>Weaken</Name>
+    <Description>Reduces your opponents strength by 5%</Description>
+    <RequiredLevel>11</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>34</int>
+      <int>36</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>2</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>fire_strike</Id>
+    <Name>Fire strike</Name>
+    <Description>A strength 4 missile attack</Description>
+    <RequiredLevel>13</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>35</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>2</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>bones_to_bananas</Id>
+    <Name>Bones to bananas</Name>
+    <Description>Changes all held bones into bananas!</Description>
+    <RequiredLevel>15</RequiredLevel>
+    <Type>0</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>32</int>
+      <int>40</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>2</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>wind_bolt</Id>
+    <Name>Wind bolt</Name>
+    <Description>A strength 5 missile attack</Description>
+    <RequiredLevel>17</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>33</int>
+      <int>41</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>curse</Id>
+    <Name>Curse</Name>
+    <Description>Reduces your opponents defense by 5%</Description>
+    <RequiredLevel>19</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>34</int>
+      <int>36</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>low_level_alchemy</Id>
+    <Name>Low level alchemy</Name>
+    <Description>Converts an item into gold</Description>
+    <RequiredLevel>21</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>40</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>water_bolt</Id>
+    <Name>Water bolt</Name>
+    <Description>A strength 6 missile attack</Description>
+    <RequiredLevel>23</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>33</int>
+      <int>41</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>2</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>varrock_teleport</Id>
+    <Name>Varrock teleport</Name>
+    <Description>Teleports you to Varrock</Description>
+    <RequiredLevel>25</RequiredLevel>
+    <Type>0</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>42</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>1</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>enchant_lvl-2_amulet</Id>
+    <Name>Enchant lvl-2 amulet</Name>
+    <Description>For use on emerald amulets</Description>
+    <RequiredLevel>27</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>33</int>
+      <int>46</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>earth_bolt</Id>
+    <Name>Earth bolt</Name>
+    <Description>A strength 7 missile attack</Description>
+    <RequiredLevel>29</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>33</int>
+      <int>41</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>2</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>lumbridge_teleport</Id>
+    <Name>Lumbridge teleport</Name>
+    <Description>Teleports you to Lumbridge</Description>
+    <RequiredLevel>31</RequiredLevel>
+    <Type>0</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>33</int>
+      <int>42</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>1</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>telekinetic_grab</Id>
+    <Name>Telekinetic grab</Name>
+    <Description>Take an item you can see but can't reach</Description>
+    <RequiredLevel>33</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>33</int>
+      <int>42</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>1</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>fire_bolt</Id>
+    <Name>Fire bolt</Name>
+    <Description>A strength 8 missile attack</Description>
+    <RequiredLevel>35</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>41</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>4</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>falador_teleport</Id>
+    <Name>Falador teleport</Name>
+    <Description>Teleports you to Falador</Description>
+    <RequiredLevel>37</RequiredLevel>
+    <Type>0</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>33</int>
+      <int>42</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>1</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>crumble_undead</Id>
+    <Name>Crumble undead</Name>
+    <Description>Hits skeleton, ghosts &amp; zombies hard!</Description>
+    <RequiredLevel>39</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>33</int>
+      <int>41</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>2</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>wind_blast</Id>
+    <Name>Wind blast</Name>
+    <Description>A strength 9 missile attack</Description>
+    <RequiredLevel>41</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>33</int>
+      <int>38</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>superheat_item</Id>
+    <Name>Superheat item</Name>
+    <Description>Smelt 1 ore without a furnace</Description>
+    <RequiredLevel>43</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>40</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>4</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>camelot_teleport</Id>
+    <Name>Camelot teleport</Name>
+    <Description>Teleports you to Camelot</Description>
+    <RequiredLevel>45</RequiredLevel>
+    <Type>0</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>33</int>
+      <int>42</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>water_blast</Id>
+    <Name>Water blast</Name>
+    <Description>A strength 10 missile attack</Description>
+    <RequiredLevel>47</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>33</int>
+      <int>38</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>enchant_lvl-3_amulet</Id>
+    <Name>Enchant lvl-3 amulet</Name>
+    <Description>For use on ruby amulets</Description>
+    <RequiredLevel>49</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>46</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>iban_blast</Id>
+    <Name>Iban blast</Name>
+    <Description>A strength 25 missile attack!</Description>
+    <RequiredLevel>50</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>38</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>ardougne_teleport</Id>
+    <Name>Ardougne teleport</Name>
+    <Description>Teleports you to Ardougne</Description>
+    <RequiredLevel>51</RequiredLevel>
+    <Type>0</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>42</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>2</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>earth_blast</Id>
+    <Name>Earth blast</Name>
+    <Description>A strength 11 missile attack</Description>
+    <RequiredLevel>53</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>33</int>
+      <int>38</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>4</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>high_level_alchemy</Id>
+    <Name>High level alchemy</Name>
+    <Description>Convert an item into more gold</Description>
+    <RequiredLevel>55</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>40</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>charge_water_orb</Id>
+    <Name>Charge Water Orb</Name>
+    <Description>Needs to be cast on a water obelisk</Description>
+    <RequiredLevel>56</RequiredLevel>
+    <Type>5</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>46</int>
+      <int>611</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>30</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>enchant_lvl-4_amulet</Id>
+    <Name>Enchant lvl-4 amulet</Name>
+    <Description>For use on diamond amulets</Description>
+    <RequiredLevel>57</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>46</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>10</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>watchtower_teleport</Id>
+    <Name>Watchtower teleport</Name>
+    <Description>Teleports you to the watchtower</Description>
+    <RequiredLevel>58</RequiredLevel>
+    <Type>0</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>42</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>2</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>fire_blast</Id>
+    <Name>Fire blast</Name>
+    <Description>A strength 12 missile attack</Description>
+    <RequiredLevel>59</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>38</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>5</int>
+      <int>4</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>claws_of_guthix</Id>
+    <Name>Claws of Guthix</Name>
+    <Description>Summons the power of Guthix</Description>
+    <RequiredLevel>60</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>619</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>1</int>
+      <int>4</int>
+      <int>2</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>saradomin_strike</Id>
+    <Name>Saradomin strike</Name>
+    <Description>Summons the power of Saradomin</Description>
+    <RequiredLevel>60</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>619</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>2</int>
+      <int>4</int>
+      <int>2</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>flames_of_zamorak</Id>
+    <Name>Flames of Zamorak</Name>
+    <Description>Summons the power of Zamorak</Description>
+    <RequiredLevel>60</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>619</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>4</int>
+      <int>1</int>
+      <int>2</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>charge_earth_orb</Id>
+    <Name>Charge earth Orb</Name>
+    <Description>Needs to be cast on an earth obelisk</Description>
+    <RequiredLevel>60</RequiredLevel>
+    <Type>5</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>46</int>
+      <int>611</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>30</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>wind_wave</Id>
+    <Name>Wind wave</Name>
+    <Description>A strength 13 missile attack</Description>
+    <RequiredLevel>62</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>2</RuneCount>
+    <RequiredRunesIds>
+      <int>33</int>
+      <int>619</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>charge_fire_orb</Id>
+    <Name>Charge Fire Orb</Name>
+    <Description>Needs to be cast on a fire obelisk</Description>
+    <RequiredLevel>63</RequiredLevel>
+    <Type>5</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>46</int>
+      <int>611</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>30</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>water_wave</Id>
+    <Name>Water wave</Name>
+    <Description>A strength 14 missile attack</Description>
+    <RequiredLevel>65</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>33</int>
+      <int>619</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>7</int>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>charge_air_orb</Id>
+    <Name>Charge air Orb</Name>
+    <Description>Needs to be cast on an air obelisk</Description>
+    <RequiredLevel>66</RequiredLevel>
+    <Type>5</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>33</int>
+      <int>46</int>
+      <int>611</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>30</int>
+      <int>3</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>vulnerability</Id>
+    <Name>Vulnerability</Name>
+    <Description>Reduces your opponents defense by 10%</Description>
+    <RequiredLevel>66</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>32</int>
+      <int>825</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>5</int>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>enchant_lvl-5_amulet</Id>
+    <Name>Enchant lvl-5 amulet</Name>
+    <Description>For use on dragonstone amulets</Description>
+    <RequiredLevel>68</RequiredLevel>
+    <Type>3</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>32</int>
+      <int>34</int>
+      <int>46</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>15</int>
+      <int>15</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>earth_wave</Id>
+    <Name>Earth wave</Name>
+    <Description>A strength 15 missile attack</Description>
+    <RequiredLevel>70</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>33</int>
+      <int>619</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>7</int>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>enfeeble</Id>
+    <Name>Enfeeble</Name>
+    <Description>Reduces your opponents strength by 10%</Description>
+    <RequiredLevel>73</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>32</int>
+      <int>825</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>8</int>
+      <int>8</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>fire_wave</Id>
+    <Name>Fire wave</Name>
+    <Description>A strength 16 missile attack</Description>
+    <RequiredLevel>75</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>619</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>7</int>
+      <int>5</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>stun</Id>
+    <Name>Stun</Name>
+    <Description>Reduces your opponents attack by 10%</Description>
+    <RequiredLevel>80</RequiredLevel>
+    <Type>2</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>34</int>
+      <int>32</int>
+      <int>825</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>12</int>
+      <int>12</int>
+      <int>1</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+  <SpellEntity>
+    <Id>charge</Id>
+    <Name>Charge</Name>
+    <Description>Increase your mage arena spells damage</Description>
+    <RequiredLevel>80</RequiredLevel>
+    <Type>0</Type>
+    <RuneCount>3</RuneCount>
+    <RequiredRunesIds>
+      <int>31</int>
+      <int>33</int>
+      <int>619</int>
+    </RequiredRunesIds>
+    <RequiredRunesCounts>
+      <int>3</int>
+      <int>3</int>
+      <int>3</int>
+    </RequiredRunesCounts>
+    <ExperienceGain>0</ExperienceGain>
+  </SpellEntity>
+</ArrayOfSpellEntity>

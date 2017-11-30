@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfElevationEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ElevationEntity>
+    <Id>0</Id>
+    <Roof>64</Roof>
+    <Unknown>6</Unknown>
+  </ElevationEntity>
+  <ElevationEntity>
+    <Id>1</Id>
+    <Roof>64</Roof>
+    <Unknown>3</Unknown>
+  </ElevationEntity>
+  <ElevationEntity>
+    <Id>2</Id>
+    <Roof>96</Roof>
+    <Unknown>2</Unknown>
+  </ElevationEntity>
+  <ElevationEntity>
+    <Id>3</Id>
+    <Roof>80</Roof>
+    <Unknown>33</Unknown>
+  </ElevationEntity>
+  <ElevationEntity>
+    <Id>4</Id>
+    <Roof>80</Roof>
+    <Unknown>15</Unknown>
+  </ElevationEntity>
+  <ElevationEntity>
+    <Id>5</Id>
+    <Roof>90</Roof>
+    <Unknown>49</Unknown>
+  </ElevationEntity>
+</ArrayOfElevationEntity>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24363CDB-0A6A-4FCC-AD2E-52CC98C7F49F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GielinorAdventures.GameLogic</RootNamespace>
+    <AssemblyName>GielinorAdventures.GameLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Mapping\AnimationMappingExtensions.cs" />
+    <Compile Include="Mapping\GameObjectLocationMappingExtensions.cs" />
+    <Compile Include="Mapping\ElevationMappingExtensions.cs" />
+    <Compile Include="Mapping\ItemLocationMappingExtensions.cs" />
+    <Compile Include="Mapping\NpcLocationMappingExtensions.cs" />
+    <Compile Include="Mapping\WorldObjectMappingExtensions.cs" />
+    <Compile Include="Mapping\ItemDropMappingExtensions.cs" />
+    <Compile Include="Mapping\ItemMappingExtensions.cs" />
+    <Compile Include="Mapping\NpcMappingExtensions.cs" />
+    <Compile Include="Mapping\PrayerMappingExtensions.cs" />
+    <Compile Include="Mapping\SpellMappingExtensions.cs" />
+    <Compile Include="Mapping\GameTextureMappingExtensions.cs" />
+    <Compile Include="Mapping\TileMappingExtensions.cs" />
+    <Compile Include="Mapping\WallObjectMappingExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GameManagers\EntityManager.cs" />
+    <Compile Include="GameManagers\InventoryManager.cs" />
+    <Compile Include="GameManagers\CombatManager.cs" />
+    <Compile Include="Mapping\QuestMappingExtensions.cs" />
+    <Compile Include="GameManagers\QuestManager.cs" />
+    <Compile Include="Mapping\WorldMappingExtensions.cs" />
+    <Compile Include="Mapping\WorldLayerMappingExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GielinorAdventures.DataAccess\GielinorAdventures.DataAccess.csproj">
+      <Project>{dfa1e1e9-afeb-4565-ba38-ecdbafc9d47b}</Project>
+      <Name>GielinorAdventures.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Models\GielinorAdventures.Models.csproj">
+      <Project>{0fb5c790-78f3-44ea-af6c-2d5b7c8e82be}</Project>
+      <Name>GielinorAdventures.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">
+      <Project>{395f7f7f-f89e-43f4-96f0-6a6e20016b81}</Project>
+      <Name>GielinorAdventures.Primitives</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Settings\GielinorAdventures.Settings.csproj">
+      <Project>{f863eb40-1193-4067-8eef-405caf9f2fc9}</Project>
+      <Name>GielinorAdventures.Settings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

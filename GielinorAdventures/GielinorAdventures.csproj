@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{52BAD441-8465-4574-9899-B2911249E2DE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GielinorAdventures</RootNamespace>
+    <AssemblyName>GielinorAdventures</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MonoGame.Framework.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GameWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GielinorAdventures.Data\GielinorAdventures.Data.csproj">
+      <Project>{1F0B4C1F-5C31-465E-8747-54399762C50A}</Project>
+      <Name>GielinorAdventures.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.GameLogic\GielinorAdventures.GameLogic.csproj">
+      <Project>{24363cdb-0a6a-4fcc-ad2e-52cc98c7f49f}</Project>
+      <Name>GielinorAdventures.GameLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Graphics\GielinorAdventures.Graphics.csproj">
+      <Project>{512eac2f-fd40-4143-b52a-c250fba51e4f}</Project>
+      <Name>GielinorAdventures.Graphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Gui\GielinorAdventures.Gui.csproj">
+      <Project>{d7f47fa0-d9bc-4702-9a21-40697dff128a}</Project>
+      <Name>GielinorAdventures.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Input\GielinorAdventures.Input.csproj">
+      <Project>{FF805103-A40E-4154-8ED6-C70623AF471C}</Project>
+      <Name>GielinorAdventures.Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Models\GielinorAdventures.Models.csproj">
+      <Project>{0FB5C790-78F3-44EA-AF6C-2D5B7C8E82BE}</Project>
+      <Name>GielinorAdventures.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.DataAccess\GielinorAdventures.DataAccess.csproj">
+      <Project>{DFA1E1E9-AFEB-4565-BA38-ECDBAFC9D47B}</Project>
+      <Name>GielinorAdventures.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Settings\GielinorAdventures.Settings.csproj">
+      <Project>{f863eb40-1193-4067-8eef-405caf9f2fc9}</Project>
+      <Name>GielinorAdventures.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">
+      <Project>{395F7F7F-F89E-43F4-96F0-6A6E20016B81}</Project>
+      <Name>GielinorAdventures.Primitives</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GielinorAdventures.Infrastructure\GielinorAdventures.Infrastructure.csproj">
+      <Project>{A498B100-9B60-48F7-A2FB-2E6D214E520C}</Project>
+      <Name>GielinorAdventures.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

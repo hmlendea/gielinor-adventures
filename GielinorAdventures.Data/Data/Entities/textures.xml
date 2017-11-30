@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGameTextureEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameTextureEntity>
+    <Id>0</Id>
+    <Name>wall</Name>
+    <SubName>door</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>1</Id>
+    <Name>water</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>2</Id>
+    <Name>wall</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>3</Id>
+    <Name>planks</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>4</Id>
+    <Name>wall</Name>
+    <SubName>doorway</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>5</Id>
+    <Name>wall</Name>
+    <SubName>window</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>6</Id>
+    <Name>roof</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>7</Id>
+    <Name>wall</Name>
+    <SubName>arrowslit</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>8</Id>
+    <Name>leafytree</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>9</Id>
+    <Name>treestump</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>10</Id>
+    <Name>fence</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>11</Id>
+    <Name>mossy</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>12</Id>
+    <Name>railings</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>13</Id>
+    <Name>painting1</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>14</Id>
+    <Name>painting2</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>15</Id>
+    <Name>marble</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>16</Id>
+    <Name>deadtree</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>17</Id>
+    <Name>fountain</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>18</Id>
+    <Name>wall</Name>
+    <SubName>stainedglass</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>19</Id>
+    <Name>target</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>20</Id>
+    <Name>books</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>21</Id>
+    <Name>timbered</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>22</Id>
+    <Name>timbered</Name>
+    <SubName>timberwindow</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>23</Id>
+    <Name>mossybricks</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>24</Id>
+    <Name>growingwheat</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>25</Id>
+    <Name>gungywater</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>26</Id>
+    <Name>web</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>27</Id>
+    <Name>wall</Name>
+    <SubName>desertwindow</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>28</Id>
+    <Name>wall</Name>
+    <SubName>crumbled</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>29</Id>
+    <Name>cavern</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>30</Id>
+    <Name>cavern2</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>31</Id>
+    <Name>lava</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>32</Id>
+    <Name>pentagram</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>33</Id>
+    <Name>mapletree</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>34</Id>
+    <Name>yewtree</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>35</Id>
+    <Name>helmet</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>36</Id>
+    <Name>canvas</Name>
+    <SubName>tentbottom</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>37</Id>
+    <Name>Chainmail2</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>38</Id>
+    <Name>mummy</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>39</Id>
+    <Name>jungleleaf</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>40</Id>
+    <Name>jungleleaf3</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>41</Id>
+    <Name>jungleleaf4</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>42</Id>
+    <Name>jungleleaf5</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>43</Id>
+    <Name>jungleleaf6</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>44</Id>
+    <Name>mossybricks</Name>
+    <SubName>arrowslit</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>45</Id>
+    <Name>planks</Name>
+    <SubName>window</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>46</Id>
+    <Name>planks</Name>
+    <SubName>junglewindow</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>47</Id>
+    <Name>cargonet</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>48</Id>
+    <Name>bark</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>49</Id>
+    <Name>canvas</Name>
+    <SubName />
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>50</Id>
+    <Name>canvas</Name>
+    <SubName>tentdoor</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>51</Id>
+    <Name>wall</Name>
+    <SubName>lowcrumbled</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>52</Id>
+    <Name>cavern</Name>
+    <SubName>crumbled</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>53</Id>
+    <Name>cavern2</Name>
+    <SubName>crumbled</SubName>
+  </GameTextureEntity>
+  <GameTextureEntity>
+    <Id>54</Id>
+    <Name>lava</Name>
+    <SubName>flames</SubName>
+  </GameTextureEntity>
+</ArrayOfGameTextureEntity>
