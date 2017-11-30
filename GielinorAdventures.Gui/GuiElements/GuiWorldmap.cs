@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GielinorAdventures.Gui.GuiElements
 {
-    public class GuiGame : GuiElement
+    public class GuiWorldmap : GuiElement
     {
         public override void LoadContent()
         {

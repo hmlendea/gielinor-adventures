@@ -43,7 +43,7 @@
     <Compile Include="FpsIndicator.cs" />
     <Compile Include="GuiElements\GuiChatPanel.cs" />
     <Compile Include="GuiElements\GuiElement.cs" />
-    <Compile Include="GuiElements\GuiGame.cs" />
+    <Compile Include="GuiElements\GuiWorldmap.cs" />
     <Compile Include="GuiElements\GuiMinimap.cs" />
     <Compile Include="GuiElements\GuiToggleButton.cs" />
     <Compile Include="GuiElements\GuiToolTip.cs" />
@@ -66,6 +66,10 @@
     <Compile Include="GuiElements\GuiCombatStyleCard.cs" />
     <Compile Include="GuiElements\GuiCombatPanel.cs" />
     <Compile Include="Screens\SplashScreen.cs" />
+    <Compile Include="WorldMap\Layer.cs" />
+    <Compile Include="WorldMap\Tile.cs" />
+    <Compile Include="WorldMap\Map.cs" />
+    <Compile Include="Camera.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GielinorAdventures.DataAccess\GielinorAdventures.DataAccess.csproj">
@@ -98,5 +102,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="WorldMap\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
