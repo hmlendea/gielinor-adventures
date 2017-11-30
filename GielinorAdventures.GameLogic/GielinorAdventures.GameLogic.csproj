@@ -60,6 +60,8 @@
     <Compile Include="GameManagers\QuestManager.cs" />
     <Compile Include="Mapping\WorldMappingExtensions.cs" />
     <Compile Include="Mapping\WorldLayerMappingExtensions.cs" />
+    <Compile Include="GameManagers\GameManager.cs" />
+    <Compile Include="GameManagers\IGameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

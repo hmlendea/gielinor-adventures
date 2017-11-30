@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+using GielinorAdventures.DataAccess.DataObjects;
 using GielinorAdventures.DataAccess.Repositories;
 using GielinorAdventures.GameLogic.Mapping;
 using GielinorAdventures.Models;
@@ -301,6 +302,20 @@ namespace GielinorAdventures.GameLogic.GameManagers
             }
 
             return wallObjects[index];
+        }
+
+        /// <summary>
+        /// Gets the world.
+        /// </summary>
+        /// <returns>The world.</returns>
+        /// <param name="id">Identifier.</param>
+        public World GetWorld(string id)
+        {
+            WorldRepository worldRepository = new WorldRepository(ApplicationPaths.WorldsDirectory);
+
+            WorldEntity worldEntity = worldRepository.Get(id);
+
+            return worldEntity.ToDomainModel();
         }
 
         /// <summary>

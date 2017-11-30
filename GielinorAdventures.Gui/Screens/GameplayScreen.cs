@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Gui.GuiElements;
 using GielinorAdventures.Primitives;
 
@@ -11,6 +12,8 @@ namespace GielinorAdventures.Gui.Screens
     /// </summary>
     public class GameplayScreen : Screen
     {
+        IGameManager game;
+
         /// <summary>
         /// Gets or sets the minimap.
         /// </summary>
@@ -23,7 +26,7 @@ namespace GielinorAdventures.Gui.Screens
         /// Gets or sets the game client.
         /// </summary>
         /// <value>The game client.</value>
-        public GuiGame GameFrame { get; set; }
+        public GuiWorldmap Worldmap { get; set; }
 
         /// <summary>
         /// Loads the content.
@@ -32,12 +35,15 @@ namespace GielinorAdventures.Gui.Screens
         {
             SideBar = new GuiSideBar();
             ChatPanel = new GuiChatPanel();
-            GameFrame = new GuiGame();
+            Worldmap = new GuiWorldmap();
 
             SideBar.Enabled = false;
             SideBar.Visible = false;
 
-            GuiManager.Instance.GuiElements.Add(GameFrame);
+            game = new GameManager();
+            Worldmap.AssociateGameManager(game);
+
+            GuiManager.Instance.GuiElements.Add(Worldmap);
             GuiManager.Instance.GuiElements.Add(SideBar);
             GuiManager.Instance.GuiElements.Add(ChatPanel);
 
@@ -74,7 +80,7 @@ namespace GielinorAdventures.Gui.Screens
                 (int)(ScreenManager.Instance.Size.Height * 0.25));
             ChatPanel.Location = new Point2D(0, ScreenManager.Instance.Size.Height - ChatPanel.Size.Height);
 
-            GameFrame.Size = new Size2D(
+            Worldmap.Size = new Size2D(
                 ScreenManager.Instance.Size.Width - SideBar.Size.Width,
                 ScreenManager.Instance.Size.Height - ChatPanel.Size.Height);
         }
