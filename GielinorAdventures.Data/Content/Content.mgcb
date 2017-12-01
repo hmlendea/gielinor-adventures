@@ -880,18 +880,6 @@
 /processorParam:TextureFormat=Color
 /build:World/Terrain/dirt.png
 
-#begin World/Terrain/furniture_kitchen.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:World/Terrain/furniture_kitchen.png
-
 #begin World/Terrain/grass.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -976,18 +964,6 @@
 /processorParam:TextureFormat=Color
 /build:World/Terrain/wood_planks.png
 
-#begin World/Terrain/furniture.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:World/Terrain/furniture.png
-
 #begin World/Terrain/marble.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1023,4 +999,28 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpriteSheets/Mobs/human_male_white.png
+
+#begin World/Terrain/furniture-home.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:World/Terrain/furniture-home.png
+
+#begin World/Terrain/furniture-work.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:World/Terrain/furniture-work.png
 
