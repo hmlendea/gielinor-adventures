@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Gui.WorldMap;
 using GielinorAdventures.Input.Events;
+using GielinorAdventures.Models;
 using GielinorAdventures.Primitives;
 using GielinorAdventures.Primitives.Mapping;
 using GielinorAdventures.Settings;
@@ -15,21 +16,22 @@ namespace GielinorAdventures.Gui.GuiElements
         IGameManager game;
         Camera camera;
         Map map;
+        Player player;
 
         Point2D mouseCoords;
 
-        GuiMob player;
+        GuiMob playerImage;
 
         public override void LoadContent()
         {
             camera = new Camera { Size = Size };
             map = new Map();
-            player = new GuiMob();
+            playerImage = new GuiMob();
 
             camera.LoadContent();
             map.LoadContent(game.GetWorld());
 
-            Children.Add(player);
+            Children.Add(playerImage);
 
             base.LoadContent();
         }
@@ -46,7 +48,11 @@ namespace GielinorAdventures.Gui.GuiElements
         {
             camera.Size = Size;
 
-            CentreCameraOnLocation(game.GetPlayer().Location);
+            Point2D centreLocation = new Point2D(
+                player.Location.X + 3,
+                player.Location.Y + 3);
+
+            CentreCameraOnLocation(centreLocation);
 
             camera.Update(gameTime);
             map.Update(gameTime);
@@ -69,6 +75,8 @@ namespace GielinorAdventures.Gui.GuiElements
         public void AssociateGameManager(IGameManager game)
         {
             this.game = game;
+
+            player = game.GetPlayer();
         }
 
         /// <summary>
@@ -85,9 +93,7 @@ namespace GielinorAdventures.Gui.GuiElements
         {
             base.SetChildrenProperties();
 
-            player.Location = new Point2D(
-                (Size.Width - player.Size.Width) / 2,
-                (Size.Height - player.Size.Height) / 2);
+            playerImage.Location = MapToScreenCoordinates(player.Location);
         }
 
         /// <summary>
@@ -99,6 +105,13 @@ namespace GielinorAdventures.Gui.GuiElements
         {
             return new Point2D((camera.Location.X + screenCoords.X) / GameDefines.MAP_TILE_SIZE,
                                (camera.Location.Y + screenCoords.Y) / GameDefines.MAP_TILE_SIZE);
+        }
+
+        Point2D MapToScreenCoordinates(Point2D mapCoordinates)
+        {
+            return new Point2D(
+                mapCoordinates.X * GameDefines.MAP_TILE_SIZE - camera.Location.X,
+                mapCoordinates.Y * GameDefines.MAP_TILE_SIZE - camera.Location.Y);
         }
 
         protected override void OnClicked(object sender, MouseButtonEventArgs e)
