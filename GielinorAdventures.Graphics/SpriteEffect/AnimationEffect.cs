@@ -55,23 +55,6 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
         }
 
         /// <summary>
-        /// Loads the content.
-        /// </summary>
-        /// <param name="sprite">Sprite.</param>
-        public override void LoadContent(ref Sprite sprite)
-        {
-            base.LoadContent(ref sprite);
-        }
-
-        /// <summary>
-        /// Unloads the content.
-        /// </summary>
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-        }
-
-        /// <summary>
         /// Update the content.
         /// </summary>
         /// <param name="gameTime">Game time.</param>

@@ -121,13 +121,6 @@ namespace GielinorAdventures.Gui.GuiElements
             textSprite.Draw(spriteBatch);
         }
 
-        /// <summary>
-        /// Activates the effect.
-        /// </summary>
-        /// <param name="effect">Effect.</param>
-        public void ActivateEffect(string effect)
-        => textSprite.ActivateEffect(effect);
-
         protected override void SetChildrenProperties()
         {
             base.SetChildrenProperties();

@@ -39,26 +39,6 @@ namespace GielinorAdventures.Gui
             idleSprite = new Sprite { ContentFile = "Cursors/idle" };
             clickSprite = new Sprite { ContentFile = "Cursors/click" };
 
-            if (Frames > 1)
-            {
-                idleSprite.Active = true;
-                idleSprite.Effects = nameof(AnimationEffect);
-
-                clickSprite.Active = true;
-                clickSprite.Effects = nameof(AnimationEffect);
-
-                idleSprite.AnimationEffect = new AnimationEffect
-                {
-                    FrameAmount = new Point2D(Frames, 1).ToXnaPoint(),
-                    SwitchFrame = 300
-                };
-                clickSprite.AnimationEffect = new AnimationEffect
-                {
-                    FrameAmount = new Point2D(Frames, 1).ToXnaPoint(),
-                    SwitchFrame = 300
-                };
-            }
-
             SetChildrenProperites();
 
             idleSprite.LoadContent();

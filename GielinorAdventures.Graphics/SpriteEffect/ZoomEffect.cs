@@ -26,6 +26,12 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
         public float MaximumZoom { get; set; }
 
         /// <summary>
+        /// Gets or sets the current zoom.
+        /// </summary>
+        /// <value>The current zoom.</value>
+        public float CurrentZoom { get; private set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this <see cref="ZoomEffect"/> is increasing.
         /// </summary>
         /// <value><c>true</c> if increasing; otherwise, <c>false</c>.</value>
@@ -43,23 +49,6 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
         }
 
         /// <summary>
-        /// Loads the content.
-        /// </summary>
-        /// <param name="sprite">Sprite.</param>
-        public override void LoadContent(ref Sprite sprite)
-        {
-            base.LoadContent(ref sprite);
-        }
-
-        /// <summary>
-        /// Unloads the content.
-        /// </summary>
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-        }
-
-        /// <summary>
         /// Updates the content.
         /// </summary>
         /// <param name="gameTime">Game time.</param>
@@ -71,27 +60,27 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
             {
                 if (Increasing == false)
                 {
-                    Sprite.Zoom -= Speed * ((float)gameTime.ElapsedGameTime.TotalSeconds);
+                    CurrentZoom -= Speed * ((float)gameTime.ElapsedGameTime.TotalSeconds);
                 }
                 else
                 {
-                    Sprite.Zoom += Speed * ((float)gameTime.ElapsedGameTime.TotalSeconds);
+                    CurrentZoom += Speed * ((float)gameTime.ElapsedGameTime.TotalSeconds);
                 }
 
-                if (Sprite.Zoom < MinimumZoom)
+                if (Sprite.Zoom + CurrentZoom < MinimumZoom)
                 {
                     Increasing = true;
-                    Sprite.Zoom = MinimumZoom;
+                    CurrentZoom = MinimumZoom;
                 }
-                else if (Sprite.Zoom > MaximumZoom)
+                else if (Sprite.Zoom + CurrentZoom > MaximumZoom)
                 {
                     Increasing = false;
-                    Sprite.Zoom = MaximumZoom;
+                    CurrentZoom = MaximumZoom;
                 }
             }
             else
             {
-                Sprite.Zoom = MaximumZoom;
+                CurrentZoom = MaximumZoom;
             }
         }
     }

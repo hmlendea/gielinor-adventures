@@ -18,13 +18,18 @@ namespace GielinorAdventures.Gui.GuiElements
 
         Point2D mouseCoords;
 
+        GuiMob player;
+
         public override void LoadContent()
         {
             camera = new Camera { Size = Size };
             map = new Map();
+            player = new GuiMob();
 
             camera.LoadContent();
             map.LoadContent(game.GetWorld());
+
+            Children.Add(player);
 
             base.LoadContent();
         }
@@ -74,6 +79,15 @@ namespace GielinorAdventures.Gui.GuiElements
             camera.CentreOnLocation(new Point2D(
                 mapLocation.X * GameDefines.MAP_TILE_SIZE,
                 mapLocation.Y * GameDefines.MAP_TILE_SIZE));
+        }
+
+        protected override void SetChildrenProperties()
+        {
+            base.SetChildrenProperties();
+
+            player.Location = new Point2D(
+                (Size.Width - player.Size.Width) / 2,
+                (Size.Height - player.Size.Height) / 2);
         }
 
         /// <summary>

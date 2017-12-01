@@ -26,7 +26,7 @@ namespace GielinorAdventures.Gui.Screens
         /// Gets or sets the background.
         /// </summary>
         /// <value>The background.</value>
-        public Sprite BackgroundImage { get; set; }
+        public GuiImage BackgroundImage { get; set; }
 
         /// <summary>
         /// Gets or sets the overlay.
@@ -54,7 +54,7 @@ namespace GielinorAdventures.Gui.Screens
         /// </summary>
         public override void LoadContent()
         {
-            BackgroundImage = new Sprite
+            BackgroundImage = new GuiImage
             {
                 ContentFile = "SplashScreen/Background",
                 RotationEffect = new RotationEffect
@@ -67,31 +67,20 @@ namespace GielinorAdventures.Gui.Screens
                     Speed = 0.1f,
                     MinimumZoom = 1.25f,
                     MaximumZoom = 2.00f
-                }
+                },
+                EffectsActive = true
             };
             OverlayImage = new GuiImage { ContentFile = "SplashScreen/Overlay" };
             LogoImage = new GuiImage { ContentFile = "SplashScreen/Logo" };
 
+            GuiManager.Instance.GuiElements.Add(BackgroundImage);
+            GuiManager.Instance.GuiElements.Add(OverlayImage);
+            GuiManager.Instance.GuiElements.Add(LogoImage);
+
             base.LoadContent();
 
-            BackgroundImage.LoadContent();
-            OverlayImage.LoadContent();
-            LogoImage.LoadContent();
-
-            BackgroundImage.ActivateEffect("RotationEffect");
-            BackgroundImage.ActivateEffect("ZoomEffect");
-        }
-
-        /// <summary>
-        /// Unloads the content.
-        /// </summary>
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-
-            BackgroundImage.UnloadContent();
-            OverlayImage.UnloadContent();
-            LogoImage.UnloadContent();
+            BackgroundImage.RotationEffect.Activate();
+            BackgroundImage.ZoomEffect.Activate();
         }
 
         /// <summary>
@@ -101,33 +90,12 @@ namespace GielinorAdventures.Gui.Screens
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            BackgroundImage.Update(gameTime);
-            OverlayImage.Update(gameTime);
-            LogoImage.Update(gameTime);
 
             Delay -= (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
 
-        /// <summary>
-        /// Draws the content on the specified spriteBatch.
-        /// </summary>
-        /// <param name="spriteBatch">Sprite batch.</param>
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            base.Draw(spriteBatch);
-
-            BackgroundImage.Draw(spriteBatch);
-            OverlayImage.Draw(spriteBatch);
-            LogoImage.Draw(spriteBatch);
-        }
-
         protected override void SetChildrenProperties()
         {
-            float bgScale = (float)Math.Max(ScreenManager.Instance.Size.Width, ScreenManager.Instance.Size.Height) /
-                            Math.Max(BackgroundImage.SpriteSize.Width, BackgroundImage.SpriteSize.Height);
-
-
-            BackgroundImage.Scale = new Scale2D(bgScale, bgScale);
             OverlayImage.Size = ScreenManager.Instance.Size;
 
             BackgroundImage.Location = new Point2D((ScreenManager.Instance.Size.Width - BackgroundImage.ClientRectangle.Width) / 2,

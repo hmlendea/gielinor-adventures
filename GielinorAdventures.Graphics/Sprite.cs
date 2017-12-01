@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -22,16 +20,7 @@ namespace GielinorAdventures.Graphics
     public class Sprite
     {
         SpriteFont font;
-
-        FadeEffect fadeEffect;
-        RotationEffect rotationEffect;
-        ZoomEffect zoomEffect;
-        AnimationEffect animationEffect;
-
-        Texture2D texture;
         Texture2D alphaMask;
-
-        readonly Dictionary<string, CustomSpriteEffect> effectList;
 
         string loadedContentFile;
         string loadedAlphaMaskFile;
@@ -151,11 +140,18 @@ namespace GielinorAdventures.Graphics
         }
 
         /// <summary>
+        /// Gets the texture.
+        /// </summary>
+        /// <value>The texture.</value>
+        [XmlIgnore]
+        public Texture2D Texture { get; private set; }
+
+        /// <summary>
         /// Gets the texture size.
         /// </summary>
         /// <value>The texture size.</value>
         [XmlIgnore]
-        public Size2D TextureSize => new Size2D(texture.Width, texture.Height);
+        public Size2D TextureSize => new Size2D(Texture.Width, Texture.Height);
 
         /// <summary>
         /// Gets or sets the fill mode.
@@ -164,50 +160,34 @@ namespace GielinorAdventures.Graphics
         public TextureLayout TextureLayout { get; set; }
 
         /// <summary>
-        /// Gets or sets the effects.
+        /// Gets or sets the animation effect.
         /// </summary>
-        /// <value>The effects.</value>
-        public string Effects { get; set; }
+        /// <value>The animation effect.</value>
+        public AnimationEffect AnimationEffect { get; set; }
 
         /// <summary>
         /// Gets or sets the fade effect.
         /// </summary>
         /// <value>The fade effect.</value>
-        public FadeEffect FadeEffect
-        {
-            get { return fadeEffect; }
-            set { fadeEffect = value; }
-        }
+        public FadeEffect FadeEffect { get; set; }
 
         /// <summary>
         /// Gets or sets the rotation effect.
         /// </summary>
         /// <value>The rotation effect.</value>
-        public RotationEffect RotationEffect
-        {
-            get { return rotationEffect; }
-            set { rotationEffect = value; }
-        }
+        public RotationEffect RotationEffect { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sprite sheet effect.
+        /// </summary>
+        /// <value>The sprite sheet effect.</value>
+        public SpriteSheetEffect SpriteSheetEffect { get; set; }
 
         /// <summary>
         /// Gets or sets the zoom effect.
         /// </summary>
         /// <value>The zoom effect.</value>
-        public ZoomEffect ZoomEffect
-        {
-            get { return zoomEffect; }
-            set { zoomEffect = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the animation effect.
-        /// </summary>
-        /// <value>The animation effect.</value>
-        public AnimationEffect AnimationEffect
-        {
-            get { return animationEffect; }
-            set { animationEffect = value; }
-        }
+        public ZoomEffect ZoomEffect { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Sprite"/> class.
@@ -215,9 +195,6 @@ namespace GielinorAdventures.Graphics
         public Sprite()
         {
             Active = true;
-
-            effectList = new Dictionary<string, CustomSpriteEffect>();
-            Effects = string.Empty;
 
             ContentFile = string.Empty;
             Text = string.Empty;
@@ -239,6 +216,12 @@ namespace GielinorAdventures.Graphics
         /// </summary>
         public void LoadContent()
         {
+            AnimationEffect?.AssociateSprite(this);
+            FadeEffect?.AssociateSprite(this);
+            RotationEffect?.AssociateSprite(this);
+            SpriteSheetEffect?.AssociateSprite(this);
+            ZoomEffect?.AssociateSprite(this);
+
             if (string.IsNullOrWhiteSpace(Text))
             {
                 Text = string.Empty;
@@ -253,10 +236,10 @@ namespace GielinorAdventures.Graphics
             {
                 Size2D size = Size2D.Empty;
 
-                if (texture != null)
+                if (Texture != null)
                 {
-                    size.Width = texture.Width;
-                    size.Height = texture.Height;
+                    size.Width = Texture.Width;
+                    size.Height = Texture.Height;
                 }
                 else if (Text != string.Empty)
                 {
@@ -284,28 +267,16 @@ namespace GielinorAdventures.Graphics
             GraphicsManager.Instance.Graphics.GraphicsDevice.SetRenderTarget(renderTarget);
             GraphicsManager.Instance.Graphics.GraphicsDevice.Clear(Color.Transparent);
 
-            if (texture != null)
+            if (Texture != null)
             {
                 GraphicsManager.Instance.SpriteBatch.Begin();
-                GraphicsManager.Instance.SpriteBatch.Draw(texture, Vector2.Zero, Color.White);
+                GraphicsManager.Instance.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);
                 GraphicsManager.Instance.SpriteBatch.End();
             }
 
-            texture = renderTarget;
+            Texture = renderTarget;
 
             GraphicsManager.Instance.Graphics.GraphicsDevice.SetRenderTarget(null);
-
-            SetEffect(ref fadeEffect);
-            SetEffect(ref rotationEffect);
-            SetEffect(ref zoomEffect);
-            SetEffect(ref animationEffect);
-
-            if (!string.IsNullOrEmpty(Effects))
-            {
-                List<string> split = Effects.Split(':').ToList();
-
-                split.ForEach(ActivateEffect);
-            }
         }
 
         /// <summary>
@@ -313,9 +284,11 @@ namespace GielinorAdventures.Graphics
         /// </summary>
         public void UnloadContent()
         {
-            List<string> effectKeys = effectList.Keys.ToList();
-
-            effectKeys.ForEach(DeactivateEffect);
+            AnimationEffect?.UnloadContent();
+            FadeEffect?.UnloadContent();
+            RotationEffect?.UnloadContent();
+            SpriteSheetEffect?.UnloadContent();
+            ZoomEffect?.UnloadContent();
         }
 
         /// <summary>
@@ -327,9 +300,11 @@ namespace GielinorAdventures.Graphics
             LoadContentFile();
             LoadAlphaMaskFile();
 
-            List<CustomSpriteEffect> activeEffects = effectList.Values.Where(effect => effect.Active).ToList();
-
-            activeEffects.ForEach(effect => effect.Update(gameTime));
+            AnimationEffect?.Update(gameTime);
+            FadeEffect?.Update(gameTime);
+            RotationEffect?.Update(gameTime);
+            SpriteSheetEffect?.Update(gameTime);
+            ZoomEffect?.Update(gameTime);
         }
 
         /// <summary>
@@ -348,19 +323,32 @@ namespace GielinorAdventures.Graphics
             }
 
             // TODO: Do not do this for every Draw call
-            Texture2D textureToDraw = texture;
+            Texture2D textureToDraw = Texture;
 
             // TODO: Find a better way to do this, because this one doesn't keep the mipmaps
             if (alphaMask != null)
             {
-                textureToDraw = TextureBlend(texture, alphaMask);
+                textureToDraw = TextureBlend(Texture, alphaMask);
             }
 
             if (TextureLayout == TextureLayout.Stretch)
             {
+                float rotation = Rotation;
+                float zoom = Zoom;
+
+                if (RotationEffect != null && RotationEffect.Active)
+                {
+                    rotation += RotationEffect.CurrentRotation;
+                }
+
+                if (ZoomEffect != null && ZoomEffect.Active)
+                {
+                    zoom += ZoomEffect.CurrentZoom;
+                }
+
                 spriteBatch.Draw(textureToDraw, new Vector2(Location.X + ClientRectangle.Width / 2, Location.Y + ClientRectangle.Height / 2), SourceRectangle.ToXnaRectangle(),
-                    Tint.ToXnaColor() * Opacity, Rotation,
-                    origin, Scale.ToXnaVector2() * Zoom,
+                    Tint.ToXnaColor() * Opacity, rotation,
+                    origin, Scale.ToXnaVector2() * zoom,
                     SpriteEffects.None, 0.0f);
             }
             else if (TextureLayout == TextureLayout.Tile)
@@ -378,81 +366,6 @@ namespace GielinorAdventures.Graphics
                 spriteBatch.End();
                 spriteBatch.Begin();
             }
-        }
-
-        /// <summary>
-        /// Activates the effect.
-        /// </summary>
-        /// <param name="effect">Effect.</param>
-        public void ActivateEffect(string effect)
-        {
-            if (effectList.ContainsKey(effect))
-            {
-                var obj = this;
-
-                effectList[effect].Active = true;
-                effectList[effect].LoadContent(ref obj);
-            }
-        }
-
-        /// <summary>
-        /// Deactivates the effect.
-        /// </summary>
-        /// <param name="effect">Effect.</param>
-        public void DeactivateEffect(string effect)
-        {
-            if (effectList.ContainsKey(effect))
-            {
-                effectList[effect].Active = false;
-                effectList[effect].UnloadContent();
-            }
-        }
-
-        /// <summary>
-        /// Sets the effect.
-        /// </summary>
-        /// <param name="effect">Effect.</param>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        void SetEffect<T>(ref T effect) where T : CustomSpriteEffect
-        {
-            if (effect == null)
-            {
-                effect = (T)Activator.CreateInstance(typeof(T));
-            }
-            else
-            {
-                var obj = this;
-
-                effect.Active = true;
-                effect.LoadContent(ref obj);
-            }
-
-            effectList.Add(effect.Key, effect);
-        }
-
-        /// <summary>
-        /// Stores the effects.
-        /// </summary>
-        public void StoreEffects()
-        {
-            List<CustomSpriteEffect> activeEffects = effectList.Values.Where(effect => effect.Active).ToList();
-            Effects = string.Empty;
-
-            activeEffects.ForEach(effect => Effects += effect.Key + ":");
-
-            Effects.TrimEnd(':');
-        }
-
-        /// <summary>
-        /// Restores the effects.
-        /// </summary>
-        public void RestoreEffects()
-        {
-            List<string> effectKeys = effectList.Keys.ToList();
-            List<string> split = Effects.Split(':').ToList();
-
-            effectKeys.ForEach(DeactivateEffect);
-            split.ForEach(ActivateEffect);
         }
 
         void DrawString(SpriteBatch spriteBatch, SpriteFont spriteFont, string text, Rectangle bounds, HorizontalAlignment hAlign, VerticalAlignment vAlign, Color colour)
@@ -572,7 +485,7 @@ namespace GielinorAdventures.Graphics
                 return;
             }
 
-            texture = ResourceManager.Instance.LoadTexture2D(ContentFile);
+            Texture = ResourceManager.Instance.LoadTexture2D(ContentFile);
 
             loadedContentFile = ContentFile;
         }

@@ -70,6 +70,8 @@
     <Compile Include="WorldMap\Tile.cs" />
     <Compile Include="WorldMap\Map.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="GuiElements\GuiMob.cs" />
+    <Compile Include="MobAnimationEffects\HumanSpriteSheetEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GielinorAdventures.DataAccess\GielinorAdventures.DataAccess.csproj">
@@ -104,6 +106,7 @@
   <ItemGroup />
   <ItemGroup>
     <Folder Include="WorldMap\" />
+    <Folder Include="MobAnimationEffects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

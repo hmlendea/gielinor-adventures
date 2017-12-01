@@ -67,6 +67,7 @@
     <Compile Include="World.cs" />
     <Compile Include="WorldLayer.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Enumerations\Direction.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">

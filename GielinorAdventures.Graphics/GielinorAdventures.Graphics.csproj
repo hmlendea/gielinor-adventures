@@ -52,6 +52,7 @@
     <Compile Include="SpriteEffect\RotationEffect.cs" />
     <Compile Include="SpriteEffect\ZoomEffect.cs" />
     <Compile Include="Enumerations\FontOutline.cs" />
+    <Compile Include="SpriteEffect\SpriteSheetEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GielinorAdventures.DataAccess\GielinorAdventures.DataAccess.csproj">

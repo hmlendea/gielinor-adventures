@@ -44,10 +44,34 @@ namespace GielinorAdventures.Gui.GuiElements
         public TextureLayout TextureLayout { get; set; }
 
         /// <summary>
+        /// Gets or sets the animation effect.
+        /// </summary>
+        /// <value>The animation effect.</value>
+        public AnimationEffect AnimationEffect { get; set; }
+
+        /// <summary>
         /// Gets or sets the fade effect.
         /// </summary>
         /// <value>The fade effect.</value>
         public FadeEffect FadeEffect { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rotation effect.
+        /// </summary>
+        /// <value>The rotation effect.</value>
+        public RotationEffect RotationEffect { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sprite sheet effect.
+        /// </summary>
+        /// <value>The sprite sheet effect.</value>
+        public SpriteSheetEffect SpriteSheetEffect { get; set; }
+
+        /// <summary>
+        /// Gets or sets the zoom effect.
+        /// </summary>
+        /// <value>The zoom effect.</value>
+        public ZoomEffect ZoomEffect { get; set; }
 
         public float Rotation { get; set; }
 
@@ -81,6 +105,11 @@ namespace GielinorAdventures.Gui.GuiElements
             sprite.LoadContent();
 
             base.LoadContent();
+
+            if (SourceRectangle == Rectangle2D.Empty)
+            {
+                SourceRectangle = new Rectangle2D(Point2D.Empty, sprite.SpriteSize);
+            }
         }
 
         /// <summary>
@@ -115,21 +144,9 @@ namespace GielinorAdventures.Gui.GuiElements
             base.Draw(spriteBatch);
         }
 
-        /// <summary>
-        /// Activates the effect.
-        /// </summary>
-        /// <param name="effect">Effect.</param>
-        public void ActivateEffect(string effect)
-        => sprite.ActivateEffect(effect);
-
         protected override void SetChildrenProperties()
         {
             base.SetChildrenProperties();
-
-            if (SourceRectangle == Rectangle2D.Empty)
-            {
-                SourceRectangle = new Rectangle2D(Point2D.Empty, sprite.SpriteSize);
-            }
 
             if (Size == Size2D.Empty)
             {
@@ -139,12 +156,17 @@ namespace GielinorAdventures.Gui.GuiElements
             sprite.Active = EffectsActive;
             sprite.AlphaMaskFile = MaskFile;
             sprite.ContentFile = ContentFile;
-            sprite.FadeEffect = FadeEffect;
             sprite.Location = Location;
             sprite.SourceRectangle = SourceRectangle;
             sprite.Rotation = Rotation;
             sprite.TextureLayout = TextureLayout;
             sprite.Tint = TintColour;
+
+            sprite.AnimationEffect = AnimationEffect;
+            sprite.FadeEffect = FadeEffect;
+            sprite.RotationEffect = RotationEffect;
+            sprite.SpriteSheetEffect = SpriteSheetEffect;
+            sprite.ZoomEffect = ZoomEffect;
 
             if (!sprite.SourceRectangle.IsEmpty)
             {

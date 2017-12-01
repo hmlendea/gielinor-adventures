@@ -11,13 +11,14 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
     /// </summary>
     public class CustomSpriteEffect
     {
+        bool isContentLoaded;
         protected Sprite Sprite;
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="CustomSpriteEffect"/> is active.
         /// </summary>
         /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
-        public bool Active { get; set; }
+        public bool Active { get; private set; }
 
         /// <summary>
         /// Gets the type.
@@ -45,10 +46,9 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
         /// <summary>
         /// Loads the content.
         /// </summary>
-        /// <param name="sprite">Sprite.</param>
-        public virtual void LoadContent(ref Sprite sprite)
+        public virtual void LoadContent()
         {
-            Sprite = sprite;
+
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
         /// </summary>
         public virtual void UnloadContent()
         {
-
+            Active = false;
         }
 
         /// <summary>
@@ -67,6 +67,25 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
         {
 
         }
+
+        public void AssociateSprite(Sprite sprite)
+        {
+            Sprite = sprite;
+        }
+
+        public void Activate()
+        {
+            Active = true;
+
+            if (!isContentLoaded)
+            {
+                LoadContent();
+            }
+        }
+
+        public void Deactivate()
+        {
+            Active = false;
+        }
     }
 }
-

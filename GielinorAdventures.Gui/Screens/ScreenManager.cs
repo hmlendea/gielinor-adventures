@@ -20,6 +20,7 @@ namespace GielinorAdventures.Gui.Screens
         static object syncRoot = new object();
 
         Screen currentScreen, newScreen;
+        Sprite transitionSprite;
 
         /// <summary>
         /// Gets the instance.
@@ -66,25 +67,12 @@ namespace GielinorAdventures.Gui.Screens
         public bool Transitioning { get; private set; }
 
         /// <summary>
-        /// Gets or sets the image.
-        /// </summary>
-        /// <value>The image.</value>
-        public Sprite TransitionImage { get; set; }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="ScreenManager"/> class.
         /// </summary>
         public ScreenManager()
         {
             Size = SettingsManager.Instance.GraphicsSettings.Resolution;
             currentScreen = new SplashScreen();
-
-            TransitionImage = new Sprite
-            {
-                ContentFile = "ScreenManager/FillImage",
-                Tint = Colour.Black,
-                FadeEffect = new FadeEffect { Speed = 3 }
-            };
         }
 
         /// <summary>
@@ -92,10 +80,18 @@ namespace GielinorAdventures.Gui.Screens
         /// </summary>
         public void LoadContent()
         {
-            TransitionImage.TextureLayout = TextureLayout.Tile;
+            transitionSprite = new Sprite
+            {
+                ContentFile = "ScreenManager/FillImage",
+                Tint = Colour.Black,
+                FadeEffect = new FadeEffect { Speed = 3 },
+                TextureLayout = TextureLayout.Tile
+            };
+
+            transitionSprite.FadeEffect.AssociateSprite(transitionSprite);
 
             currentScreen.LoadContent();
-            TransitionImage.LoadContent();
+            transitionSprite.LoadContent();
         }
 
         /// <summary>
@@ -104,7 +100,7 @@ namespace GielinorAdventures.Gui.Screens
         public void UnloadContent()
         {
             currentScreen.UnloadContent();
-            TransitionImage.UnloadContent();
+            transitionSprite.UnloadContent();
         }
 
         /// <summary>
@@ -122,7 +118,7 @@ namespace GielinorAdventures.Gui.Screens
             }
 
             Size = SettingsManager.Instance.GraphicsSettings.Resolution;
-            TransitionImage.Scale = new Scale2D(Size);
+            transitionSprite.Scale = new Scale2D(Size);
         }
 
         /// <summary>
@@ -135,7 +131,7 @@ namespace GielinorAdventures.Gui.Screens
 
             if (Transitioning)
             {
-                TransitionImage.Draw(spriteBatch);
+                transitionSprite.Draw(spriteBatch);
             }
         }
 
@@ -159,10 +155,11 @@ namespace GielinorAdventures.Gui.Screens
 
             newScreen.ScreenArgs = screenArgs;
 
-            TransitionImage.ActivateEffect(nameof(FadeEffect));
-            TransitionImage.Active = true;
-            TransitionImage.FadeEffect.Increasing = true;
-            TransitionImage.Opacity = 0.0f;
+            transitionSprite.FadeEffect.Activate();
+
+            transitionSprite.Active = true;
+            transitionSprite.FadeEffect.Increasing = true;
+            transitionSprite.Opacity = 0.0f;
 
             Transitioning = true;
         }
@@ -173,17 +170,17 @@ namespace GielinorAdventures.Gui.Screens
         /// <param name="gameTime">Game time.</param>
         void Transition(GameTime gameTime)
         {
-            TransitionImage.Update(gameTime);
+            transitionSprite.Update(gameTime);
 
-            if (TransitionImage.Opacity >= 1.0f)
+            if (transitionSprite.Opacity >= 1.0f)
             {
                 currentScreen.UnloadContent();
                 currentScreen = newScreen;
                 currentScreen.LoadContent();
             }
-            else if (TransitionImage.Opacity <= 0.0f)
+            else if (transitionSprite.Opacity <= 0.0f)
             {
-                TransitionImage.Active = false;
+                transitionSprite.Active = false;
                 Transitioning = false;
             }
         }

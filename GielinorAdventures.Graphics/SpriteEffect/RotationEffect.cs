@@ -20,6 +20,12 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
         public float MaximumRotation { get; set; }
 
         /// <summary>
+        /// Gets or sets the current rotation.
+        /// </summary>
+        /// <value>The current rotation.</value>
+        public float CurrentRotation { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this <see cref="RotationEffect"/> is increasing.
         /// </summary>
         /// <value><c>true</c> if increasing; otherwise, <c>false</c>.</value>
@@ -36,23 +42,6 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
         }
 
         /// <summary>
-        /// Loads the content.
-        /// </summary>
-        /// <param name="sprite">Sprite.</param>
-        public override void LoadContent(ref Sprite sprite)
-        {
-            base.LoadContent(ref sprite);
-        }
-
-        /// <summary>
-        /// Unloads the content.
-        /// </summary>
-        public override void UnloadContent()
-        {
-            base.UnloadContent();
-        }
-
-        /// <summary>
         /// Updates the content.
         /// </summary>
         /// <param name="gameTime">Game time.</param>
@@ -64,27 +53,27 @@ namespace GielinorAdventures.Graphics.CustomSpriteEffects
             {
                 if (Increasing == false)
                 {
-                    Sprite.Rotation -= Speed * ((float)gameTime.ElapsedGameTime.TotalSeconds);
+                    CurrentRotation -= Speed * ((float)gameTime.ElapsedGameTime.TotalSeconds);
                 }
                 else
                 {
-                    Sprite.Rotation += Speed * ((float)gameTime.ElapsedGameTime.TotalSeconds);
+                    CurrentRotation += Speed * ((float)gameTime.ElapsedGameTime.TotalSeconds);
                 }
 
-                if (Sprite.Rotation < -MaximumRotation)
+                if (CurrentRotation < -MaximumRotation)
                 {
                     Increasing = true;
-                    Sprite.Rotation = -MaximumRotation;
+                    CurrentRotation = -MaximumRotation;
                 }
-                else if (Sprite.Rotation > MaximumRotation)
+                else if (Sprite.Rotation + CurrentRotation > MaximumRotation)
                 {
                     Increasing = false;
-                    Sprite.Rotation = MaximumRotation;
+                    CurrentRotation = MaximumRotation;
                 }
             }
             else
             {
-                Sprite.Rotation = MaximumRotation;
+                CurrentRotation = MaximumRotation;
             }
         }
     }
