@@ -59,7 +59,7 @@ namespace GielinorAdventures.Gui
         /// </summary>
         public void LoadContent()
         {
-            InputManager.Instance.KeyboardKeyDown += InputManager_OnKeyboardKeyDown;
+
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace GielinorAdventures.Gui
         /// </summary>
         public void UnloadContent()
         {
-            InputManager.Instance.KeyboardKeyDown -= InputManager_OnKeyboardKeyDown;
+
         }
 
         /// <summary>
@@ -129,27 +129,6 @@ namespace GielinorAdventures.Gui
         public void CentreOnLocation(Point2D location)
         {
             Location = new Point2D(location.X - Size.Width / 2, location.Y - Size.Height / 2);
-        }
-
-        void InputManager_OnKeyboardKeyDown(object sender, KeyboardKeyEventArgs e)
-        {
-            if (e.Key == Keys.Up || e.Key == Keys.W)
-            {
-                directionY = -1;
-            }
-            else if (e.Key == Keys.Down || e.Key == Keys.S)
-            {
-                directionY = 1;
-            }
-
-            if (e.Key == Keys.Left || e.Key == Keys.A)
-            {
-                directionX = -1;
-            }
-            else if (e.Key == Keys.Right || e.Key == Keys.D)
-            {
-                directionX = 1;
-            }
         }
     }
 }
