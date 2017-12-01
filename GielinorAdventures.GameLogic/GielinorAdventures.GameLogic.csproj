@@ -46,7 +46,6 @@
     <Compile Include="Mapping\WorldObjectMappingExtensions.cs" />
     <Compile Include="Mapping\ItemDropMappingExtensions.cs" />
     <Compile Include="Mapping\ItemMappingExtensions.cs" />
-    <Compile Include="Mapping\NpcMappingExtensions.cs" />
     <Compile Include="Mapping\PrayerMappingExtensions.cs" />
     <Compile Include="Mapping\SpellMappingExtensions.cs" />
     <Compile Include="Mapping\GameTextureMappingExtensions.cs" />
@@ -63,6 +62,7 @@
     <Compile Include="GameManagers\IGameManager.cs" />
     <Compile Include="Mapping\PlayerMappingExtensions.cs" />
     <Compile Include="Mapping\InventoryItemMappingExtensions.cs" />
+    <Compile Include="Mapping\MobMappingExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

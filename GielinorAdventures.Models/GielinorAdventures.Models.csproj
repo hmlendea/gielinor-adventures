@@ -43,7 +43,6 @@
     <Compile Include="WorldObject.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemDrop.cs" />
-    <Compile Include="Npc.cs" />
     <Compile Include="Prayer.cs" />
     <Compile Include="Spell.cs" />
     <Compile Include="GameTexture.cs" />
@@ -68,6 +67,7 @@
     <Compile Include="Enumerations\Direction.cs" />
     <Compile Include="Enumerations\WorldObjectType.cs" />
     <Compile Include="Enumerations\GameObjectType.cs" />
+    <Compile Include="Mob.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">

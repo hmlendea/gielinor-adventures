@@ -16,7 +16,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
         List<Animation> animations;
         List<Elevation> elevations;
         List<Item> items;
-        List<Npc> npcs;
+        List<Mob> mobs;
         List<Prayer> prayers;
         List<Spell> spells;
         List<GameTexture> textures;
@@ -42,10 +42,10 @@ namespace GielinorAdventures.GameLogic.GameManagers
         public int ItemCount => items.Count;
 
         /// <summary>
-        /// Gets the npc count.
+        /// Gets the mob count.
         /// </summary>
-        /// <value>The npc count.</value>
-        public int NpcCount => npcs.Count;
+        /// <value>The mob count.</value>
+        public int MobCount => mobs.Count;
 
         /// <summary>
         /// Gets the object models count.
@@ -99,7 +99,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
             string animationsPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "animations.xml");
             string elevationPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "elevations.xml");
             string itemPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "items.xml");
-            string npcPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "npcs.xml");
+            string mobPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "mobs.xml");
             string prayerPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "prayers.xml");
             string spellPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "spells.xml");
             string texturePath = Path.Combine(ApplicationPaths.EntitiesDirectory, "textures.xml");
@@ -109,7 +109,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
             AnimationRepository animationRepository = new AnimationRepository(animationsPath);
             ElevationRepository elevationRepository = new ElevationRepository(elevationPath);
             ItemRepository itemRepository = new ItemRepository(itemPath);
-            NpcRepository npcRepository = new NpcRepository(npcPath);
+            MobRepository mobRepository = new MobRepository(mobPath);
             PrayerRepository prayerRepository = new PrayerRepository(prayerPath);
             SpellRepository spellRepository = new SpellRepository(spellPath);
             GameTextureRepository textureRepository = new GameTextureRepository(texturePath);
@@ -119,7 +119,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
             animations = animationRepository.GetAll().ToDomainModels().ToList();
             elevations = elevationRepository.GetAll().ToDomainModels().ToList();
             items = itemRepository.GetAll().ToDomainModels().ToList();
-            npcs = npcRepository.GetAll().ToDomainModels().ToList();
+            mobs = mobRepository.GetAll().ToDomainModels().ToList();
             prayers = prayerRepository.GetAll().ToDomainModels().ToList();
             spells = spellRepository.GetAll().ToDomainModels().ToList();
             textures = textureRepository.GetAll().ToDomainModels().ToList();
@@ -184,18 +184,18 @@ namespace GielinorAdventures.GameLogic.GameManagers
         }
 
         /// <summary>
-        /// Gets the npc.
+        /// Gets the mob.
         /// </summary>
-        /// <returns>The npc.</returns>
+        /// <returns>The mob.</returns>
         /// <param name="index">Identifier.</param>
-        public Npc GetNpc(int index)
+        public Mob GetMob(int index)
         {
-            if (index < 0 || index >= NpcCount)
+            if (index < 0 || index >= MobCount)
             {
                 return null;
             }
 
-            return npcs[index];
+            return mobs[index];
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using GielinorAdventures.Models.Enumerations;
 using GielinorAdventures.Primitives;
@@ -46,17 +47,12 @@ namespace GielinorAdventures.Models
         {
             get
             {
-                double attack = AttackSkill.BaseLevel + StrengthSkill.BaseLevel;
-                double defense = DefenceSkill.BaseLevel + HitpointsSkill.BaseLevel;
-                double mage = (PrayerSkill.BaseLevel + MagicSkill.BaseLevel) / 8D;
+                double baseLevel = 0.25 * (DefenceSkill.BaseLevel + HitpointsSkill.BaseLevel + PrayerSkill.BaseLevel / 2);
+                double meleeLevel = 0.325 * (AttackSkill.BaseLevel + StrengthSkill.BaseLevel);
+                double rangedMagicLevel = 0.325 * (int)(Math.Max(RangedSkill.BaseLevel, MagicSkill.BaseLevel) * 1.5);
+                double combatLevel = Math.Floor(baseLevel + Math.Max(meleeLevel, rangedMagicLevel));
 
-
-                if (attack < (RangedSkill.BaseLevel * 1.5D))
-                {
-                    return (int)((defense / 4D) + (RangedSkill.BaseLevel * 0.375D) + mage);
-                }
-
-                return (int)((attack / 4D) + (defense / 4D) + mage);
+                return (int)combatLevel;
             }
         }
 

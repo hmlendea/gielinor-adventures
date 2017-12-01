@@ -61,7 +61,6 @@
     <Compile Include="DataObjects\ElevationEntity.cs" />
     <Compile Include="DataObjects\WorldObjectEntity.cs" />
     <Compile Include="DataObjects\ItemDropEntity.cs" />
-    <Compile Include="DataObjects\NpcEntity.cs" />
     <Compile Include="DataObjects\SpellEntity.cs" />
     <Compile Include="DataObjects\GameTextureEntity.cs" />
     <Compile Include="DataObjects\TileEntity.cs" />
@@ -69,7 +68,7 @@
     <Compile Include="Repositories\ElevationRepository.cs" />
     <Compile Include="Repositories\WorldObjectRepository.cs" />
     <Compile Include="Repositories\ItemDropRepository.cs" />
-    <Compile Include="Repositories\NpcRepository.cs" />
+    <Compile Include="Repositories\MobRepository.cs" />
     <Compile Include="Repositories\PrayerRepository.cs" />
     <Compile Include="Repositories\SpellRepository.cs" />
     <Compile Include="Repositories\GameTextureRepository.cs" />
@@ -81,6 +80,7 @@
     <Compile Include="Repositories\WorldRepository.cs" />
     <Compile Include="DataObjects\PlayerEntity.cs" />
     <Compile Include="DataObjects\InventoryItemEntity.cs" />
+    <Compile Include="DataObjects\MobEntity.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

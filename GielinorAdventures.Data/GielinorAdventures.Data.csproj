@@ -65,7 +65,7 @@
     <Content Include="Data\Entities\items.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\Entities\npcs.xml">
+    <Content Include="Data\Entities\mobs.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Entities\world_objects.xml">
