@@ -101,6 +101,15 @@ namespace GielinorAdventures.Gui.GuiElements
                                (camera.Location.Y + screenCoords.Y) / GameDefines.MAP_TILE_SIZE);
         }
 
+        protected override void OnClicked(object sender, MouseButtonEventArgs e)
+        {
+            base.OnClicked(sender, e);
+
+            Point2D mapLocation = ScreenToMapCoordinates(e.Location.ToPoint2D());
+
+            game.MovePlayer(mapLocation);
+        }
+
         protected override void OnMouseMoved(object sender, MouseEventArgs e)
         {
             base.OnMouseMoved(sender, e);

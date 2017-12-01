@@ -1,4 +1,6 @@
-﻿namespace GielinorAdventures.GameLogic.GameManagers
+﻿using GielinorAdventures.Primitives;
+
+namespace GielinorAdventures.GameLogic.GameManagers
 {
     using GielinorAdventures.Models;
 
@@ -35,5 +37,11 @@
         /// </summary>
         /// <returns>The world.</returns>
         World GetWorld();
+
+        /// <summary>
+        /// Moves the player to the specified location.
+        /// </summary>
+        /// <param name="location">Location.</param>
+        void MovePlayer(Point2D location);
     }
 }

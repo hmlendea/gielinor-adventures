@@ -1,4 +1,5 @@
 ﻿using GielinorAdventures.Models;
+using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.GameLogic.GameManagers
 {
@@ -66,5 +67,15 @@ namespace GielinorAdventures.GameLogic.GameManagers
         /// <returns>The world.</returns>
         public World GetWorld()
         => currentWorld;
+
+        /// <summary>
+        /// Moves the player to the specified location.
+        /// </summary>
+        /// <param name="location">Location.</param>
+        public void MovePlayer(Point2D location)
+        {
+            // TODO: Actual movement logic
+            currentPlayer.Location = location;
+        }
     }
 }

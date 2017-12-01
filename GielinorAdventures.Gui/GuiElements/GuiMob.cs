@@ -62,8 +62,8 @@ namespace GielinorAdventures.Gui.GuiElements
             else
             {
                 mob.Location = new Point2D(
-                    Location.X - (GameDefines.MAP_TILE_SIZE - mob.SourceRectangle.Width) / 2,
-                    Location.Y - (GameDefines.MAP_TILE_SIZE - mob.SourceRectangle.Height) / 2);
+                    Location.X + (GameDefines.MAP_TILE_SIZE - mob.SourceRectangle.Width) / 2,
+                    Location.Y + GameDefines.MAP_TILE_SIZE - mob.SourceRectangle.Height);
             }
         }
     }
