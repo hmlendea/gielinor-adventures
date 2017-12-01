@@ -6,9 +6,14 @@
     public enum Action
     {
         /// <summary>
-        /// Idle or walking.
+        /// Idle.
         /// </summary>
-        IdleOrWalking,
+        Idle,
+
+        /// <summary>
+        /// Walking.
+        /// </summary>
+        Walking,
 
         /// <summary>
         /// Attacking an NPC.

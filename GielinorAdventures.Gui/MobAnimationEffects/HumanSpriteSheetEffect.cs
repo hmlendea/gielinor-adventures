@@ -54,7 +54,12 @@ namespace GielinorAdventures.Gui.MobAnimationEffects
                     newFrame.Y = 0;
                     break;
 
-                case Action.IdleOrWalking:
+                case Action.Idle:
+                    newFrame.X = 0;
+                    newFrame.Y = 8;
+                    break;
+
+                case Action.Walking:
                     if (newFrame.X >= WalkFrames)
                     {
                         newFrame.X = 0;
