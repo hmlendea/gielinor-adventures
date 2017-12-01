@@ -18,6 +18,12 @@ namespace GielinorAdventures.Gui.Screens
         /// Gets or sets the minimap.
         /// </summary>
         /// <value>The minimap.</value>
+        public GuiMinimap Minimap { get; set; }
+
+        /// <summary>
+        /// Gets or sets the minimap.
+        /// </summary>
+        /// <value>The minimap.</value>
         public GuiSideBar SideBar { get; set; }
 
         public GuiChatPanel ChatPanel { get; set; }
@@ -33,56 +39,41 @@ namespace GielinorAdventures.Gui.Screens
         /// </summary>
         public override void LoadContent()
         {
-            SideBar = new GuiSideBar();
+            Minimap = new GuiMinimap { Size = new Size2D(224, 176) };
+            SideBar = new GuiSideBar { Size = new Size2D(240, 334) };
             ChatPanel = new GuiChatPanel();
             Worldmap = new GuiWorldmap();
 
-            SideBar.Enabled = false;
-            SideBar.Visible = false;
-
             game = new GameManager();
+            game.LoadContent();
+
             Worldmap.AssociateGameManager(game);
+            Minimap.AssociateGameManager(game);
 
             GuiManager.Instance.GuiElements.Add(Worldmap);
+            GuiManager.Instance.GuiElements.Add(Minimap);
             GuiManager.Instance.GuiElements.Add(SideBar);
             GuiManager.Instance.GuiElements.Add(ChatPanel);
 
             base.LoadContent();
-        }
 
-        /// <summary>
-        /// Update the content.
-        /// </summary>
-        /// <returns>The update.</returns>
-        /// <param name="gameTime">Game time.</param>
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-        }
-
-        /// <summary>
-        /// Draw the content on the specified spriteBatch.
-        /// </summary>
-        /// <returns>The draw.</returns>
-        /// <param name="spriteBatch">Sprite batch.</param>
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            base.Draw(spriteBatch);
+            SideBar.AssociateGameManager(game);
         }
 
         protected override void SetChildrenProperties()
         {
-            SideBar.Size = new Size2D(240, ScreenManager.Instance.Size.Height);
-            SideBar.Location = new Point2D(ScreenManager.Instance.Size.Width - SideBar.Size.Width, 0);
+            Worldmap.Size = ScreenManager.Instance.Size;
+
+            SideBar.Location = new Point2D(
+                ScreenManager.Instance.Size.Width - SideBar.Size.Width,
+                ScreenManager.Instance.Size.Height - SideBar.Size.Height);
+
+            Minimap.Location = new Point2D(ScreenManager.Instance.Size.Width - Minimap.Size.Width, 0);
 
             ChatPanel.Size = new Size2D(
                 ScreenManager.Instance.Size.Width - SideBar.Size.Width,
                 (int)(ScreenManager.Instance.Size.Height * 0.25));
             ChatPanel.Location = new Point2D(0, ScreenManager.Instance.Size.Height - ChatPanel.Size.Height);
-
-            Worldmap.Size = new Size2D(
-                ScreenManager.Instance.Size.Width - SideBar.Size.Width,
-                ScreenManager.Instance.Size.Height - ChatPanel.Size.Height);
         }
     }
 }

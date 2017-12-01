@@ -81,6 +81,7 @@
     <Compile Include="DataObjects\WorldEntity.cs" />
     <Compile Include="DataObjects\WorldLayerEntity.cs" />
     <Compile Include="Repositories\WorldRepository.cs" />
+    <Compile Include="DataObjects\PlayerEntity.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

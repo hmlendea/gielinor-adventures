@@ -26,9 +26,6 @@ namespace GielinorAdventures.Gui.GuiElements
             camera.LoadContent();
             map.LoadContent(game.GetWorld());
 
-            // TODO: Remove this
-            CentreCameraOnLocation(new Point2D(184, 309));
-
             base.LoadContent();
         }
 
@@ -43,6 +40,8 @@ namespace GielinorAdventures.Gui.GuiElements
         public override void Update(GameTime gameTime)
         {
             camera.Size = Size;
+
+            CentreCameraOnLocation(game.GetPlayer().Location);
 
             camera.Update(gameTime);
             map.Update(gameTime);
@@ -70,11 +69,11 @@ namespace GielinorAdventures.Gui.GuiElements
         /// <summary>
         /// Centres the camera on the specified location.
         /// </summary>
-        public void CentreCameraOnLocation(Point2D location)
+        public void CentreCameraOnLocation(Point2D mapLocation)
         {
             camera.CentreOnLocation(new Point2D(
-                location.X * GameDefines.MAP_TILE_SIZE,
-                location.Y * GameDefines.MAP_TILE_SIZE));
+                mapLocation.X * GameDefines.MAP_TILE_SIZE,
+                mapLocation.Y * GameDefines.MAP_TILE_SIZE));
         }
 
         /// <summary>

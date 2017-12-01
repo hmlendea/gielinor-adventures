@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 
 using GielinorAdventures.DataAccess.DataObjects;
+using GielinorAdventures.DataAccess.IO;
 using GielinorAdventures.DataAccess.Repositories;
 using GielinorAdventures.GameLogic.Mapping;
 using GielinorAdventures.Models;
@@ -227,6 +228,19 @@ namespace GielinorAdventures.GameLogic.GameManagers
         public string GetObjectModelName(int index)
         {
             return modelName[index];
+        }
+
+        /// <summary>
+        /// Gets the player.
+        /// </summary>
+        /// <returns>The player.</returns>
+        public Player GetPlayer()
+        {
+            XmlManager<PlayerEntity> xml = new XmlManager<PlayerEntity>();
+            string path = Path.Combine(ApplicationPaths.UserDataDirectory, "Player.xml");
+
+            PlayerEntity playerEntity = xml.Read(path);
+            return playerEntity.ToDomainModel();
         }
 
         /// <summary>

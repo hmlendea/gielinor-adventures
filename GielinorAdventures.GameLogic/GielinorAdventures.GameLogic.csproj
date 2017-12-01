@@ -62,6 +62,7 @@
     <Compile Include="Mapping\WorldLayerMappingExtensions.cs" />
     <Compile Include="GameManagers\GameManager.cs" />
     <Compile Include="GameManagers\IGameManager.cs" />
+    <Compile Include="Mapping\PlayerMappingExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

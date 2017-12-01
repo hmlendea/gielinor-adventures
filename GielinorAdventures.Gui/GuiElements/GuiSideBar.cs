@@ -1,4 +1,5 @@
-﻿using GielinorAdventures.Graphics.Enumerations;
+﻿using GielinorAdventures.GameLogic.GameManagers;
+using GielinorAdventures.Graphics.Enumerations;
 using GielinorAdventures.Primitives;
 using GielinorAdventures.Settings;
 
@@ -6,8 +7,7 @@ namespace GielinorAdventures.Gui.GuiElements
 {
     public class GuiSideBar : GuiElement
     {
-        GuiImage background;
-        GuiMinimap minimap;
+        IGameManager game;
 
         GuiSideBarPanel panel;
         GuiCombatPanel combatPanel;
@@ -26,12 +26,6 @@ namespace GielinorAdventures.Gui.GuiElements
 
         public override void LoadContent()
         {
-            background = new GuiImage
-            {
-                ContentFile = "Interface/Backgrounds/sidebar",
-                TextureLayout = TextureLayout.Tile
-            };
-            minimap = new GuiMinimap { Size = new Size2D(224, 176) };
             panel = new GuiSideBarPanel { Size = new Size2D(240, 262) };
             combatPanel = new GuiCombatPanel { Size = new Size2D(190, 262) };
             skillsPanel = new GuiSkillsPanel { Size = new Size2D(190, 262) };
@@ -101,9 +95,6 @@ namespace GielinorAdventures.Gui.GuiElements
                 Size = new Size2D(240, 36)
             };
 
-            Children.Add(background);
-            Children.Add(minimap);
-
             Children.Add(panel);
             Children.Add(combatPanel);
             Children.Add(skillsPanel);
@@ -124,16 +115,17 @@ namespace GielinorAdventures.Gui.GuiElements
             base.LoadContent();
         }
 
+        public void AssociateGameManager(IGameManager game)
+        {
+            this.game = game;
+
+            combatPanel.AssociateGameManager(game);
+            skillsPanel.AssociateGameManager(game);
+        }
+
         protected override void SetChildrenProperties()
         {
             base.SetChildrenProperties();
-
-            background.Location = Location;
-            background.Size = Size;
-
-            minimap.Location = new Point2D(
-                Location.X + (Size.Width - minimap.Size.Width) / 2,
-                Location.Y + (Size.Width - minimap.Size.Width) / 2);
 
             exitButton.Location = new Point2D(
                 Location.X + (Size.Width - exitButton.Size.Width) / 2,

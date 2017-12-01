@@ -10,6 +10,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
         readonly QuestManager questManager;
 
         World currentWorld;
+        Player currentPlayer;
 
         public GameManager()
         {
@@ -17,14 +18,22 @@ namespace GielinorAdventures.GameLogic.GameManagers
             inventoryManager = new InventoryManager(entityManager);
             combatManager = new CombatManager(inventoryManager);
             questManager = new QuestManager();
-
-            currentWorld = entityManager.GetWorld("gielinor");
         }
 
         public void LoadContent()
         {
             entityManager.LoadContent();
+
+            currentPlayer = entityManager.GetPlayer();
+            currentWorld = entityManager.GetWorld(currentPlayer.World);
         }
+
+        /// <summary>
+        /// Gets the player.
+        /// </summary>
+        /// <returns>The player.</returns>
+        public Player GetPlayer()
+        => currentPlayer;
 
         /// <summary>
         /// Gets the world.

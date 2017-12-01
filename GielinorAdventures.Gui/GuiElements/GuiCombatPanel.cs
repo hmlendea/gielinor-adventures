@@ -1,5 +1,5 @@
-﻿using System;
-
+﻿using GielinorAdventures.GameLogic.GameManagers;
+using GielinorAdventures.Models;
 using GielinorAdventures.Models.Enumerations;
 using GielinorAdventures.Primitives;
 
@@ -8,6 +8,8 @@ namespace GielinorAdventures.Gui.GuiElements
     public class GuiCombatPanel : GuiElement
     {
         const int Spacing = 12;
+
+        IGameManager game;
 
         GuiText combatLevelText;
 
@@ -58,6 +60,11 @@ namespace GielinorAdventures.Gui.GuiElements
             base.LoadContent();
         }
 
+        public void AssociateGameManager(IGameManager game)
+        {
+            this.game = game;
+        }
+
         protected override void SetChildrenProperties()
         {
             base.SetChildrenProperties();
@@ -84,36 +91,38 @@ namespace GielinorAdventures.Gui.GuiElements
             accurateStyleCard.ForegroundColour = ForegroundColour;
             defensiveStyleCard.ForegroundColour = ForegroundColour;
 
-            /*
-            if (gameManager != null) // TODO: Ugly fix
+            controlledStyleCard.IsToggled = false;
+            aggressiveStyleCard.IsToggled = false;
+            accurateStyleCard.IsToggled = false;
+            defensiveStyleCard.IsToggled = false;
+
+            // TODO: Ugly fix
+            if (game == null)
             {
-                combatLevelText.Text = $"Combat Level: {client.CurrentPlayer.CombatLevel}";
-
-                controlledStyleCard.IsToggled = false;
-                aggressiveStyleCard.IsToggled = false;
-                accurateStyleCard.IsToggled = false;
-                defensiveStyleCard.IsToggled = false;
-
-                switch (gameManager.CombatStyle)
-                {
-                    case CombatStyle.Controlled:
-                        controlledStyleCard.IsToggled = true;
-                        break;
-
-                    case CombatStyle.Aggressive:
-                        aggressiveStyleCard.IsToggled = true;
-                        break;
-
-                    case CombatStyle.Accurate:
-                        accurateStyleCard.IsToggled = true;
-                        break;
-
-                    case CombatStyle.Defensive:
-                        defensiveStyleCard.IsToggled = true;
-                        break;
-                }
+                return;
             }
-            */
+
+            Player player = game.GetPlayer();
+            combatLevelText.Text = $"Combat Level: {player.CombatLevel}";
+
+            switch (player.CombatStyle)
+            {
+                case CombatStyle.Controlled:
+                    controlledStyleCard.IsToggled = true;
+                    break;
+
+                case CombatStyle.Aggressive:
+                    aggressiveStyleCard.IsToggled = true;
+                    break;
+
+                case CombatStyle.Accurate:
+                    accurateStyleCard.IsToggled = true;
+                    break;
+
+                case CombatStyle.Defensive:
+                    defensiveStyleCard.IsToggled = true;
+                    break;
+            }
         }
 
         protected override void RegisterEvents()
@@ -134,22 +143,22 @@ namespace GielinorAdventures.Gui.GuiElements
 
         void ControlledStyleCard_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            game.GetPlayer().CombatStyle = CombatStyle.Controlled;
         }
 
         void AggressiveStyleCard_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            game.GetPlayer().CombatStyle = CombatStyle.Aggressive;
         }
 
         void AccurateStyleCard_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            game.GetPlayer().CombatStyle = CombatStyle.Accurate;
         }
 
         void DefensiveStyleCard_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            game.GetPlayer().CombatStyle = CombatStyle.Defensive;
         }
     }
 }

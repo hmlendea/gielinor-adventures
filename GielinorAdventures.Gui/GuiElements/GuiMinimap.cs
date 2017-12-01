@@ -4,8 +4,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using GielinorAdventures.DataAccess.Resources;
+using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Graphics;
 using GielinorAdventures.Input.Events;
+using GielinorAdventures.Models;
 using GielinorAdventures.Primitives;
 using GielinorAdventures.Primitives.Mapping;
 
@@ -13,9 +15,11 @@ namespace GielinorAdventures.Gui.GuiElements
 {
     public class GuiMinimap : GuiElement
     {
+        IGameManager game;
+
         GuiMinimapIndicator compassIndicator;
         GuiMinimapIndicator healthIndicator;
-        GuiMinimapIndicator staminaIndicator;
+        GuiMinimapIndicator energyIndicator;
         GuiMinimapIndicator prayerIndicator;
 
         byte[,] alphaMask;
@@ -47,8 +51,9 @@ namespace GielinorAdventures.Gui.GuiElements
                 BackgroundColour = Colour.PersianRed,
                 Icon = "Interface/Minimap/icon_health"
             };
-            staminaIndicator = new GuiMinimapIndicator
+            energyIndicator = new GuiMinimapIndicator
             {
+                BaseValue = 100,
                 BackgroundColour = Colour.OliveDrab,
                 Icon = "Interface/Minimap/icon_stamina"
             };
@@ -80,7 +85,7 @@ namespace GielinorAdventures.Gui.GuiElements
 
             Children.Add(compassIndicator);
             Children.Add(healthIndicator);
-            Children.Add(staminaIndicator);
+            Children.Add(energyIndicator);
             Children.Add(prayerIndicator);
 
             base.LoadContent();
@@ -105,15 +110,30 @@ namespace GielinorAdventures.Gui.GuiElements
             base.Draw(spriteBatch);
         }
 
+        public void AssociateGameManager(IGameManager game)
+        {
+            this.game = game;
+        }
+
         protected override void SetChildrenProperties()
         {
             base.SetChildrenProperties();
 
+            Player player = game.GetPlayer();
+
             frame.Location = Location;
 
             compassIndicator.Location = new Point2D(Location.X + 40, Location.Y + 9);
+
+            healthIndicator.CurrentValue = player.HitpointsSkill.CurrentLevel;
+            healthIndicator.BaseValue = player.HitpointsSkill.BaseLevel;
             healthIndicator.Location = new Point2D(Location.X + 17, Location.Y + 36);
-            staminaIndicator.Location = new Point2D(Location.X + 162, Location.Y + 146);
+
+            energyIndicator.CurrentValue = player.Energy;
+            energyIndicator.Location = new Point2D(Location.X + 162, Location.Y + 146);
+
+            prayerIndicator.CurrentValue = player.PrayerSkill.CurrentLevel;
+            prayerIndicator.BaseValue = player.PrayerSkill.BaseLevel;
             prayerIndicator.Location = new Point2D(Location.X + 10, Location.Y + 72);
         }
 
@@ -129,7 +149,7 @@ namespace GielinorAdventures.Gui.GuiElements
 
         void DrawMinimapMenu(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         void DrawMinimapTiles(SpriteBatch spriteBatch)
