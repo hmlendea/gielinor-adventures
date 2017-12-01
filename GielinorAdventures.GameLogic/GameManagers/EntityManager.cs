@@ -21,10 +21,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
         List<Spell> spells;
         List<GameTexture> textures;
         List<Tile> tiles;
-        List<WallObject> wallObjects;
         List<WorldObject> worldObjects;
-
-        string[] modelName = new string[5000];
 
         /// <summary>
         /// Gets the animations count.
@@ -87,12 +84,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
         public int TileCount => tiles.Count;
 
         /// <summary>
-        /// Gets the wall objects count.
-        /// </summary>
-        /// <value>The wall objects count.</value>
-        public int WallObjectCount => wallObjects.Count;
-
-        /// <summary>
         /// Gets the world objects count.
         /// </summary>
         /// <value>The world objects count.</value>
@@ -135,13 +126,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
             spells = spellRepository.GetAll().ToDomainModels().ToList();
             textures = textureRepository.GetAll().ToDomainModels().ToList();
             tiles = tileRepository.GetAll().ToDomainModels().ToList();
-            wallObjects = wallObjectRepository.GetAll().ToDomainModels().ToList();
             worldObjects = worldObjectRepository.GetAll().ToDomainModels().ToList();
-
-            foreach (WorldObject worldObject in worldObjects)
-            {
-                worldObject.ModelId = GetModelIndex(worldObject.ObjectModel);
-            }
         }
 
         /// <summary>
@@ -200,27 +185,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             return items[index];
         }
 
-        public int GetModelIndex(string model)
-        {
-            if (model.ToLower().Equals("na"))
-            {
-                return 0;
-            }
-
-            for (int i = 0; i < ObjectModelCount; i++)
-            {
-                if (modelName[i].ToLower().Equals(model))
-                {
-                    return i;
-                }
-            }
-
-            modelName[ObjectModelCount] = model;
-            ObjectModelCount += 1;
-
-            return ObjectModelCount - 1;
-        }
-
         /// <summary>
         /// Gets the npc.
         /// </summary>
@@ -234,11 +198,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             }
 
             return npcs[index];
-        }
-
-        public string GetObjectModelName(int index)
-        {
-            return modelName[index];
         }
 
         /// <summary>
@@ -315,21 +274,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
         }
 
         /// <summary>
-        /// Gets the wall object.
-        /// </summary>
-        /// <returns>The wall object.</returns>
-        /// <param name="index">Identifier.</param>
-        public WallObject GetWallObject(int index)
-        {
-            if (index < 0 || index >= WallObjectCount)
-            {
-                return null;
-            }
-
-            return wallObjects[index];
-        }
-
-        /// <summary>
         /// Gets the world.
         /// </summary>
         /// <returns>The world.</returns>
@@ -341,21 +285,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             WorldEntity worldEntity = worldRepository.Get(id);
 
             return worldEntity.ToDomainModel();
-        }
-
-        /// <summary>
-        /// Gets the world object.
-        /// </summary>
-        /// <returns>The world object.</returns>
-        /// <param name="index">Index.</param>
-        public WorldObject GetWorldObject(int index)
-        {
-            if (index < 0 || index >= WorldObjectCount)
-            {
-                return null;
-            }
-
-            return worldObjects[index];
         }
 
         /// <summary>

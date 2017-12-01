@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using GielinorAdventures.DataAccess.DataObjects;
 using GielinorAdventures.Models;
+using GielinorAdventures.Models.Enumerations;
 
 namespace GielinorAdventures.GameLogic.Mapping
 {
@@ -25,12 +27,7 @@ namespace GielinorAdventures.GameLogic.Mapping
                 Description = worldObjectEntity.Description,
                 Command1 = worldObjectEntity.Command1,
                 Command2 = worldObjectEntity.Command2,
-                Type = worldObjectEntity.Type,
-                Width = worldObjectEntity.Width,
-                Height = worldObjectEntity.Height,
-                GroundItemVar = worldObjectEntity.GroundItemVar,
-                ObjectModel = worldObjectEntity.ObjectModel,
-                ModelId = worldObjectEntity.ModelId
+                Type = (WorldObjectType)Enum.Parse(typeof(WorldObjectType), worldObjectEntity.Type)
             };
 
             return worldObject;
@@ -50,12 +47,7 @@ namespace GielinorAdventures.GameLogic.Mapping
                 Description = worldObject.Description,
                 Command1 = worldObject.Command1,
                 Command2 = worldObject.Command2,
-                Type = worldObject.Type,
-                Width = worldObject.Width,
-                Height = worldObject.Height,
-                GroundItemVar = worldObject.GroundItemVar,
-                ObjectModel = worldObject.ObjectModel,
-                ModelId = worldObject.ModelId
+                Type = worldObject.Type.ToString()
             };
 
             return worldObjectEntity;

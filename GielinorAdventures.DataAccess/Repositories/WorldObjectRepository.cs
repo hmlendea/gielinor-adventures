@@ -100,11 +100,6 @@ namespace GielinorAdventures.DataAccess.Repositories
             worldObjectEntityToUpdate.Command1 = worldObjectEntity.Command1;
             worldObjectEntityToUpdate.Command2 = worldObjectEntity.Command2;
             worldObjectEntityToUpdate.Type = worldObjectEntity.Type;
-            worldObjectEntityToUpdate.Width = worldObjectEntity.Width;
-            worldObjectEntityToUpdate.Height = worldObjectEntity.Height;
-            worldObjectEntityToUpdate.GroundItemVar = worldObjectEntity.GroundItemVar;
-            worldObjectEntityToUpdate.ObjectModel = worldObjectEntity.ObjectModel;
-            worldObjectEntityToUpdate.ModelId = worldObjectEntity.ModelId;
 
             xmlDatabase.SaveEntities(worldObjectEntities);
         }

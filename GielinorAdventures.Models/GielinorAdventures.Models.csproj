@@ -32,7 +32,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enumerations\GameObjectType.cs" />
     <Compile Include="GameObjectLocation.cs" />
     <Compile Include="InventoryItem.cs" />
     <Compile Include="ItemLocation.cs" />
@@ -68,6 +67,8 @@
     <Compile Include="WorldLayer.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Enumerations\Direction.cs" />
+    <Compile Include="Enumerations\WorldObjectType.cs" />
+    <Compile Include="Enumerations\GameObjectType.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">
