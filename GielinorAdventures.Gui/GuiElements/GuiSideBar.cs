@@ -1,5 +1,4 @@
 ﻿using GielinorAdventures.GameLogic.GameManagers;
-using GielinorAdventures.Graphics.Enumerations;
 using GielinorAdventures.Primitives;
 using GielinorAdventures.Settings;
 
