@@ -92,12 +92,16 @@ namespace GielinorAdventures.DataAccess.Repositories
         List<WorldLayerEntity> LoadWorldLayers(string worldId)
         {
             TmxMap tmxMap = new TmxMap(Path.Combine(worldsDirectory, $"{worldId}.tmx"));
-            ConcurrentBag<WorldLayerEntity> layers = new ConcurrentBag<WorldLayerEntity>();
+            List<WorldLayerEntity> layers = new List<WorldLayerEntity>();
 
-            Parallel.ForEach(tmxMap.Layers, tmxLayer => layers.Add(ProcessTmxLayer(tmxMap, tmxLayer)));
+            foreach (TmxLayer tmxLayer in tmxMap.Layers)
+            {
+                WorldLayerEntity layer = ProcessTmxLayer(tmxMap, tmxLayer);
 
-            return layers.OrderBy(l => tmxMap.Layers.IndexOf(tmxMap.Layers.FirstOrDefault(x => x.Name == l.Name)))
-                         .ToList();
+                layers.Add(layer);
+            }
+
+            return layers;
         }
 
         WorldLayerEntity ProcessTmxLayer(TmxMap tmxMap, TmxLayer tmxLayer)
