@@ -104,7 +104,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             string spellPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "spells.xml");
             string texturePath = Path.Combine(ApplicationPaths.EntitiesDirectory, "textures.xml");
             string tilePath = Path.Combine(ApplicationPaths.EntitiesDirectory, "tiles.xml");
-            string wallObjectPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "wall_objects.xml");
             string worldObjectPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "world_objects.xml");
 
             AnimationRepository animationRepository = new AnimationRepository(animationsPath);
@@ -115,7 +114,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             SpellRepository spellRepository = new SpellRepository(spellPath);
             GameTextureRepository textureRepository = new GameTextureRepository(texturePath);
             TileRepository tileRepository = new TileRepository(tilePath);
-            WallObjectRepository wallObjectRepository = new WallObjectRepository(wallObjectPath);
             WorldObjectRepository worldObjectRepository = new WorldObjectRepository(worldObjectPath);
 
             animations = animationRepository.GetAll().ToDomainModels().ToList();

@@ -48,7 +48,6 @@
     <Compile Include="Spell.cs" />
     <Compile Include="GameTexture.cs" />
     <Compile Include="Tile.cs" />
-    <Compile Include="WallObject.cs" />
     <Compile Include="Enumerations\Action.cs" />
     <Compile Include="Enumerations\CombatStyle.cs" />
     <Compile Include="Enumerations\Gender.cs" />
