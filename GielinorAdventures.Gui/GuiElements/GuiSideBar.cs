@@ -120,6 +120,7 @@ namespace GielinorAdventures.Gui.GuiElements
 
             combatPanel.AssociateGameManager(game);
             skillsPanel.AssociateGameManager(game);
+            inventoryPanel.AssociateGameManager(game);
         }
 
         protected override void SetChildrenProperties()

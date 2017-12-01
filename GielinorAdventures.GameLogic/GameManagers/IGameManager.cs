@@ -5,9 +5,24 @@
     public interface IGameManager
     {
         /// <summary>
-        /// Loads the content.
+        /// Gets the size of the inventory.
         /// </summary>
-        void LoadContent();
+        /// <value>The size of the inventory.</value>
+        int InventorySize { get; }
+
+        /// <summary>
+        /// Gets the inventory item.
+        /// </summary>
+        /// <returns>The inventory item.</returns>
+        /// <param name="slot">Slot.</param>
+        InventoryItem GetInventoryItem(int slot);
+
+        /// <summary>
+        /// Gets the item.
+        /// </summary>
+        /// <returns>The item.</returns>
+        /// <param name="id">Identifier.</param>
+        Item GetItem(string id);
 
         /// <summary>
         /// Gets the player.

@@ -1,4 +1,6 @@
-﻿using GielinorAdventures.Models.Enumerations;
+﻿using System.Collections.Generic;
+
+using GielinorAdventures.Models.Enumerations;
 using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.Models
@@ -16,6 +18,10 @@ namespace GielinorAdventures.Models
         public int Energy { get; set; }
 
         public CombatStyle CombatStyle { get; set; }
+
+        public IEnumerable<InventoryItem> Bank { get; set; }
+
+        public IEnumerable<InventoryItem> Inventory { get; set; }
 
         public Skill AttackSkill { get; set; }
         public Skill HitpointsSkill { get; set; }
@@ -52,6 +58,12 @@ namespace GielinorAdventures.Models
 
                 return (int)((attack / 4D) + (defense / 4D) + mage);
             }
+        }
+
+        public Player()
+        {
+            Bank = new List<InventoryItem>();
+            Inventory = new List<InventoryItem>();
         }
     }
 }

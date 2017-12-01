@@ -1,4 +1,6 @@
-﻿namespace GielinorAdventures.DataAccess.DataObjects
+﻿using System.Collections.Generic;
+
+namespace GielinorAdventures.DataAccess.DataObjects
 {
     public class PlayerEntity
     {
@@ -15,6 +17,10 @@
         public int Energy { get; set; }
 
         public int CombatStyle { get; set; }
+
+        public List<InventoryItemEntity> Bank { get; set; }
+
+        public List<InventoryItemEntity> Inventory { get; set; }
 
         public int AttackLevelCurrent { get; set; }
         public int AttackLevelBase { get; set; }
@@ -87,5 +93,11 @@
         public int WoodcuttingLevelCurrent { get; set; }
         public int WoodcuttingLevelBase { get; set; }
         public int WoodcuttingExperience { get; set; }
+
+        public PlayerEntity()
+        {
+            Bank = new List<InventoryItemEntity>();
+            Inventory = new List<InventoryItemEntity>();
+        }
     }
 }

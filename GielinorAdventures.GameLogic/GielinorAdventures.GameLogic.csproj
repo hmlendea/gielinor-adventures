@@ -63,6 +63,7 @@
     <Compile Include="GameManagers\GameManager.cs" />
     <Compile Include="GameManagers\IGameManager.cs" />
     <Compile Include="Mapping\PlayerMappingExtensions.cs" />
+    <Compile Include="Mapping\InventoryItemMappingExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

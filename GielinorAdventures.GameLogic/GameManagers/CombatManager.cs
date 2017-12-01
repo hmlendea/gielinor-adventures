@@ -11,6 +11,7 @@
 
         public bool HasRequiredRunes(int itemId, int count)
         {
+            /*
             if (itemId == 31 && (inventoryManager.IsItemEquipped(197) || inventoryManager.IsItemEquipped(615) || inventoryManager.IsItemEquipped(682)))
             {
                 return true;
@@ -32,6 +33,9 @@
             }
 
             return inventoryManager.GetItemTotalCount(itemId) >= count;
+            */
+
+            return false;
         }
     }
 }

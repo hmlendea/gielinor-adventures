@@ -29,6 +29,9 @@ namespace GielinorAdventures.GameLogic.Mapping
                 Energy = playerEntity.Energy,
                 CombatStyle = (CombatStyle)playerEntity.CombatStyle,
 
+                Bank = playerEntity.Bank.ToDomainModels(),
+                Inventory = playerEntity.Inventory.ToDomainModels(),
+
                 AttackSkill = new Skill(
                     playerEntity.AttackLevelCurrent,
                     playerEntity.AttackLevelBase,
@@ -122,6 +125,9 @@ namespace GielinorAdventures.GameLogic.Mapping
                 LocationY = player.Location.Y,
                 Energy = player.Energy,
                 CombatStyle = (int)player.CombatStyle,
+
+                Bank = player.Bank.ToEntities().ToList(),
+                Inventory = player.Inventory.ToEntities().ToList(),
 
                 AttackLevelCurrent = player.AttackSkill.CurrentLevel,
                 AttackLevelBase = player.AttackSkill.BaseLevel,

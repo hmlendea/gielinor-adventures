@@ -45,7 +45,6 @@ namespace GielinorAdventures.Gui.Screens
             Worldmap = new GuiWorldmap();
 
             game = new GameManager();
-            game.LoadContent();
 
             Worldmap.AssociateGameManager(game);
             Minimap.AssociateGameManager(game);

@@ -178,7 +178,18 @@ namespace GielinorAdventures.GameLogic.GameManagers
         /// Gets the item.
         /// </summary>
         /// <returns>The item.</returns>
-        /// <param name="index">Identifier.</param>
+        /// <param name="id">Identifier.</param>
+        public Item GetItem(string id)
+        {
+            return items.FirstOrDefault(x => x.Id == id);
+        }
+
+
+        /// <summary>
+        /// Gets the item.
+        /// </summary>
+        /// <returns>The item.</returns>
+        /// <param name="index">Index.</param>
         public Item GetItem(int index)
         {
             if (index < 0 || index >= ItemCount)

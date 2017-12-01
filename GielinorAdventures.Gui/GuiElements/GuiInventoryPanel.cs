@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
+using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Models;
 using GielinorAdventures.Primitives;
 
@@ -7,6 +8,8 @@ namespace GielinorAdventures.Gui.GuiElements
 {
     public class GuiInventoryPanel : GuiElement
     {
+        IGameManager game;
+
         GuiItemCard[] itemCards;
 
         const int Rows = 8;
@@ -33,6 +36,11 @@ namespace GielinorAdventures.Gui.GuiElements
             SetItems();
         }
 
+        public void AssociateGameManager(IGameManager game)
+        {
+            this.game = game;
+        }
+
         protected override void SetChildrenProperties()
         {
             base.SetChildrenProperties();
@@ -53,15 +61,19 @@ namespace GielinorAdventures.Gui.GuiElements
 
         void SetItems()
         {
-            for (int itemSlot = 0; itemSlot < Rows * Columns; itemSlot++)
+            for (int itemSlot = 0; itemSlot < game.InventorySize; itemSlot++)
             {
-                /*
-                InventoryItem inventoryItem = inventoryManager.GetItem(itemSlot);
-                Item item = entityManager.GetItem(inventoryItem.Index);
+                InventoryItem inventoryItem = game.GetInventoryItem(itemSlot);
+
+                if (string.IsNullOrWhiteSpace(inventoryItem?.Id))
+                {
+                    continue;
+                }
+
+                Item item = game.GetItem(inventoryItem.Id);
 
                 itemCards[itemSlot].ItemPictureId = item.InventoryPicture;
                 itemCards[itemSlot].Quantity = inventoryItem.Quantity;
-                */
             }
         }
     }
