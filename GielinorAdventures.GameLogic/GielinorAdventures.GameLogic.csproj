@@ -64,6 +64,8 @@
     <Compile Include="Mapping\InventoryItemMappingExtensions.cs" />
     <Compile Include="Mapping\MobMappingExtensions.cs" />
     <Compile Include="Mapping\WorldTileMappingExtensions.cs" />
+    <Compile Include="GameManagers\WorldManager.cs" />
+    <Compile Include="GameManagers\IWorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

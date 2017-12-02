@@ -39,6 +39,13 @@ namespace GielinorAdventures.GameLogic.GameManagers
         World GetWorld();
 
         /// <summary>
+        /// Gets the world object.
+        /// </summary>
+        /// <returns>The world object.</returns>
+        /// <param name="location">Location.</param>
+        WorldObject GetWorldObject(Point2D location);
+
+        /// <summary>
         /// Moves the player to the specified location.
         /// </summary>
         /// <param name="location">Location.</param>

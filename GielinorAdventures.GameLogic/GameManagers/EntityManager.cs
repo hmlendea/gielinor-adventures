@@ -21,7 +21,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
         List<Spell> spells;
         List<GameTexture> textures;
         List<Tile> tiles;
-        List<WorldObject> worldObjects;
 
         /// <summary>
         /// Gets the animations count.
@@ -83,12 +82,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
         /// <value>The tiles count.</value>
         public int TileCount => tiles.Count;
 
-        /// <summary>
-        /// Gets the world objects count.
-        /// </summary>
-        /// <value>The world objects count.</value>
-        public int WorldObjectCount => worldObjects.Count;
-
         public int HighestLoadedPicture { get; private set; }
 
         /// <summary>
@@ -104,7 +97,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             string spellPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "spells.xml");
             string texturePath = Path.Combine(ApplicationPaths.EntitiesDirectory, "textures.xml");
             string tilePath = Path.Combine(ApplicationPaths.EntitiesDirectory, "tiles.xml");
-            string worldObjectPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "world_objects.xml");
 
             AnimationRepository animationRepository = new AnimationRepository(animationsPath);
             ElevationRepository elevationRepository = new ElevationRepository(elevationPath);
@@ -114,7 +106,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             SpellRepository spellRepository = new SpellRepository(spellPath);
             GameTextureRepository textureRepository = new GameTextureRepository(texturePath);
             TileRepository tileRepository = new TileRepository(tilePath);
-            WorldObjectRepository worldObjectRepository = new WorldObjectRepository(worldObjectPath);
 
             animations = animationRepository.GetAll().ToDomainModels().ToList();
             elevations = elevationRepository.GetAll().ToDomainModels().ToList();
@@ -124,7 +115,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             spells = spellRepository.GetAll().ToDomainModels().ToList();
             textures = textureRepository.GetAll().ToDomainModels().ToList();
             tiles = tileRepository.GetAll().ToDomainModels().ToList();
-            worldObjects = worldObjectRepository.GetAll().ToDomainModels().ToList();
         }
 
         /// <summary>
@@ -269,30 +259,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             }
 
             return tiles[index];
-        }
-
-        /// <summary>
-        /// Gets the world.
-        /// </summary>
-        /// <returns>The world.</returns>
-        /// <param name="id">Identifier.</param>
-        public World GetWorld(string id)
-        {
-            WorldRepository worldRepository = new WorldRepository(ApplicationPaths.WorldsDirectory);
-
-            WorldEntity worldEntity = worldRepository.Get(id);
-
-            return worldEntity.ToDomainModel();
-        }
-
-        /// <summary>
-        /// Gets the world object.
-        /// </summary>
-        /// <returns>The world object.</returns>
-        /// <param name="id">Identifier.</param>
-        public WorldObject GetWorldObject(string id)
-        {
-            return worldObjects.FirstOrDefault(x => x.Id == id);
         }
     }
 }

@@ -8,13 +8,13 @@ namespace GielinorAdventures.GameLogic.GameManagers
     /// </summary>
     public class GameManager : IGameManager
     {
-        World currentWorld;
         Player currentPlayer;
 
         readonly CombatManager combatManager;
         readonly EntityManager entityManager;
         readonly InventoryManager inventoryManager;
         readonly QuestManager questManager;
+        readonly IWorldManager worldManager;
 
         /// <summary>
         /// Gets the size of the inventory.
@@ -31,11 +31,14 @@ namespace GielinorAdventures.GameLogic.GameManagers
             entityManager.LoadContent();
 
             currentPlayer = entityManager.GetPlayer();
-            currentWorld = entityManager.GetWorld(currentPlayer.World);
 
             inventoryManager = new InventoryManager(currentPlayer, entityManager);
             combatManager = new CombatManager(inventoryManager);
             questManager = new QuestManager();
+            worldManager = new WorldManager();
+
+            worldManager.LoadContent();
+            worldManager.LoadWorld(currentPlayer.World);
         }
 
         /// <summary>
@@ -66,7 +69,15 @@ namespace GielinorAdventures.GameLogic.GameManagers
         /// </summary>
         /// <returns>The world.</returns>
         public World GetWorld()
-        => currentWorld;
+        => worldManager.GetWorld();
+
+        /// <summary>
+        /// Gets the world object.
+        /// </summary>
+        /// <returns>The world object.</returns>
+        /// <param name="location">Location.</param>
+        public WorldObject GetWorldObject(Point2D location)
+        => worldManager.GetWorldObject(location);
 
         /// <summary>
         /// Moves the player to the specified location.
