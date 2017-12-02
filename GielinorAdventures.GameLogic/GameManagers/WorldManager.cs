@@ -6,6 +6,7 @@ using GielinorAdventures.DataAccess.DataObjects;
 using GielinorAdventures.DataAccess.Repositories;
 using GielinorAdventures.GameLogic.Mapping;
 using GielinorAdventures.Models;
+using GielinorAdventures.Models.Enumerations;
 using GielinorAdventures.Primitives;
 using GielinorAdventures.Settings;
 
@@ -18,6 +19,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
         Terrain[,] terrainMap;
         WorldObject[,] worldObjectMap;
 
+        List<MapMarker> mapMarkers;
         List<Terrain> terrains;
         List<WorldObject> worldObjects;
 
@@ -47,33 +49,21 @@ namespace GielinorAdventures.GameLogic.GameManagers
 
             currentWorld = worldEntity.ToDomainModel();
 
+            mapMarkers = new List<MapMarker>();
             terrainMap = new Terrain[currentWorld.Width, currentWorld.Height];
             worldObjectMap = new WorldObject[currentWorld.Width, currentWorld.Height];
 
-            for (int y = 0; y < currentWorld.Height; y++)
-            {
-                for (int x = 0; x < currentWorld.Width; x++)
-                {
-                    string objectId = string.Empty;
-                    string terrainId = string.Empty;
+            ProcessTileProperties();
+            ProcessMapMarkers();
+        }
 
-                    foreach (WorldLayer layer in currentWorld.Layers)
-                    {
-                        if (!string.IsNullOrWhiteSpace(layer.Tiles[x, y].ObjectId))
-                        {
-                            objectId = layer.Tiles[x, y].ObjectId;
-                        }
-
-                        if (!string.IsNullOrWhiteSpace(layer.Tiles[x, y].TerrainId))
-                        {
-                            terrainId = layer.Tiles[x, y].TerrainId;
-                        }
-                    }
-
-                    terrainMap[x, y] = GetTerrain(terrainId);
-                    worldObjectMap[x, y] = GetWorldObject(objectId);
-                }
-            }
+        /// <summary>
+        /// Gets the map markers.
+        /// </summary>
+        /// <returns>The map markers.</returns>
+        public IEnumerable<MapMarker> GetMapMarkers()
+        {
+            return mapMarkers;
         }
 
         /// <summary>
@@ -105,18 +95,85 @@ namespace GielinorAdventures.GameLogic.GameManagers
         }
 
         /// <summary>
-        /// Gets the world object.
+        /// Gets the world object at the specified location.
         /// </summary>
         /// <returns>The world object.</returns>
-        /// <param name="location">Location.</param>
-        public WorldObject GetWorldObject(Point2D location)
+        /// <param name="x">The X coordinate.</param>
+        /// <param name="y">The Y coordinate.</param>
+        public WorldObject GetWorldObject(int x, int y)
         {
-            return worldObjectMap[location.X, location.Y];
+            return worldObjectMap[x, y];
+        }
+
+        void AddMapMarker(int x, int y, MapMarkerType type)
+        {
+            MapMarker mapMarker = new MapMarker
+            {
+                Type = type,
+                Location = new Point2D(x, y)
+            };
+
+            mapMarkers.Add(mapMarker);
         }
 
         Terrain GetTerrain(string id)
         {
             return terrains.FirstOrDefault(x => x.Id == id);
+        }
+
+        void ProcessTileProperties()
+        {
+            for (int y = 0; y < currentWorld.Height; y++)
+            {
+                for (int x = 0; x < currentWorld.Width; x++)
+                {
+                    string objectId = string.Empty;
+                    string terrainId = string.Empty;
+
+                    foreach (WorldLayer layer in currentWorld.Layers)
+                    {
+                        if (!string.IsNullOrWhiteSpace(layer.Tiles[x, y].ObjectId))
+                        {
+                            objectId = layer.Tiles[x, y].ObjectId;
+                        }
+
+                        if (!string.IsNullOrWhiteSpace(layer.Tiles[x, y].TerrainId))
+                        {
+                            terrainId = layer.Tiles[x, y].TerrainId;
+                        }
+                    }
+
+                    terrainMap[x, y] = GetTerrain(terrainId);
+                    worldObjectMap[x, y] = GetWorldObject(objectId);
+                }
+            }
+        }
+
+        void ProcessMapMarkers()
+        {
+            for (int y = 0; y < currentWorld.Height; y++)
+            {
+                for (int x = 0; x < currentWorld.Width; x++)
+                {
+                    WorldObject worldObject = GetWorldObject(x, y);
+
+                    if (worldObject == null)
+                    {
+                        continue;
+                    }
+
+                    switch (worldObject.Type)
+                    {
+                        case WorldObjectType.Anvil:
+                            AddMapMarker(x, y, MapMarkerType.Anvil);
+                            break;
+
+                        case WorldObjectType.Cooking:
+                            AddMapMarker(x, y, MapMarkerType.CookingStation);
+                            break;
+                    }
+                }
+            }
         }
     }
 }

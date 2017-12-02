@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,6 +10,7 @@ using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Graphics;
 using GielinorAdventures.Input.Events;
 using GielinorAdventures.Models;
+using GielinorAdventures.Models.Enumerations;
 using GielinorAdventures.Primitives;
 using GielinorAdventures.Primitives.Mapping;
 
@@ -24,6 +27,7 @@ namespace GielinorAdventures.Gui.GuiElements
 
         byte[,] alphaMask;
 
+        Sprite mapMarkerSprite;
         Sprite mobDot;
         Sprite pixel;
         Sprite frame;
@@ -40,6 +44,7 @@ namespace GielinorAdventures.Gui.GuiElements
 
         public override void LoadContent()
         {
+            mapMarkerSprite = new Sprite { ContentFile = "Interface/Minimap/markers" };
             mobDot = new Sprite { ContentFile = "Interface/Minimap/entity_dot" };
             pixel = new Sprite
             {
@@ -86,6 +91,7 @@ namespace GielinorAdventures.Gui.GuiElements
                 }
             }
 
+            mapMarkerSprite.LoadContent();
             mobDot.LoadContent();
             pixel.LoadContent();
             frame.LoadContent();
@@ -100,6 +106,7 @@ namespace GielinorAdventures.Gui.GuiElements
 
         public override void Update(GameTime gameTime)
         {
+            mapMarkerSprite.Update(gameTime);
             mobDot.Update(gameTime);
             pixel.Update(gameTime);
             frame.Update(gameTime);
@@ -111,7 +118,14 @@ namespace GielinorAdventures.Gui.GuiElements
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            DrawMinimapMenu(spriteBatch);
+            Player player = game.GetPlayer();
+
+            Point2D startLocation = new Point2D(
+                player.Location.X - Size.Width / (2 * ZoomLevel),
+                player.Location.Y - Size.Height / (2 * ZoomLevel));
+
+            DrawMinimapTerrain(spriteBatch, startLocation);
+            DrawMinimapMarkers(spriteBatch, startLocation);
             frame.Draw(spriteBatch);
 
             base.Draw(spriteBatch);
@@ -154,14 +168,8 @@ namespace GielinorAdventures.Gui.GuiElements
             compassIndicator.Clicked -= CompassIndicator_Clicked;
         }
 
-        void DrawMinimapMenu(SpriteBatch spriteBatch)
+        void DrawMinimapTerrain(SpriteBatch spriteBatch, Point2D startLocation)
         {
-            Player player = game.GetPlayer();
-
-            Point2D startLocation = new Point2D(
-                player.Location.X - Size.Width / (2 * ZoomLevel),
-                player.Location.Y - Size.Height / (2 * ZoomLevel));
-
             for (int y = 0; y < Size.Height / ZoomLevel; y++)
             {
                 for (int x = 0; x < Size.Width / ZoomLevel; x++)
@@ -171,12 +179,34 @@ namespace GielinorAdventures.Gui.GuiElements
                         Location.Y + y * ZoomLevel);
 
                     Terrain terrain = game.GetTerrain(
-                        player.Location.X - Size.Width / (2 * ZoomLevel) + x,
-                        player.Location.Y - Size.Height / (2 * ZoomLevel) + y);
+                        startLocation.X + x,
+                        startLocation.Y + y);
                     Colour terrainColour = terrain != null ? terrain.Colour : Colour.Black;
 
-                    DrawMinimapTerrain(spriteBatch, terrainColour, screenLocation);
+                    DrawMinimapPixel(spriteBatch, terrainColour, screenLocation);
                 }
+            }
+        }
+
+        void DrawMinimapMarkers(SpriteBatch spriteBatch, Point2D startLocation)
+        {
+            List<MapMarker> mapMarkers = game.GetMapMarkers(
+                startLocation.X,
+                startLocation.Y,
+                startLocation.X + Size.Width,
+                startLocation.Y + Size.Height).ToList();
+
+            foreach (MapMarker mapMarker in mapMarkers)
+            {
+                int xOffset = mapMarker.Location.X - startLocation.X;
+                int yOffset = mapMarker.Location.Y - startLocation.Y;
+
+                mapMarkerSprite.SourceRectangle = CalculateIconSourceRectangle(mapMarker.Type);
+                mapMarkerSprite.Location = new Point2D(
+                    Location.X + xOffset * ZoomLevel - mapMarkerSprite.SourceRectangle.Width / 2,
+                    Location.Y + yOffset * ZoomLevel - mapMarkerSprite.SourceRectangle.Height / 2);
+
+                mapMarkerSprite.Draw(spriteBatch);
             }
         }
 
@@ -216,7 +246,7 @@ namespace GielinorAdventures.Gui.GuiElements
             mobDot.Draw(spriteBatch);
         }
 
-        void DrawMinimapTerrain(SpriteBatch spriteBatch, Colour colour, Point2D screenLocation)
+        void DrawMinimapPixel(SpriteBatch spriteBatch, Colour colour, Point2D screenLocation)
         {
             if (!ClientRectangle.Contains(screenLocation))
             {
@@ -242,6 +272,15 @@ namespace GielinorAdventures.Gui.GuiElements
         void CompassIndicator_Clicked(object sender, MouseButtonEventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        Rectangle2D CalculateIconSourceRectangle(MapMarkerType mapMarkerType)
+        {
+            return new Rectangle2D(
+                (int)mapMarkerType % 14 * 16,
+                (int)mapMarkerType / 14 * 16,
+                16,
+                16);
         }
     }
 }

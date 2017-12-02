@@ -1,4 +1,6 @@
-﻿using GielinorAdventures.Primitives;
+﻿using System.Collections.Generic;
+
+using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.GameLogic.GameManagers
 {
@@ -18,6 +20,16 @@ namespace GielinorAdventures.GameLogic.GameManagers
         /// <returns>The inventory item.</returns>
         /// <param name="slot">Slot.</param>
         InventoryItem GetInventoryItem(int slot);
+
+        /// <summary>
+        /// Gets the map markers between the specified coordinates.
+        /// </summary>
+        /// <returns>The map markers.</returns>
+        /// <param name="minX">Minimum X coordinate.</param>
+        /// <param name="minY">Minimum Y coordinate.</param>
+        /// <param name="maxX">Maximum X coordinate.</param>
+        /// <param name="maxY">Maximum Y coordinate.</param>
+        IEnumerable<MapMarker> GetMapMarkers(int minX, int minY, int maxX, int maxY);
 
         /// <summary>
         /// Gets the item.
@@ -47,11 +59,12 @@ namespace GielinorAdventures.GameLogic.GameManagers
         World GetWorld();
 
         /// <summary>
-        /// Gets the world object.
+        /// Gets the world object at the specified location.
         /// </summary>
         /// <returns>The world object.</returns>
-        /// <param name="location">Location.</param>
-        WorldObject GetWorldObject(Point2D location);
+        /// <param name="x">The X coordinate.</param>
+        /// <param name="y">The Y coordinate.</param>
+        WorldObject GetWorldObject(int x, int y);
 
         /// <summary>
         /// Moves the player to the specified location.

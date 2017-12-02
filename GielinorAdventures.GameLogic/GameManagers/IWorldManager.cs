@@ -1,5 +1,6 @@
-﻿using GielinorAdventures.Models;
-using GielinorAdventures.Primitives;
+﻿using System.Collections.Generic;
+
+using GielinorAdventures.Models;
 
 namespace GielinorAdventures.GameLogic.GameManagers
 {
@@ -15,6 +16,12 @@ namespace GielinorAdventures.GameLogic.GameManagers
         /// </summary>
         /// <param name="id">World identifier.</param>
         void LoadWorld(string id);
+
+        /// <summary>
+        /// Gets the map markers.
+        /// </summary>
+        /// <returns>The map markers.</returns>
+        IEnumerable<MapMarker> GetMapMarkers();
 
         /// <summary>
         /// Gets the terrain at the specified location.
@@ -37,10 +44,11 @@ namespace GielinorAdventures.GameLogic.GameManagers
         WorldObject GetWorldObject(string id);
 
         /// <summary>
-        /// Gets the world object.
+        /// Gets the world object at the specified location.
         /// </summary>
         /// <returns>The world object.</returns>
-        /// <param name="location">Location.</param>
-        WorldObject GetWorldObject(Point2D location);
+        /// <param name="x">The X coordinate.</param>
+        /// <param name="y">The Y coordinate.</param>
+        WorldObject GetWorldObject(int x, int y);
     }
 }

@@ -1,4 +1,7 @@
-﻿using GielinorAdventures.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+
+using GielinorAdventures.Models;
 using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.GameLogic.GameManagers
@@ -42,6 +45,23 @@ namespace GielinorAdventures.GameLogic.GameManagers
         }
 
         /// <summary>
+        /// Gets the map markers between the specified coordinates.
+        /// </summary>
+        /// <returns>The map markers.</returns>
+        /// <param name="minX">Minimum X coordinate.</param>
+        /// <param name="minY">Minimum Y coordinate.</param>
+        /// <param name="maxX">Maximum X coordinate.</param>
+        /// <param name="maxY">Maximum Y coordinate.</param>
+        public IEnumerable<MapMarker> GetMapMarkers(int minX, int minY, int maxX, int maxY)
+        {
+            Rectangle2D targetArea = new Rectangle2D(minX, minY, maxX, maxY);
+
+            return worldManager
+                .GetMapMarkers()
+                .Where(x => targetArea.Contains(x.Location));
+        }
+
+        /// <summary>
         /// Gets the inventory item.
         /// </summary>
         /// <returns>The inventory item.</returns>
@@ -81,12 +101,13 @@ namespace GielinorAdventures.GameLogic.GameManagers
         => worldManager.GetWorld();
 
         /// <summary>
-        /// Gets the world object.
+        /// Gets the world object at the specified location.
         /// </summary>
         /// <returns>The world object.</returns>
-        /// <param name="location">Location.</param>
-        public WorldObject GetWorldObject(Point2D location)
-        => worldManager.GetWorldObject(location);
+        /// <param name="x">The X coordinate.</param>
+        /// <param name="y">The Y coordinate.</param>
+        public WorldObject GetWorldObject(int x, int y)
+        => worldManager.GetWorldObject(x, y);
 
         /// <summary>
         /// Moves the player to the specified location.

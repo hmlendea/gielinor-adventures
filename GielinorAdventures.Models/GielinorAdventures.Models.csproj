@@ -68,6 +68,8 @@
     <Compile Include="Enumerations\WorldObjectType.cs" />
     <Compile Include="Enumerations\GameObjectType.cs" />
     <Compile Include="Mob.cs" />
+    <Compile Include="Enumerations\MapMarkerType.cs" />
+    <Compile Include="MapMarker.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">
