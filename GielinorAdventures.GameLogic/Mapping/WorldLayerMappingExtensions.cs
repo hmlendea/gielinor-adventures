@@ -22,7 +22,7 @@ namespace GielinorAdventures.GameLogic.Mapping
             {
                 Name = worldLayerEntity.Name,
                 Tileset = worldLayerEntity.Tileset,
-                Tiles = worldLayerEntity.Tiles,
+                Tiles = worldLayerEntity.Tiles.ToDomainModels(),
                 Opacity = worldLayerEntity.Opacity,
                 Visible = worldLayerEntity.Visible
             };
@@ -41,7 +41,7 @@ namespace GielinorAdventures.GameLogic.Mapping
             {
                 Name = worldLayer.Name,
                 Tileset = worldLayer.Tileset,
-                Tiles = worldLayer.Tiles,
+                Tiles = worldLayer.Tiles.ToEntities(),
                 Opacity = worldLayer.Opacity,
                 Visible = worldLayer.Visible
             };

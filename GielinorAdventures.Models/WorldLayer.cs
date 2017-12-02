@@ -26,7 +26,7 @@ namespace GielinorAdventures.Models
         /// Gets or sets the layer tiles.
         /// </summary>
         /// <value>The layer tiles.</value>
-        public int[,] Tiles { get; set; }
+        public WorldTile[,] Tiles { get; set; }
 
         /// <summary>
         /// Gets or sets the layer opacity.

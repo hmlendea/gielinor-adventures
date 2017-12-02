@@ -44,14 +44,12 @@ namespace GielinorAdventures.Models
         /// <value>The height.</value>
         public int Height { get; set; }
 
-        /*
         /// <summary>
         /// Gets or sets the tiles.
         /// </summary>
         /// <value>The tiles.</value>
         [XmlIgnore]
         public WorldTile[,] Tiles { get; set; }
-        */
 
         /// <summary>
         /// Gets or sets the geographic layers.
@@ -91,7 +89,7 @@ namespace GielinorAdventures.Models
                    string.Equals(Description, other.Description) &&
                    Equals(Width, other.Width) &&
                    Equals(Height, other.Height) &&
-                   //Equals(Tiles, other.Tiles) &&
+                   Equals(Tiles, other.Tiles) &&
                    Equals(Layers, other.Layers);
         }
 
@@ -135,7 +133,7 @@ namespace GielinorAdventures.Models
                        (Description != null ? Description.GetHashCode() : 0) ^
                        Width.GetHashCode() ^
                        Height.GetHashCode() ^
-                       //(Tiles != null ? Tiles.GetHashCode() : 0) ^
+                       (Tiles != null ? Tiles.GetHashCode() : 0) ^
                        (Layers != null ? Layers.GetHashCode() : 0);
             }
         }

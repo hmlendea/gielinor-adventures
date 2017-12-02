@@ -1,9 +1,9 @@
-﻿namespace GielinorAdventures.Models
+﻿namespace GielinorAdventures.DataAccess.DataObjects
 {
     /// <summary>
-    /// World tile.
+    /// World tile entity.
     /// </summary>
-    public class WorldTile
+    public class WorldTileEntity
     {
         /// <summary>
         /// Gets or sets the sprite sheet frame.

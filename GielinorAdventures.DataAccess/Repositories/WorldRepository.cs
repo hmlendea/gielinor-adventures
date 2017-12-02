@@ -51,7 +51,6 @@ namespace GielinorAdventures.DataAccess.Repositories
             worldEntity = new WorldEntity { Id = id };
             // TODO: Also load Name and Description
 
-            //worldEntity.Tiles = LoadWorldTiles(id);
             worldEntity.Layers = LoadWorldLayers(id);
 
             return worldEntity;
@@ -119,13 +118,48 @@ namespace GielinorAdventures.DataAccess.Repositories
             WorldLayerEntity layer = new WorldLayerEntity
             {
                 Name = tmxLayer.Name,
-                Tiles = new int[tmxMap.Width, tmxMap.Height],
+                Tiles = new WorldTileEntity[tmxMap.Width, tmxMap.Height],
                 Tileset = tmxTileset.Name,
                 Opacity = (float)tmxLayer.Opacity,
                 Visible = tmxLayer.Visible
             };
 
-            Parallel.ForEach(tmxLayer.Tiles, tile => layer.Tiles[tile.X, tile.Y] = Math.Max(-1, tile.Gid - tmxTileset.FirstGid));
+            for (int y = 0; y < tmxMap.Height; y++)
+            {
+                for (int x = 0; x < tmxMap.Width; x++)
+                {
+                    layer.Tiles[x, y] = new WorldTileEntity
+                    {
+                        SpriteSheetFrame = -1
+                    };
+                }
+            }
+
+            foreach (TmxLayerTile tmxTile in tmxLayer.Tiles)
+            {
+                WorldTileEntity tile = new WorldTileEntity
+                {
+                    SpriteSheetFrame = Math.Max(-1, tmxTile.Gid - tmxTileset.FirstGid)
+                };
+                layer.Tiles[tmxTile.X, tmxTile.Y] = tile;
+
+                if (tile.SpriteSheetFrame < 0)
+                {
+                    continue;
+                }
+
+                TmxTilesetTile tmxTilesetTile = tmxTileset.Tiles.FirstOrDefault(x => x.Id == tile.SpriteSheetFrame);
+
+                if (tmxTilesetTile == null)
+                {
+                    continue;
+                }
+
+                if (tmxTilesetTile.Properties.ContainsKey("ObjectId"))
+                {
+                    tile.ObjectId = tmxTilesetTile.Properties["ObjectId"];
+                }
+            }
 
             return layer;
         }

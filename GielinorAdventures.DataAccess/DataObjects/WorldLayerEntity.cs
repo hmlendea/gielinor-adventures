@@ -21,7 +21,7 @@
         /// Gets or sets the layer tiles.
         /// </summary>
         /// <value>The layer tiles.</value>
-        public int[,] Tiles { get; set; }
+        public WorldTileEntity[,] Tiles { get; set; }
 
         /// <summary>
         /// Gets or sets the layer opacity.

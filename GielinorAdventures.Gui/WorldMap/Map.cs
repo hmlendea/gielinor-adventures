@@ -34,15 +34,27 @@ namespace GielinorAdventures.Gui.WorldMap
         /// <param name="world">World.</param>
         public void LoadContent(World world)
         {
-            foreach (WorldLayer worldGeoLayer in world.Layers)
+            foreach (WorldLayer worldLayer in world.Layers)
             {
                 Layer layer = new Layer
                 {
-                    Tileset = worldGeoLayer.Tileset,
-                    TileMap = worldGeoLayer.Tiles,
-                    Opacity = worldGeoLayer.Opacity,
-                    Visible = worldGeoLayer.Visible
+                    Tileset = worldLayer.Tileset,
+                    Opacity = worldLayer.Opacity,
+                    Visible = worldLayer.Visible
                 };
+
+                int cols = worldLayer.Tiles.GetLength(0);
+                int rows = worldLayer.Tiles.GetLength(1);
+
+                layer.TileMap = new int[cols, rows];
+
+                for (int y = 0; y < rows; y++)
+                {
+                    for (int x = 0; x < cols; x++)
+                    {
+                        layer.TileMap[x, y] = worldLayer.Tiles[x, y].SpriteSheetFrame;
+                    }
+                }
 
                 Layers.Add(layer);
 

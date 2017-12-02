@@ -81,6 +81,7 @@
     <Compile Include="DataObjects\PlayerEntity.cs" />
     <Compile Include="DataObjects\InventoryItemEntity.cs" />
     <Compile Include="DataObjects\MobEntity.cs" />
+    <Compile Include="DataObjects\WorldTileEntity.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
