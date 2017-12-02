@@ -237,8 +237,8 @@
    <terrain name="New Terrain" tile="10"/>
   </terraintypes>
  </tileset>
- <tileset firstgid="187" name="furniture-home" tilewidth="32" tileheight="32" tilecount="221" columns="17">
-  <image source="../Content/World/Terrain/furniture-home.png" width="544" height="416"/>
+ <tileset firstgid="187" name="furniture-home" tilewidth="32" tileheight="32" tilecount="260" columns="20">
+  <image source="../Content/World/Terrain/furniture-home.png" width="640" height="416"/>
   <tile id="0" type="Furniture">
    <properties>
     <property name="ObjectId" value="chair_poor"/>
@@ -316,391 +316,339 @@
   </tile>
   <tile id="15" type="Furniture"/>
   <tile id="16" type="Furniture"/>
-  <tile id="17" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="chair_poor"/>
-   </properties>
-  </tile>
-  <tile id="18" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="chair_poor"/>
-   </properties>
-  </tile>
-  <tile id="19" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="small_chair_poor"/>
-   </properties>
-  </tile>
+  <tile id="17" type="Furniture"/>
+  <tile id="18" type="Furniture"/>
+  <tile id="19" type="Furniture"/>
   <tile id="20" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table_poor"/>
+    <property name="ObjectId" value="chair_poor"/>
    </properties>
   </tile>
   <tile id="21" type="Furniture">
    <properties>
-    <property name="ObjectId" value="small_table_poor"/>
+    <property name="ObjectId" value="chair_poor"/>
    </properties>
   </tile>
   <tile id="22" type="Furniture">
    <properties>
-    <property name="ObjectId" value="chair"/>
+    <property name="ObjectId" value="small_chair_poor"/>
    </properties>
   </tile>
   <tile id="23" type="Furniture">
    <properties>
-    <property name="ObjectId" value="chair"/>
+    <property name="ObjectId" value="table_poor"/>
    </properties>
   </tile>
   <tile id="24" type="Furniture">
    <properties>
-    <property name="ObjectId" value="small_chair"/>
+    <property name="ObjectId" value="small_table_poor"/>
    </properties>
   </tile>
   <tile id="25" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table"/>
+    <property name="ObjectId" value="chair"/>
    </properties>
   </tile>
   <tile id="26" type="Furniture">
    <properties>
-    <property name="ObjectId" value="small_table"/>
+    <property name="ObjectId" value="chair"/>
    </properties>
   </tile>
   <tile id="27" type="Furniture">
    <properties>
-    <property name="ObjectId" value="chair_rich"/>
+    <property name="ObjectId" value="small_chair"/>
    </properties>
   </tile>
   <tile id="28" type="Furniture">
    <properties>
-    <property name="ObjectId" value="chair_rich"/>
+    <property name="ObjectId" value="table"/>
    </properties>
   </tile>
   <tile id="29" type="Furniture">
    <properties>
-    <property name="ObjectId" value="small_chair_rich"/>
+    <property name="ObjectId" value="small_table"/>
    </properties>
   </tile>
   <tile id="30" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table_rich"/>
+    <property name="ObjectId" value="chair_rich"/>
    </properties>
   </tile>
   <tile id="31" type="Furniture">
    <properties>
+    <property name="ObjectId" value="chair_rich"/>
+   </properties>
+  </tile>
+  <tile id="32" type="Furniture">
+   <properties>
+    <property name="ObjectId" value="small_chair_rich"/>
+   </properties>
+  </tile>
+  <tile id="33" type="Furniture">
+   <properties>
+    <property name="ObjectId" value="table_rich"/>
+   </properties>
+  </tile>
+  <tile id="34" type="Furniture">
+   <properties>
     <property name="ObjectId" value="small_table_rich"/>
    </properties>
   </tile>
-  <tile id="32" type="Furniture"/>
-  <tile id="33" type="Furniture"/>
-  <tile id="34" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="table_poor"/>
-   </properties>
-  </tile>
-  <tile id="35" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="table_poor"/>
-   </properties>
-  </tile>
-  <tile id="36" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="table_poor"/>
-   </properties>
-  </tile>
-  <tile id="37" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="table_poor"/>
-   </properties>
-  </tile>
-  <tile id="38" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="small_table_round_poor"/>
-   </properties>
-  </tile>
-  <tile id="39" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="table"/>
-   </properties>
-  </tile>
+  <tile id="35" type="Furniture"/>
+  <tile id="36" type="Furniture"/>
+  <tile id="37" type="Furniture"/>
+  <tile id="38" type="Furniture"/>
+  <tile id="39" type="Furniture"/>
   <tile id="40" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table"/>
+    <property name="ObjectId" value="table_poor"/>
    </properties>
   </tile>
   <tile id="41" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table"/>
+    <property name="ObjectId" value="table_poor"/>
    </properties>
   </tile>
   <tile id="42" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table"/>
+    <property name="ObjectId" value="table_poor"/>
    </properties>
   </tile>
   <tile id="43" type="Furniture">
    <properties>
-    <property name="ObjectId" value="small_table_round"/>
+    <property name="ObjectId" value="table_poor"/>
    </properties>
   </tile>
   <tile id="44" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table_rich"/>
+    <property name="ObjectId" value="small_table_round_poor"/>
    </properties>
   </tile>
   <tile id="45" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table_rich"/>
+    <property name="ObjectId" value="table"/>
    </properties>
   </tile>
   <tile id="46" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table_rich"/>
+    <property name="ObjectId" value="table"/>
    </properties>
   </tile>
   <tile id="47" type="Furniture">
    <properties>
-    <property name="ObjectId" value="table_rich"/>
+    <property name="ObjectId" value="table"/>
    </properties>
   </tile>
   <tile id="48" type="Furniture">
    <properties>
-    <property name="ObjectId" value="small_table_round_rich"/>
+    <property name="ObjectId" value="table"/>
    </properties>
   </tile>
-  <tile id="49" type="Furniture"/>
-  <tile id="50" type="Furniture"/>
+  <tile id="49" type="Furniture">
+   <properties>
+    <property name="ObjectId" value="small_table_round"/>
+   </properties>
+  </tile>
+  <tile id="50" type="Furniture">
+   <properties>
+    <property name="ObjectId" value="table_rich"/>
+   </properties>
+  </tile>
   <tile id="51" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="table_rich"/>
    </properties>
   </tile>
   <tile id="52" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="table_rich"/>
    </properties>
   </tile>
   <tile id="53" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="table_rich"/>
    </properties>
   </tile>
   <tile id="54" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="small_table_round_rich"/>
    </properties>
   </tile>
-  <tile id="55" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="bed_poor"/>
-   </properties>
-  </tile>
-  <tile id="56" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed"/>
-   </properties>
-  </tile>
-  <tile id="57" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed"/>
-   </properties>
-  </tile>
-  <tile id="58" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed"/>
-   </properties>
-  </tile>
-  <tile id="59" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed"/>
-   </properties>
-  </tile>
+  <tile id="55" type="Furniture"/>
+  <tile id="56" type="Furniture"/>
+  <tile id="57" type="Furniture"/>
+  <tile id="58" type="Furniture"/>
+  <tile id="59" type="Furniture"/>
   <tile id="60" type="Furniture">
    <properties>
-    <property name="ObjectId" value="bed"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="61" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="62" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="63" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="64" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
+    <property name="ObjectId" value="bed_poor"/>
    </properties>
   </tile>
   <tile id="65" type="Furniture">
    <properties>
-    <property name="ObjectId" value="bed_rich"/>
+    <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
-  <tile id="66" type="Furniture"/>
-  <tile id="67" type="Furniture"/>
+  <tile id="66" type="Furniture">
+   <properties>
+    <property name="ObjectId" value="double_bed"/>
+   </properties>
+  </tile>
+  <tile id="67" type="Furniture">
+   <properties>
+    <property name="ObjectId" value="double_bed"/>
+   </properties>
+  </tile>
   <tile id="68" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
   <tile id="69" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="bed"/>
    </properties>
   </tile>
   <tile id="70" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="71" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="72" type="Furniture">
    <properties>
-    <property name="ObjectId" value="bed_poor"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="73" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="74" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed"/>
+    <property name="ObjectId" value="bed_rich"/>
    </properties>
   </tile>
-  <tile id="75" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed"/>
-   </properties>
-  </tile>
-  <tile id="76" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed"/>
-   </properties>
-  </tile>
-  <tile id="77" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="bed"/>
-   </properties>
-  </tile>
-  <tile id="78" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
-   </properties>
-  </tile>
-  <tile id="79" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
-   </properties>
-  </tile>
+  <tile id="75" type="Furniture"/>
+  <tile id="76" type="Furniture"/>
+  <tile id="77" type="Furniture"/>
+  <tile id="78" type="Furniture"/>
+  <tile id="79" type="Furniture"/>
   <tile id="80" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="81" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="82" type="Furniture">
    <properties>
-    <property name="ObjectId" value="bed_rich"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
-  <tile id="83" type="Furniture"/>
-  <tile id="84" type="Furniture"/>
-  <tile id="85" type="Furniture">
+  <tile id="83" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
-  <tile id="86" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
-   </properties>
-  </tile>
-  <tile id="87" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
-   </properties>
-  </tile>
-  <tile id="88" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
-   </properties>
-  </tile>
-  <tile id="89" type="Furniture">
+  <tile id="84" type="Furniture">
    <properties>
     <property name="ObjectId" value="bed_poor"/>
    </properties>
   </tile>
-  <tile id="90" type="Furniture">
+  <tile id="85" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
-  <tile id="91" type="Furniture">
+  <tile id="86" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
-  <tile id="92" type="Furniture">
+  <tile id="87" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
-  <tile id="93" type="Furniture">
+  <tile id="88" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
-  <tile id="94" type="Furniture">
+  <tile id="89" type="Furniture">
    <properties>
     <property name="ObjectId" value="bed"/>
    </properties>
   </tile>
-  <tile id="95" type="Furniture">
+  <tile id="90" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
-  <tile id="96" type="Furniture">
+  <tile id="91" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
-  <tile id="97" type="Furniture">
+  <tile id="92" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
-  <tile id="98" type="Furniture">
+  <tile id="93" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
-  <tile id="99" type="Furniture">
+  <tile id="94" type="Furniture">
    <properties>
     <property name="ObjectId" value="bed_rich"/>
    </properties>
   </tile>
-  <tile id="100" type="Furniture"/>
-  <tile id="101" type="Furniture"/>
+  <tile id="95" type="Furniture"/>
+  <tile id="96" type="Furniture"/>
+  <tile id="97" type="Furniture"/>
+  <tile id="98" type="Furniture"/>
+  <tile id="99" type="Furniture"/>
+  <tile id="100" type="Furniture">
+   <properties>
+    <property name="ObjectId" value="double_bed_poor"/>
+   </properties>
+  </tile>
+  <tile id="101" type="Furniture">
+   <properties>
+    <property name="ObjectId" value="double_bed_poor"/>
+   </properties>
+  </tile>
   <tile id="102" type="Furniture">
    <properties>
     <property name="ObjectId" value="double_bed_poor"/>
@@ -713,17 +661,17 @@
   </tile>
   <tile id="104" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="bed_poor"/>
    </properties>
   </tile>
   <tile id="105" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_poor"/>
+    <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
   <tile id="106" type="Furniture">
    <properties>
-    <property name="ObjectId" value="bed_poor"/>
+    <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
   <tile id="107" type="Furniture">
@@ -738,17 +686,17 @@
   </tile>
   <tile id="109" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed"/>
+    <property name="ObjectId" value="bed"/>
    </properties>
   </tile>
   <tile id="110" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="111" type="Furniture">
    <properties>
-    <property name="ObjectId" value="bed"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="112" type="Furniture">
@@ -763,98 +711,166 @@
   </tile>
   <tile id="114" type="Furniture">
    <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
-   </properties>
-  </tile>
-  <tile id="115" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="double_bed_rich"/>
-   </properties>
-  </tile>
-  <tile id="116" type="Furniture">
-   <properties>
     <property name="ObjectId" value="bed_rich"/>
    </properties>
   </tile>
+  <tile id="115" type="Furniture"/>
+  <tile id="116" type="Furniture"/>
   <tile id="117" type="Furniture"/>
   <tile id="118" type="Furniture"/>
-  <tile id="119" type="Furniture">
-   <properties>
-    <property name="ObjectId" value="bed_poor"/>
-   </properties>
-  </tile>
+  <tile id="119" type="Furniture"/>
   <tile id="120">
    <properties>
-    <property name="ObjectId" value="bed_poor"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="121">
    <properties>
-    <property name="ObjectId" value="bed_poor"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="122">
    <properties>
-    <property name="ObjectId" value="bed_poor"/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="123">
    <properties>
-    <property name="ObjectId" value=""/>
+    <property name="ObjectId" value="double_bed_poor"/>
    </properties>
   </tile>
   <tile id="124">
    <properties>
-    <property name="ObjectId" value="bed"/>
+    <property name="ObjectId" value="bed_poor"/>
    </properties>
   </tile>
   <tile id="125">
    <properties>
-    <property name="ObjectId" value="bed"/>
+    <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
   <tile id="126">
    <properties>
-    <property name="ObjectId" value="bed"/>
+    <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
   <tile id="127">
    <properties>
-    <property name="ObjectId" value="bed"/>
+    <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
   <tile id="128">
    <properties>
-    <property name="ObjectId" value=""/>
+    <property name="ObjectId" value="double_bed"/>
    </properties>
   </tile>
   <tile id="129">
    <properties>
-    <property name="ObjectId" value="bed_rich"/>
+    <property name="ObjectId" value="bed"/>
    </properties>
   </tile>
   <tile id="130">
    <properties>
-    <property name="ObjectId" value="bed_rich"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="131">
    <properties>
-    <property name="ObjectId" value="bed_rich"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="132">
    <properties>
-    <property name="ObjectId" value="bed_rich"/>
+    <property name="ObjectId" value="double_bed_rich"/>
    </properties>
   </tile>
   <tile id="133">
+   <properties>
+    <property name="ObjectId" value="double_bed_rich"/>
+   </properties>
+  </tile>
+  <tile id="134">
+   <properties>
+    <property name="ObjectId" value="bed_rich"/>
+   </properties>
+  </tile>
+  <tile id="140">
+   <properties>
+    <property name="ObjectId" value="bed_poor"/>
+   </properties>
+  </tile>
+  <tile id="141">
+   <properties>
+    <property name="ObjectId" value="bed_poor"/>
+   </properties>
+  </tile>
+  <tile id="142">
+   <properties>
+    <property name="ObjectId" value="bed_poor"/>
+   </properties>
+  </tile>
+  <tile id="143">
+   <properties>
+    <property name="ObjectId" value="bed_poor"/>
+   </properties>
+  </tile>
+  <tile id="144">
+   <properties>
+    <property name="ObjectId" value=""/>
+   </properties>
+  </tile>
+  <tile id="145">
+   <properties>
+    <property name="ObjectId" value="bed"/>
+   </properties>
+  </tile>
+  <tile id="146">
+   <properties>
+    <property name="ObjectId" value="bed"/>
+   </properties>
+  </tile>
+  <tile id="147">
+   <properties>
+    <property name="ObjectId" value="bed"/>
+   </properties>
+  </tile>
+  <tile id="148">
+   <properties>
+    <property name="ObjectId" value="bed"/>
+   </properties>
+  </tile>
+  <tile id="149">
+   <properties>
+    <property name="ObjectId" value=""/>
+   </properties>
+  </tile>
+  <tile id="150">
+   <properties>
+    <property name="ObjectId" value="bed_rich"/>
+   </properties>
+  </tile>
+  <tile id="151">
+   <properties>
+    <property name="ObjectId" value="bed_rich"/>
+   </properties>
+  </tile>
+  <tile id="152">
+   <properties>
+    <property name="ObjectId" value="bed_rich"/>
+   </properties>
+  </tile>
+  <tile id="153">
+   <properties>
+    <property name="ObjectId" value="bed_rich"/>
+   </properties>
+  </tile>
+  <tile id="154">
    <properties>
     <property name="ObjectId" value=""/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="408" name="fence" tilewidth="32" tileheight="32" tilecount="45" columns="9">
+ <tileset firstgid="447" name="fence" tilewidth="32" tileheight="32" tilecount="45" columns="9">
   <image source="../Content/World/Terrain/fence.png" width="288" height="160"/>
   <tile id="0" type="Fence">
    <properties>
@@ -1082,10 +1098,10 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="453" name="water" tilewidth="32" tileheight="32" tilecount="18" columns="3">
+ <tileset firstgid="492" name="water" tilewidth="32" tileheight="32" tilecount="18" columns="3">
   <image source="../Content/World/Terrain/water.png" width="96" height="192"/>
  </tileset>
- <tileset firstgid="471" name="furniture-work" tilewidth="32" tileheight="32" tilecount="200" columns="20">
+ <tileset firstgid="510" name="furniture-work" tilewidth="32" tileheight="32" tilecount="200" columns="20">
   <image source="../Content/World/Terrain/furniture-work.png" width="640" height="320"/>
   <tile id="0">
    <properties>
@@ -1798,7 +1814,7 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="671" name="well" tilewidth="32" tileheight="32" tilecount="48" columns="8">
+ <tileset firstgid="710" name="well" tilewidth="32" tileheight="32" tilecount="48" columns="8">
   <image source="../Content/World/Terrain/well.png" width="256" height="192"/>
   <tile id="0">
    <properties>
@@ -2041,7 +2057,7 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="719" name="furniture-decor" tilewidth="32" tileheight="32" tilecount="120" columns="15">
+ <tileset firstgid="758" name="furniture-decor" tilewidth="32" tileheight="32" tilecount="120" columns="15">
   <image source="../Content/World/Terrain/furniture-decor.png" width="480" height="256"/>
   <tile id="48">
    <properties>
@@ -2078,7 +2094,7 @@
    <property name="tileset" value="water"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <layer name="Floor - Wood Planks" width="480" height="480">
@@ -2087,14 +2103,6 @@
   </properties>
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+3VyQnAQAwEwc3Ht51/blYCAoNBgqUK+j+/GQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5bojVpa9wFADPboyPpbNwFADPzvwBQz/8CQD3/CwD1/C8A1PO/AFDviu6kp3EXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN+8YVA56wAQDgA=
-  </data>
- </layer>
- <layer name="Floor - Marble" width="480" height="480">
-  <properties>
-   <property name="tileset" value="marble"/>
-  </properties>
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3dsQrCMBSG0byrk4N2UBH15W2RDA62IuWPDefAxTXbx8U2LQUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP7PYZzjwgzNTgcAfTqNc16YS7PTAUCf9BcA8vQXAPL0FwDy9BcA8vQXAPL0FwDy9BcA8vQXAPKm/l7Lq7OffvUXANZV99+5BusvAKzL/gsAefZfAMjb0v7rW00A9GJL+69ntQHoxW2c+8I8mp3unf4CQJ7+AkBO/d93X/QXAFK+2Xv1FwDWpb8AkKe/AJCnvwCQV9+R2hX9BYA07x8BQJ7+AkCe/gJA3pbuygQAAAAAAAAAAAAAAAB+U7/nOzdDs9MBQJ/cowEAefoLAHn6CwB5+gsAee5xBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKBXT4JeXv8AEA4A
   </data>
  </layer>
  <layer name="Floor - Brown Tiles" width="480" height="480">
@@ -2113,12 +2121,20 @@
    H4sIAAAAAAAAA+3c3WqDQBCA0X36lrTmp/aF60IEI8KqUyeQnANzGeLdxyTrlgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwFG+h+nuc37yswDAu7gMc73PqWgwAGSY9ndscNcYjQaAmJ9hPstjg1tjTwaAuPkOrMEAcLza374xSzvybcN3OOcFANst7chr+1vb+1XszgCwVaS/kc8CwDvTXwDIp78AkC/S0Pk7Th/D/B7wjADwaqI7bG3weJZaewFgHb8hA0A+/QWAfPoLAPn0FwDyRfvr/kkA2M79kwCQz/0bAJBPfwEgn/4CwP+qfewaM/3/1v2TABC3tJ+uGfdPAsB+e/prhwWA/ebvBmkvABxvvvvWtvaN0V4AiJn2114LADmciwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHg9fztKn3cAEA4A
   </data>
  </layer>
+ <layer name="Floor - Marble" width="480" height="480">
+  <properties>
+   <property name="tileset" value="marble"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3dsQrCMBSG0byrk4N2UBH15W2RDA62IuWPDefAxTXbx8U2LQUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP7PYZzjwgzNTgcAfTqNc16YS7PTAUCf9BcA8vQXAPL0FwDy9BcA8vQXAPL0FwDy9BcA8vQXAPKm/l7Lq7OffvUXANZV99+5BusvAKzL/gsAefZfAMjb0v7rW00A9GJL+69ntQHoxW2c+8I8mp3unf4CQJ7+AkBO/d93X/QXAFK+2Xv1FwDWpb8AkKe/AJCnvwCQV9+R2hX9BYA07x8BQJ7+AkCe/gJA3pbuygQAAAAAAAAAAAAAAAB+U7/nOzdDs9MBQJ/cowEAefoLAHn6CwB5+gsAee5xBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKBXT4JeXv8AEA4A
+  </data>
+ </layer>
  <layer name="Decor - Well" width="480" height="480">
   <properties>
    <property name="tileset" value="well"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <layer name="Fences" width="480" height="480">
@@ -2126,7 +2142,7 @@
    <property name="tileset" value="fence"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <layer name="Walls - Stone" width="480" height="480">
@@ -2142,7 +2158,7 @@
    <property name="tileset" value="furniture-home"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <layer name="Furniture - Work" width="480" height="480">
@@ -2150,7 +2166,7 @@
    <property name="tileset" value="furniture-work"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
  <layer name="Furniture - Decor" width="480" height="480">
@@ -2158,7 +2174,7 @@
    <property name="tileset" value="furniture-decor"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
 </map>
