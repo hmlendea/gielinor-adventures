@@ -62,7 +62,7 @@
     <Compile Include="DataObjects\WorldObjectEntity.cs" />
     <Compile Include="DataObjects\ItemDropEntity.cs" />
     <Compile Include="DataObjects\SpellEntity.cs" />
-    <Compile Include="DataObjects\GameTextureEntity.cs" />
+    <Compile Include="DataObjects\TerrainEntity.cs" />
     <Compile Include="DataObjects\TileEntity.cs" />
     <Compile Include="Repositories\AnimationRepository.cs" />
     <Compile Include="Repositories\ElevationRepository.cs" />
@@ -71,7 +71,7 @@
     <Compile Include="Repositories\MobRepository.cs" />
     <Compile Include="Repositories\PrayerRepository.cs" />
     <Compile Include="Repositories\SpellRepository.cs" />
-    <Compile Include="Repositories\GameTextureRepository.cs" />
+    <Compile Include="Repositories\TerrainRepository.cs" />
     <Compile Include="Repositories\TileRepository.cs" />
     <Compile Include="DataObjects\QuestEntity.cs" />
     <Compile Include="Repositories\QuestRepository.cs" />

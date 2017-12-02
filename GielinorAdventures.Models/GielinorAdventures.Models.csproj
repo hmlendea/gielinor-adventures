@@ -45,7 +45,7 @@
     <Compile Include="ItemDrop.cs" />
     <Compile Include="Prayer.cs" />
     <Compile Include="Spell.cs" />
-    <Compile Include="GameTexture.cs" />
+    <Compile Include="Terrain.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="Enumerations\Action.cs" />
     <Compile Include="Enumerations\CombatStyle.cs" />

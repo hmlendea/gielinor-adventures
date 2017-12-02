@@ -48,7 +48,7 @@
     <Compile Include="Mapping\ItemMappingExtensions.cs" />
     <Compile Include="Mapping\PrayerMappingExtensions.cs" />
     <Compile Include="Mapping\SpellMappingExtensions.cs" />
-    <Compile Include="Mapping\GameTextureMappingExtensions.cs" />
+    <Compile Include="Mapping\TerrainMappingExtensions.cs" />
     <Compile Include="Mapping\TileMappingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameManagers\EntityManager.cs" />

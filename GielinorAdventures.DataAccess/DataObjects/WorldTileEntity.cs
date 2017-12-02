@@ -16,5 +16,11 @@
         /// </summary>
         /// <value>The object identifier.</value>
         public string ObjectId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the terrain identifier.
+        /// </summary>
+        /// <value>The terrain identifier.</value>
+        public string TerrainId { get; set; }
     }
 }

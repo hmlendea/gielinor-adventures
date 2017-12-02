@@ -135,33 +135,50 @@ namespace GielinorAdventures.DataAccess.Repositories
                 }
             }
 
-            foreach (TmxLayerTile tmxTile in tmxLayer.Tiles)
+            foreach (TmxLayerTile tmxLayerTile in tmxLayer.Tiles)
             {
-                WorldTileEntity tile = new WorldTileEntity
-                {
-                    SpriteSheetFrame = Math.Max(-1, tmxTile.Gid - tmxTileset.FirstGid)
-                };
-                layer.Tiles[tmxTile.X, tmxTile.Y] = tile;
-
-                if (tile.SpriteSheetFrame < 0)
-                {
-                    continue;
-                }
-
-                TmxTilesetTile tmxTilesetTile = tmxTileset.Tiles.FirstOrDefault(x => x.Id == tile.SpriteSheetFrame);
-
-                if (tmxTilesetTile == null)
-                {
-                    continue;
-                }
-
-                if (tmxTilesetTile.Properties.ContainsKey("ObjectId"))
-                {
-                    tile.ObjectId = tmxTilesetTile.Properties["ObjectId"];
-                }
+                layer.Tiles[tmxLayerTile.X, tmxLayerTile.Y] = ProcessTmxLayerTile(tmxLayerTile, tmxTileset);
             }
 
             return layer;
+        }
+
+        WorldTileEntity ProcessTmxLayerTile(TmxLayerTile tmxLayerTile, TmxTileset tmxTileset)
+        {
+            WorldTileEntity tile = new WorldTileEntity
+            {
+                SpriteSheetFrame = Math.Max(-1, tmxLayerTile.Gid - tmxTileset.FirstGid)
+            };
+
+            if (tile.SpriteSheetFrame < 0)
+            {
+                return tile;
+            }
+
+            TmxTilesetTile tmxTilesetTile = tmxTileset.Tiles.FirstOrDefault(x => x.Id == tile.SpriteSheetFrame);
+
+            if (tmxTilesetTile == null)
+            {
+                return tile;
+            }
+
+            string objectId = string.Empty;
+            string terrainId = string.Empty;
+
+            if (tmxTilesetTile.Properties.ContainsKey("ObjectId"))
+            {
+                tile.ObjectId = tmxTilesetTile.Properties["ObjectId"];
+            }
+
+            if (tmxTilesetTile.Properties.ContainsKey("TerrainId"))
+            {
+                tile.TerrainId = tmxTilesetTile.Properties["TerrainId"];
+            }
+
+            tile.ObjectId = string.IsNullOrWhiteSpace(objectId) ? tile.ObjectId : objectId;
+            tile.TerrainId = string.IsNullOrWhiteSpace(terrainId) ? tile.TerrainId : terrainId;
+
+            return tile;
         }
     }
 }

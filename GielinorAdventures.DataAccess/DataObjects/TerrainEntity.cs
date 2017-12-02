@@ -1,9 +1,9 @@
 ﻿namespace GielinorAdventures.DataAccess.DataObjects
 {
     /// <summary>
-    /// Texture entity.
+    /// Terrain entity.
     /// </summary>
-    public class GameTextureEntity
+    public class TerrainEntity
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -18,9 +18,15 @@
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the sub-name.
+        /// Gets or sets the description.
         /// </summary>
-        /// <value>The sub-name.</value>
-        public string SubName { get; set; }
+        /// <value>The description.</value>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or sets the colour hexadecimal.
+        /// </summary>
+        /// <value>The colour hexadecimal.</value>
+        public string ColourHexadecimal { get; set; }
     }
 }

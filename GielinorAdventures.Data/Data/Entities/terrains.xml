@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTerrainEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TerrainEntity>
+    <Id>grass</Id>
+    <ColourHexadecimal>#2F8136</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>pavement</Id>
+    <ColourHexadecimal>#473F3F</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>dirt</Id>
+    <Name>Dirt</Name>
+    <Description>It's, well... dirty</Description>
+    <ColourHexadecimal>#B88751</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>water</Id>
+    <Name>Water</Name>
+    <Description>I could do with a swim</Description>
+    <ColourHexadecimal>#566b9C</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>marble_dark</Id>
+    <ColourHexadecimal>#7F7F7F</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>marble_light</Id>
+    <ColourHexadecimal>#EAE7Df</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>brown_tiles</Id>
+    <ColourHexadecimal>#9D7B46</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>wood_planks</Id>
+    <ColourHexadecimal>#492C16</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>cobblestone</Id>
+    <ColourHexadecimal>#473F3F</ColourHexadecimal>
+  </TerrainEntity>
+  <TerrainEntity>
+    <Id>wall</Id>
+    <Name>Wall</Name>
+    <Description>It prevents things from passing through</Description>
+    <ColourHexadecimal>#CCCCCC</ColourHexadecimal>
+  </TerrainEntity>
+</ArrayOfTerrainEntity>

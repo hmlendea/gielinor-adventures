@@ -19,7 +19,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
         List<Mob> mobs;
         List<Prayer> prayers;
         List<Spell> spells;
-        List<GameTexture> textures;
+        List<Terrain> terrains;
         List<Tile> tiles;
 
         /// <summary>
@@ -71,10 +71,10 @@ namespace GielinorAdventures.GameLogic.GameManagers
         public int SpellProjectileCount { get; private set; }
 
         /// <summary>
-        /// Gets the textures count.
+        /// Gets the terrains count.
         /// </summary>
-        /// <value>The textures count.</value>
-        public int TextureCount => textures.Count;
+        /// <value>The terrains count.</value>
+        public int TextureCount => terrains.Count;
 
         /// <summary>
         /// Gets the tiles count.
@@ -95,7 +95,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
             string mobPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "mobs.xml");
             string prayerPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "prayers.xml");
             string spellPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "spells.xml");
-            string texturePath = Path.Combine(ApplicationPaths.EntitiesDirectory, "textures.xml");
+            string terrainPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "terrains.xml");
             string tilePath = Path.Combine(ApplicationPaths.EntitiesDirectory, "tiles.xml");
 
             AnimationRepository animationRepository = new AnimationRepository(animationsPath);
@@ -104,7 +104,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
             MobRepository mobRepository = new MobRepository(mobPath);
             PrayerRepository prayerRepository = new PrayerRepository(prayerPath);
             SpellRepository spellRepository = new SpellRepository(spellPath);
-            GameTextureRepository textureRepository = new GameTextureRepository(texturePath);
+            TerrainRepository terrainRepository = new TerrainRepository(terrainPath);
             TileRepository tileRepository = new TileRepository(tilePath);
 
             animations = animationRepository.GetAll().ToDomainModels().ToList();
@@ -113,7 +113,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
             mobs = mobRepository.GetAll().ToDomainModels().ToList();
             prayers = prayerRepository.GetAll().ToDomainModels().ToList();
             spells = spellRepository.GetAll().ToDomainModels().ToList();
-            textures = textureRepository.GetAll().ToDomainModels().ToList();
+            terrains = terrainRepository.GetAll().ToDomainModels().ToList();
             tiles = tileRepository.GetAll().ToDomainModels().ToList();
         }
 
@@ -232,18 +232,13 @@ namespace GielinorAdventures.GameLogic.GameManagers
         }
 
         /// <summary>
-        /// Gets the texture.
+        /// Gets the terrain.
         /// </summary>
-        /// <returns>The texture.</returns>
-        /// <param name="index">Identifier.</param>
-        public GameTexture GetTexture(int index)
+        /// <returns>The terrain.</returns>
+        /// <param name="id">Identifier.</param>
+        public Terrain GetTexture(string id)
         {
-            if (index < 0 || index >= TextureCount)
-            {
-                return null;
-            }
-
-            return textures[index];
+            return terrains.FirstOrDefault(x => x.Id == id);
         }
 
         /// <summary>

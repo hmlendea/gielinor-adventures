@@ -3,41 +3,46 @@ using System.Linq;
 
 using GielinorAdventures.DataAccess.DataObjects;
 using GielinorAdventures.Models;
+using GielinorAdventures.Primitives.Mapping;
 
 namespace GielinorAdventures.GameLogic.Mapping
 {
     /// <summary>
     /// Texture mapping extensions for converting between entities and domain models.
     /// </summary>
-    static class GameTextureMappingExtensions
+    static class TerrainMappingExtensions
     {
         /// <summary>
         /// Converts the entity into a domain model.
         /// </summary>
         /// <returns>The domain model.</returns>
         /// <param name="textureEntity">Texture entity.</param>
-        internal static GameTexture ToDomainModel(this GameTextureEntity textureEntity)
+        internal static Terrain ToDomainModel(this TerrainEntity textureEntity)
         {
-            GameTexture texture = new GameTexture
+            Terrain terrain = new Terrain
             {
+                Id = textureEntity.Id,
                 Name = textureEntity.Name,
-                SubName = textureEntity.SubName
+                Description = textureEntity.Description,
+                Colour = ColourTranslator.FromHexadecimal(textureEntity.ColourHexadecimal)
             };
 
-            return texture;
+            return terrain;
         }
 
         /// <summary>
         /// Converts the domain model into an entity.
         /// </summary>
         /// <returns>The entity.</returns>
-        /// <param name="texture">Texture.</param>
-        internal static GameTextureEntity ToEntity(this GameTexture texture)
+        /// <param name="terrain">Texture.</param>
+        internal static TerrainEntity ToEntity(this Terrain terrain)
         {
-            GameTextureEntity textureEntity = new GameTextureEntity
+            TerrainEntity textureEntity = new TerrainEntity
             {
-                Name = texture.Name,
-                SubName = texture.SubName
+                Id = terrain.Id,
+                Name = terrain.Name,
+                Description = terrain.Description,
+                ColourHexadecimal = terrain.Colour.ToHexadecimal()
             };
 
             return textureEntity;
@@ -48,9 +53,9 @@ namespace GielinorAdventures.GameLogic.Mapping
         /// </summary>
         /// <returns>The domain models.</returns>
         /// <param name="textureEntities">Texture entities.</param>
-        internal static IEnumerable<GameTexture> ToDomainModels(this IEnumerable<GameTextureEntity> textureEntities)
+        internal static IEnumerable<Terrain> ToDomainModels(this IEnumerable<TerrainEntity> textureEntities)
         {
-            IEnumerable<GameTexture> textures = textureEntities.Select(textureEntity => textureEntity.ToDomainModel());
+            IEnumerable<Terrain> textures = textureEntities.Select(textureEntity => textureEntity.ToDomainModel());
 
             return textures;
         }
@@ -60,9 +65,9 @@ namespace GielinorAdventures.GameLogic.Mapping
         /// </summary>
         /// <returns>The entities.</returns>
         /// <param name="textures">Textures.</param>
-        internal static IEnumerable<GameTextureEntity> ToEntities(this IEnumerable<GameTexture> textures)
+        internal static IEnumerable<TerrainEntity> ToEntities(this IEnumerable<Terrain> textures)
         {
-            IEnumerable<GameTextureEntity> textureEntities = textures.Select(texture => texture.ToEntity());
+            IEnumerable<TerrainEntity> textureEntities = textures.Select(terrain => terrain.ToEntity());
 
             return textureEntities;
         }

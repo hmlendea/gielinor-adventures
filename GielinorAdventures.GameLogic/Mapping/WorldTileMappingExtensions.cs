@@ -21,7 +21,8 @@ namespace GielinorAdventures.GameLogic.Mapping
             WorldTile worldTile = new WorldTile
             {
                 SpriteSheetFrame = worldTileEntity.SpriteSheetFrame,
-                ObjectId = worldTileEntity.ObjectId
+                ObjectId = worldTileEntity.ObjectId,
+                TerrainId = worldTileEntity.TerrainId
             };
 
             return worldTile;
@@ -37,7 +38,8 @@ namespace GielinorAdventures.GameLogic.Mapping
             WorldTileEntity worldTileEntity = new WorldTileEntity
             {
                 SpriteSheetFrame = worldTile.SpriteSheetFrame,
-                ObjectId = worldTile.ObjectId
+                ObjectId = worldTile.ObjectId,
+                TerrainId = worldTile.TerrainId
             };
 
             return worldTileEntity;
