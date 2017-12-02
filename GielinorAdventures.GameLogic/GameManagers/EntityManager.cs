@@ -19,7 +19,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
         List<Mob> mobs;
         List<Prayer> prayers;
         List<Spell> spells;
-        List<Terrain> terrains;
         List<Tile> tiles;
 
         /// <summary>
@@ -71,12 +70,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
         public int SpellProjectileCount { get; private set; }
 
         /// <summary>
-        /// Gets the terrains count.
-        /// </summary>
-        /// <value>The terrains count.</value>
-        public int TextureCount => terrains.Count;
-
-        /// <summary>
         /// Gets the tiles count.
         /// </summary>
         /// <value>The tiles count.</value>
@@ -95,7 +88,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             string mobPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "mobs.xml");
             string prayerPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "prayers.xml");
             string spellPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "spells.xml");
-            string terrainPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "terrains.xml");
             string tilePath = Path.Combine(ApplicationPaths.EntitiesDirectory, "tiles.xml");
 
             AnimationRepository animationRepository = new AnimationRepository(animationsPath);
@@ -104,7 +96,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             MobRepository mobRepository = new MobRepository(mobPath);
             PrayerRepository prayerRepository = new PrayerRepository(prayerPath);
             SpellRepository spellRepository = new SpellRepository(spellPath);
-            TerrainRepository terrainRepository = new TerrainRepository(terrainPath);
             TileRepository tileRepository = new TileRepository(tilePath);
 
             animations = animationRepository.GetAll().ToDomainModels().ToList();
@@ -113,7 +104,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             mobs = mobRepository.GetAll().ToDomainModels().ToList();
             prayers = prayerRepository.GetAll().ToDomainModels().ToList();
             spells = spellRepository.GetAll().ToDomainModels().ToList();
-            terrains = terrainRepository.GetAll().ToDomainModels().ToList();
             tiles = tileRepository.GetAll().ToDomainModels().ToList();
         }
 
@@ -229,16 +219,6 @@ namespace GielinorAdventures.GameLogic.GameManagers
             }
 
             return spells[index];
-        }
-
-        /// <summary>
-        /// Gets the terrain.
-        /// </summary>
-        /// <returns>The terrain.</returns>
-        /// <param name="id">Identifier.</param>
-        public Terrain GetTexture(string id)
-        {
-            return terrains.FirstOrDefault(x => x.Id == id);
         }
 
         /// <summary>

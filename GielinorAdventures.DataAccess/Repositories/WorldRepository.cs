@@ -48,10 +48,16 @@ namespace GielinorAdventures.DataAccess.Repositories
             WorldEntity worldEntity;
             string worldFile = Path.Combine(worldsDirectory, $"{id}.xml");
 
-            worldEntity = new WorldEntity { Id = id };
-            // TODO: Also load Name and Description
+            TmxMap tmxMap = new TmxMap(Path.Combine(worldsDirectory, $"{id}.tmx"));
 
-            worldEntity.Layers = LoadWorldLayers(id);
+            worldEntity = new WorldEntity
+            {
+                Id = id,
+                Width = tmxMap.Width,
+                Height = tmxMap.Height
+            };
+
+            worldEntity.Layers = LoadWorldLayers(tmxMap);
 
             return worldEntity;
         }
@@ -88,9 +94,8 @@ namespace GielinorAdventures.DataAccess.Repositories
             Directory.Delete(Path.Combine(worldsDirectory, id));
         }
 
-        List<WorldLayerEntity> LoadWorldLayers(string worldId)
+        List<WorldLayerEntity> LoadWorldLayers(TmxMap tmxMap)
         {
-            TmxMap tmxMap = new TmxMap(Path.Combine(worldsDirectory, $"{worldId}.tmx"));
             List<WorldLayerEntity> layers = new List<WorldLayerEntity>();
 
             foreach (TmxLayer tmxLayer in tmxMap.Layers)

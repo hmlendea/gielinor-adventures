@@ -30,15 +30,22 @@ namespace GielinorAdventures.Gui.GuiElements
 
         public bool IsClickable { get; set; }
 
+        public int ZoomLevel { get; set; }
+
         public GuiMinimap()
         {
             IsClickable = true;
+            ZoomLevel = 2;
         }
 
         public override void LoadContent()
         {
             mobDot = new Sprite { ContentFile = "Interface/Minimap/entity_dot" };
-            pixel = new Sprite { ContentFile = "ScreenManager/FillImage" };
+            pixel = new Sprite
+            {
+                ContentFile = "ScreenManager/FillImage",
+                Scale = new Scale2D(ZoomLevel, ZoomLevel)
+            };
             frame = new Sprite { ContentFile = "Interface/Minimap/frame" };
 
             compassIndicator = new GuiMinimapIndicator
@@ -149,7 +156,28 @@ namespace GielinorAdventures.Gui.GuiElements
 
         void DrawMinimapMenu(SpriteBatch spriteBatch)
         {
-            //throw new NotImplementedException();
+            Player player = game.GetPlayer();
+
+            Point2D startLocation = new Point2D(
+                player.Location.X - Size.Width / (2 * ZoomLevel),
+                player.Location.Y - Size.Height / (2 * ZoomLevel));
+
+            for (int y = 0; y < Size.Height / ZoomLevel; y++)
+            {
+                for (int x = 0; x < Size.Width / ZoomLevel; x++)
+                {
+                    Point2D screenLocation = new Point2D(
+                        Location.X + x * ZoomLevel,
+                        Location.Y + y * ZoomLevel);
+
+                    Terrain terrain = game.GetTerrain(
+                        player.Location.X - Size.Width / (2 * ZoomLevel) + x,
+                        player.Location.Y - Size.Height / (2 * ZoomLevel) + y);
+                    Colour terrainColour = terrain != null ? terrain.Colour : Colour.Black;
+
+                    DrawMinimapTerrain(spriteBatch, terrainColour, screenLocation);
+                }
+            }
         }
 
         void DrawMinimapTiles(SpriteBatch spriteBatch)
@@ -169,21 +197,46 @@ namespace GielinorAdventures.Gui.GuiElements
             }
         }
 
-        void DrawMinimapObject(SpriteBatch spriteBatch, int x, int y, Colour colour)
+        void DrawMinimapObject(SpriteBatch spriteBatch, Point2D dotLocation, Colour colour)
         {
-            if (x < ClientRectangle.Left || x >= ClientRectangle.Right ||
-                y < ClientRectangle.Top || y >= ClientRectangle.Bottom)
+            if (dotLocation.X < ClientRectangle.Left ||
+                dotLocation.Y < ClientRectangle.Top ||
+                dotLocation.X >= ClientRectangle.Right ||
+                dotLocation.Y >= ClientRectangle.Bottom)
             {
                 return;
             }
 
             mobDot.Tint = colour;
-            mobDot.Opacity = alphaMask[x - Location.X, y - Location.Y];
+            mobDot.Opacity = alphaMask[dotLocation.X - Location.X, dotLocation.Y - Location.Y];
             mobDot.Location = new Point2D(
-                x - mobDot.SpriteSize.Width / 2,
-                y - mobDot.SpriteSize.Height / 2);
+                dotLocation.X - mobDot.SpriteSize.Width / 2,
+                dotLocation.Y - mobDot.SpriteSize.Height / 2);
 
             mobDot.Draw(spriteBatch);
+        }
+
+        void DrawMinimapTerrain(SpriteBatch spriteBatch, Colour colour, Point2D screenLocation)
+        {
+            if (!ClientRectangle.Contains(screenLocation))
+            {
+                return;
+            }
+
+            int alpha = alphaMask[screenLocation.X - Location.X, screenLocation.Y - Location.Y];
+
+            if (alpha == 0)
+            {
+                return;
+            }
+
+            pixel.Tint = colour;
+            pixel.Location = screenLocation;
+
+            // TODO: Opacity changing doesn't work properly
+            //pixel.Opacity = alphaMask[screenLocation.X - Location.X, screenLocation.Y - Location.Y];
+
+            pixel.Draw(spriteBatch);
         }
 
         void CompassIndicator_Clicked(object sender, MouseButtonEventArgs e)

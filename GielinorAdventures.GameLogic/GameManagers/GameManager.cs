@@ -65,6 +65,15 @@ namespace GielinorAdventures.GameLogic.GameManagers
         => currentPlayer;
 
         /// <summary>
+        /// Gets the terrain at the specified location.
+        /// </summary>
+        /// <returns>The terrain.</returns>
+        /// <param name="x">The X coordinate.</param>
+        /// <param name="y">The Y coordinate.</param>
+        public Terrain GetTerrain(int x, int y)
+        => worldManager.GetTerrain(x, y);
+
+        /// <summary>
         /// Gets the world.
         /// </summary>
         /// <returns>The world.</returns>

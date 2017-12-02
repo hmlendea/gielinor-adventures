@@ -316,10 +316,13 @@ namespace GielinorAdventures.Graphics
             Vector2 origin = new Vector2(SourceRectangle.Width / 2,
                                          SourceRectangle.Height / 2);
 
+            Color colour = Tint.ToXnaColor();
+            colour.A = (byte)(colour.A * Opacity);
+
             if (!string.IsNullOrEmpty(Text))
             {
                 DrawString(spriteBatch, font, StringUtils.WrapText(font, Text, SpriteSize.Width), ClientRectangle.ToXnaRectangle(),
-                           TextHorizontalAlignment, TextVerticalAlignment, Tint.ToXnaColor() * Opacity);
+                           TextHorizontalAlignment, TextVerticalAlignment, colour);
             }
 
             // TODO: Do not do this for every Draw call
@@ -347,7 +350,7 @@ namespace GielinorAdventures.Graphics
                 }
 
                 spriteBatch.Draw(textureToDraw, new Vector2(Location.X + ClientRectangle.Width / 2, Location.Y + ClientRectangle.Height / 2), SourceRectangle.ToXnaRectangle(),
-                    Tint.ToXnaColor() * Opacity, rotation,
+                    colour, rotation,
                     origin, Scale.ToXnaVector2() * zoom,
                     SpriteEffects.None, 0.0f);
             }
@@ -361,7 +364,7 @@ namespace GielinorAdventures.Graphics
                 spriteBatch.End();
                 spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.LinearWrap, null, null);
 
-                spriteBatch.Draw(textureToDraw, new Vector2(Location.X, Location.Y), rec, Tint.ToXnaColor() * Opacity);
+                spriteBatch.Draw(textureToDraw, new Vector2(Location.X, Location.Y), rec, colour);
 
                 spriteBatch.End();
                 spriteBatch.Begin();

@@ -17,6 +17,14 @@ namespace GielinorAdventures.GameLogic.GameManagers
         void LoadWorld(string id);
 
         /// <summary>
+        /// Gets the terrain at the specified location.
+        /// </summary>
+        /// <returns>The terrain.</returns>
+        /// <param name="x">The X coordinate.</param>
+        /// <param name="y">The Y coordinate.</param>
+        Terrain GetTerrain(int x, int y);
+
+        /// <summary>
         /// Gets the world.
         /// </summary>
         /// <returns>The world.</returns>
