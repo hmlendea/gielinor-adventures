@@ -126,6 +126,7 @@ namespace GielinorAdventures.Gui.GuiElements
 
             DrawMinimapTerrain(spriteBatch, startLocation);
             DrawMinimapMarkers(spriteBatch, startLocation);
+            DrawMinimapEntities(spriteBatch);
             frame.Draw(spriteBatch);
 
             base.Draw(spriteBatch);
@@ -210,6 +211,15 @@ namespace GielinorAdventures.Gui.GuiElements
             }
         }
 
+        void DrawMinimapEntities(SpriteBatch spriteBatch)
+        {
+            Point2D location = new Point2D(
+                Location.X + Size.Width / 2,
+                Location.Y + Size.Height / 2);
+
+            DrawMinimapDot(spriteBatch, location, Colour.White);
+        }
+
         void DrawMinimapTiles(SpriteBatch spriteBatch)
         {
             for (int y = 0; y < Size.Height; y++)
@@ -227,7 +237,7 @@ namespace GielinorAdventures.Gui.GuiElements
             }
         }
 
-        void DrawMinimapObject(SpriteBatch spriteBatch, Point2D dotLocation, Colour colour)
+        void DrawMinimapDot(SpriteBatch spriteBatch, Point2D dotLocation, Colour colour)
         {
             if (dotLocation.X < ClientRectangle.Left ||
                 dotLocation.Y < ClientRectangle.Top ||
@@ -238,7 +248,6 @@ namespace GielinorAdventures.Gui.GuiElements
             }
 
             mobDot.Tint = colour;
-            mobDot.Opacity = alphaMask[dotLocation.X - Location.X, dotLocation.Y - Location.Y];
             mobDot.Location = new Point2D(
                 dotLocation.X - mobDot.SpriteSize.Width / 2,
                 dotLocation.Y - mobDot.SpriteSize.Height / 2);
