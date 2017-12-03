@@ -2,6 +2,7 @@
 {
     public enum MapMarkerType
     {
+        None,
         Quest,
         Task,
         Info,

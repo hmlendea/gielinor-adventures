@@ -334,7 +334,7 @@
     <Description>Local water source</Description>
     <Command1>WalkTo</Command1>
     <Command2>Examine</Command2>
-    <Type>Furniture</Type>
+    <Type>WaterSource</Type>
   </WorldObjectEntity>
   <WorldObjectEntity>
     <Id>well_bucketless</Id>
@@ -342,6 +342,6 @@
     <Description>The bucket is missing</Description>
     <Command1>WalkTo</Command1>
     <Command2>Examine</Command2>
-    <Type>Furniture</Type>
+    <Type>WaterSource</Type>
   </WorldObjectEntity>
 </ArrayOfWorldObjectEntity>

@@ -9,6 +9,7 @@
         Furniture,
         Ore,
         Tree,
-        Wall
+        Wall,
+        WaterSource
     }
 }

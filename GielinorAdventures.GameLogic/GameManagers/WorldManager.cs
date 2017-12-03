@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -162,18 +163,38 @@ namespace GielinorAdventures.GameLogic.GameManagers
                         continue;
                     }
 
+                    MapMarkerType type = MapMarkerType.None;
+
                     switch (worldObject.Type)
                     {
                         case WorldObjectType.Anvil:
-                            AddMapMarker(x, y, MapMarkerType.Anvil);
+                            type = MapMarkerType.Anvil;
                             break;
 
                         case WorldObjectType.Cooking:
-                            AddMapMarker(x, y, MapMarkerType.CookingStation);
+                            type = MapMarkerType.CookingStation;
                             break;
+
+                        case WorldObjectType.WaterSource:
+                            type = MapMarkerType.WaterSource;
+                            break;
+                    }
+
+                    if (type != MapMarkerType.None &&
+                        CheckMarkerPlacement(x, y, 16, type))
+                    {
+                        AddMapMarker(x, y, type);
                     }
                 }
             }
+        }
+
+        bool CheckMarkerPlacement(int x, int y, int radius, MapMarkerType type)
+        {
+            return mapMarkers
+                .Where(marker => marker.Type == type)
+                .All(marker => Math.Abs(marker.Location.X - x) >= radius ||
+                               Math.Abs(marker.Location.Y - y) >= radius);
         }
     }
 }
