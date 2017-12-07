@@ -13,10 +13,10 @@ namespace GielinorAdventures.GameLogic.GameManagers
     {
         Player currentPlayer;
 
-        readonly CombatManager combatManager;
-        readonly EntityManager entityManager;
-        readonly InventoryManager inventoryManager;
-        readonly QuestManager questManager;
+        readonly ICombatManager combatManager;
+        readonly IEntityManager entityManager;
+        readonly IInventoryManager inventoryManager;
+        readonly IQuestManager questManager;
         readonly IWorldManager worldManager;
 
         /// <summary>
@@ -39,6 +39,8 @@ namespace GielinorAdventures.GameLogic.GameManagers
             combatManager = new CombatManager(inventoryManager);
             questManager = new QuestManager();
             worldManager = new WorldManager();
+
+            questManager.LoadContent();
 
             worldManager.LoadContent();
             worldManager.LoadWorld(currentPlayer.World);

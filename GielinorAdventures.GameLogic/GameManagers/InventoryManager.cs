@@ -5,16 +5,16 @@ using GielinorAdventures.Models;
 
 namespace GielinorAdventures.GameLogic.GameManagers
 {
-    public class InventoryManager
+    public class InventoryManager : IInventoryManager
     {
         public static int MaximumInventorySize = 28;
 
         readonly Player player;
-        readonly EntityManager entityManager;
+        readonly IEntityManager entityManager;
 
         public InventoryManager(
             Player player,
-            EntityManager entityManager)
+            IEntityManager entityManager)
         {
             this.player = player;
             this.entityManager = entityManager;
@@ -23,8 +23,8 @@ namespace GielinorAdventures.GameLogic.GameManagers
         public bool IsItemEquipped(string itemId)
         {
             InventoryItem inventoryItem = player.Inventory
-                                       .Take(MaximumInventorySize)
-                                       .FirstOrDefault(x => x.Id == itemId);
+                .Take(MaximumInventorySize)
+                .FirstOrDefault(x => x.Id == itemId);
 
             if (inventoryItem == null)
             {
@@ -34,7 +34,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
             return inventoryItem.IsEquipped;
         }
 
-        public void BankItem(int itemId, int itemSlot, int quantity)
+        public void BankItem(string itemId, int itemSlot, int quantity)
         {
             throw new NotImplementedException();
         }
@@ -85,14 +85,9 @@ namespace GielinorAdventures.GameLogic.GameManagers
 
         public int GetItemTotalCount(string itemId)
         {
-            int quantity = 0;
-
-            foreach (InventoryItem inventoryItem in player.Inventory.Where(x => x.Id == itemId))
-            {
-                quantity += inventoryItem.Quantity;
-            }
-
-            return quantity;
+            return player.Inventory
+                .Where(x => x.Id == itemId)
+                .Sum(x => x.Quantity);
         }
     }
 }

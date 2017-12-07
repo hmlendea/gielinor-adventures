@@ -1,15 +1,15 @@
 ﻿namespace GielinorAdventures.GameLogic.GameManagers
 {
-    public class CombatManager
+    public class CombatManager : ICombatManager
     {
-        readonly InventoryManager inventoryManager;
+        readonly IInventoryManager inventoryManager;
 
-        public CombatManager(InventoryManager inventoryManager)
+        public CombatManager(IInventoryManager inventoryManager)
         {
             this.inventoryManager = inventoryManager;
         }
 
-        public bool HasRequiredRunes(int itemId, int count)
+        public bool HasRequiredRunes(string itemId, int count)
         {
             /*
             if (itemId == 31 && (inventoryManager.IsItemEquipped(197) || inventoryManager.IsItemEquipped(615) || inventoryManager.IsItemEquipped(682)))

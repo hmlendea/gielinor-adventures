@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -12,24 +13,19 @@ namespace GielinorAdventures.GameLogic.GameManagers
     /// <summary>
     /// Quest manager.
     /// </summary>
-    public class QuestManager
+    public class QuestManager : IQuestManager
     {
         List<Quest> quests;
-
+        
         /// <summary>
-        /// Gets the quests count.
+        /// Loads the content.
         /// </summary>
-        /// <value>The quests count.</value>
-        public int QuestsCount => quests.Count;
-
-        public int QuestPoints { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuestManager"/> class.
-        /// </summary>
-        public QuestManager()
+        public void LoadContent()
         {
-            LoadQuests();
+            string questRepositoryPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "quests.xml");
+            QuestRepository questRepository = new QuestRepository(questRepositoryPath);
+
+            quests = questRepository.GetAll().ToDomainModels().ToList();
         }
 
         /// <summary>
@@ -54,12 +50,13 @@ namespace GielinorAdventures.GameLogic.GameManagers
             quest.Stage = stage;
         }
 
-        void LoadQuests()
+        /// <summary>
+        /// Gets the total quest points.
+        /// </summary>
+        /// <returns>Total quest points.</returns>
+        public int GetTotalQuestPoints()
         {
-            string questRepositoryPath = Path.Combine(ApplicationPaths.EntitiesDirectory, "quests.xml");
-            QuestRepository questRepository = new QuestRepository(questRepositoryPath);
-
-            quests = questRepository.GetAll().ToDomainModels().ToList();
+            throw new NotImplementedException();
         }
     }
 }
