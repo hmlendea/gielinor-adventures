@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-using GielinorAdventures.Primitives;
+using NuciXNA.Primitives;
 
 namespace GielinorAdventures.Gui.GuiElements
 {

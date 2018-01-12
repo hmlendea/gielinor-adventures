@@ -1,9 +1,7 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using NuciXNA.Primitives;
 
 using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Gui.GuiElements;
-using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.Gui.Screens
 {

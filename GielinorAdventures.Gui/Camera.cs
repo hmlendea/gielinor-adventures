@@ -1,9 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
+using NuciXNA.Primitives;
 
-using GielinorAdventures.Input;
-using GielinorAdventures.Input.Events;
-using GielinorAdventures.Primitives;
 using GielinorAdventures.Settings;
 
 namespace GielinorAdventures.Gui

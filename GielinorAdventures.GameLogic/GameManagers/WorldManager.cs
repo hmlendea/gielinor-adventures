@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+using NuciXNA.Primitives;
+
 using GielinorAdventures.DataAccess.DataObjects;
 using GielinorAdventures.DataAccess.Repositories;
 using GielinorAdventures.GameLogic.Mapping;
 using GielinorAdventures.Models;
 using GielinorAdventures.Models.Enumerations;
-using GielinorAdventures.Primitives;
 using GielinorAdventures.Settings;
 
 namespace GielinorAdventures.GameLogic.GameManagers

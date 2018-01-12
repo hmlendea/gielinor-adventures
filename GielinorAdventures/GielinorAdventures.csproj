@@ -105,10 +105,6 @@
       <Project>{f863eb40-1193-4067-8eef-405caf9f2fc9}</Project>
       <Name>GielinorAdventures.Settings</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">
-      <Project>{395F7F7F-F89E-43F4-96F0-6A6E20016B81}</Project>
-      <Name>GielinorAdventures.Primitives</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GielinorAdventures.Infrastructure\GielinorAdventures.Infrastructure.csproj">
       <Project>{A498B100-9B60-48F7-A2FB-2E6D214E520C}</Project>
       <Name>GielinorAdventures.Infrastructure</Name>

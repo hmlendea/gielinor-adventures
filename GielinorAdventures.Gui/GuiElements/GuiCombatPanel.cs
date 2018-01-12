@@ -1,7 +1,9 @@
-﻿using GielinorAdventures.GameLogic.GameManagers;
+﻿using NuciXNA.Primitives;
+
+
+using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Models;
 using GielinorAdventures.Models.Enumerations;
-using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.Gui.GuiElements
 {

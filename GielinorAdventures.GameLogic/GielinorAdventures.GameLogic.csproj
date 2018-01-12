@@ -35,6 +35,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NuciXNA.Primitives, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuciXNA.Primitives.1.0.1\lib\net45\NuciXNA.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GielinorAdventures.DataAccess\GielinorAdventures.DataAccess.csproj">
@@ -82,10 +86,6 @@
     <ProjectReference Include="..\GielinorAdventures.Models\GielinorAdventures.Models.csproj">
       <Project>{0fb5c790-78f3-44ea-af6c-2d5b7c8e82be}</Project>
       <Name>GielinorAdventures.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj">
-      <Project>{395f7f7f-f89e-43f4-96f0-6a6e20016b81}</Project>
-      <Name>GielinorAdventures.Primitives</Name>
     </ProjectReference>
     <ProjectReference Include="..\GielinorAdventures.Settings\GielinorAdventures.Settings.csproj">
       <Project>{f863eb40-1193-4067-8eef-405caf9f2fc9}</Project>

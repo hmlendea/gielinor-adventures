@@ -1,4 +1,4 @@
-﻿using GielinorAdventures.Primitives;
+﻿using NuciXNA.Primitives;
 
 namespace GielinorAdventures.Settings
 {

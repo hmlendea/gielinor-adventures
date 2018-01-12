@@ -1,5 +1,6 @@
-﻿using GielinorAdventures.Graphics.Enumerations;
-using GielinorAdventures.Primitives;
+﻿using NuciXNA.Primitives;
+
+using GielinorAdventures.Graphics.Enumerations;
 
 namespace GielinorAdventures.Gui.GuiElements
 {

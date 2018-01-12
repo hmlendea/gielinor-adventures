@@ -1,8 +1,7 @@
 ﻿using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
-
-using GielinorAdventures.Primitives;
+using NuciXNA.Primitives;
 
 namespace GielinorAdventures.Graphics.CustomSpriteEffects
 {

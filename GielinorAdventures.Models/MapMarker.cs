@@ -1,5 +1,6 @@
-﻿using GielinorAdventures.Models.Enumerations;
-using GielinorAdventures.Primitives;
+﻿using NuciXNA.Primitives;
+
+using GielinorAdventures.Models.Enumerations;
 
 namespace GielinorAdventures.Models
 {

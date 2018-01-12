@@ -1,7 +1,8 @@
 ﻿using System;
 
+using NuciXNA.Primitives;
+
 using GielinorAdventures.Models.Enumerations;
-using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.Models
 {

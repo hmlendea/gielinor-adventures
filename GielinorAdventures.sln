@@ -20,8 +20,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GielinorAdventures.Graphics
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GielinorAdventures.Gui", "GielinorAdventures.Gui\GielinorAdventures.Gui.csproj", "{D7F47FA0-D9BC-4702-9A21-40697DFF128A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GielinorAdventures.Primitives", "GielinorAdventures.Primitives\GielinorAdventures.Primitives.csproj", "{395F7F7F-F89E-43F4-96F0-6A6E20016B81}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GielinorAdventures.Infrastructure", "GielinorAdventures.Infrastructure\GielinorAdventures.Infrastructure.csproj", "{A498B100-9B60-48F7-A2FB-2E6D214E520C}"
 EndProject
 Global
@@ -100,14 +98,6 @@ Global
 		{D7F47FA0-D9BC-4702-9A21-40697DFF128A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D7F47FA0-D9BC-4702-9A21-40697DFF128A}.Release|x86.ActiveCfg = Release|Any CPU
 		{D7F47FA0-D9BC-4702-9A21-40697DFF128A}.Release|x86.Build.0 = Release|Any CPU
-		{395F7F7F-F89E-43F4-96F0-6A6E20016B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{395F7F7F-F89E-43F4-96F0-6A6E20016B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{395F7F7F-F89E-43F4-96F0-6A6E20016B81}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{395F7F7F-F89E-43F4-96F0-6A6E20016B81}.Debug|x86.Build.0 = Debug|Any CPU
-		{395F7F7F-F89E-43F4-96F0-6A6E20016B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{395F7F7F-F89E-43F4-96F0-6A6E20016B81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{395F7F7F-F89E-43F4-96F0-6A6E20016B81}.Release|x86.ActiveCfg = Release|Any CPU
-		{395F7F7F-F89E-43F4-96F0-6A6E20016B81}.Release|x86.Build.0 = Release|Any CPU
 		{A498B100-9B60-48F7-A2FB-2E6D214E520C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A498B100-9B60-48F7-A2FB-2E6D214E520C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A498B100-9B60-48F7-A2FB-2E6D214E520C}.Debug|x86.ActiveCfg = Debug|Any CPU

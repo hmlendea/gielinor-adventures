@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+using NuciXNA.Primitives;
+
 using GielinorAdventures.Models;
-using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.GameLogic.GameManagers
 {

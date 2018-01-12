@@ -1,6 +1,7 @@
-﻿using GielinorAdventures.GameLogic.GameManagers;
+﻿using NuciXNA.Primitives;
+
+using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Models;
-using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.Gui.GuiElements
 {

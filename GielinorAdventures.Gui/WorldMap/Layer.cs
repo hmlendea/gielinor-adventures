@@ -5,10 +5,10 @@ using System.Linq;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.Primitives;
+using NuciXNA.Primitives.Mapping;
 
 using GielinorAdventures.Graphics;
-using GielinorAdventures.Primitives;
-using GielinorAdventures.Primitives.Mapping;
 using GielinorAdventures.Settings;
 
 namespace GielinorAdventures.Gui.WorldMap

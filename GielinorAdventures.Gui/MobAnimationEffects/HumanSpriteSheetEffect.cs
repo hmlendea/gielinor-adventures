@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using NuciXNA.Primitives;
 
 using GielinorAdventures.Graphics;
 using GielinorAdventures.Graphics.CustomSpriteEffects;
 using GielinorAdventures.Models.Enumerations;
-using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.Gui.MobAnimationEffects
 {

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+using NuciXNA.Primitives.Mapping;
+
 using GielinorAdventures.DataAccess.DataObjects;
 using GielinorAdventures.Models;
-using GielinorAdventures.Primitives.Mapping;
 
 namespace GielinorAdventures.GameLogic.Mapping
 {

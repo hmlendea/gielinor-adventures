@@ -1,6 +1,6 @@
 ﻿using System;
 
-using GielinorAdventures.Primitives;
+using NuciXNA.Primitives;
 
 namespace GielinorAdventures.Models
 {

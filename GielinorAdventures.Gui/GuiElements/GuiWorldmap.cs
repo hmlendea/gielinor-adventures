@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.Primitives;
+using NuciXNA.Primitives.Mapping;
 
 using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Gui.WorldMap;
 using GielinorAdventures.Input.Events;
 using GielinorAdventures.Models;
-using GielinorAdventures.Primitives;
-using GielinorAdventures.Primitives.Mapping;
 using GielinorAdventures.Settings;
 
 namespace GielinorAdventures.Gui.GuiElements

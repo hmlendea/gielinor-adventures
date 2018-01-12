@@ -5,7 +5,6 @@ using System.Linq;
 using GielinorAdventures.DataAccess.DataObjects;
 using GielinorAdventures.Models;
 using GielinorAdventures.Models.Enumerations;
-using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.GameLogic.Mapping
 {

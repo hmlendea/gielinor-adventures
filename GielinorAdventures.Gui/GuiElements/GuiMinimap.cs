@@ -4,6 +4,8 @@ using System.Linq;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.Primitives;
+using NuciXNA.Primitives.Mapping;
 
 using GielinorAdventures.DataAccess.Resources;
 using GielinorAdventures.GameLogic.GameManagers;
@@ -11,8 +13,6 @@ using GielinorAdventures.Graphics;
 using GielinorAdventures.Input.Events;
 using GielinorAdventures.Models;
 using GielinorAdventures.Models.Enumerations;
-using GielinorAdventures.Primitives;
-using GielinorAdventures.Primitives.Mapping;
 
 namespace GielinorAdventures.Gui.GuiElements
 {

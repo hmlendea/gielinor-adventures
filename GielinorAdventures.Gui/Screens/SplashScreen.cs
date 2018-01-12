@@ -1,13 +1,9 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using NuciXNA.Primitives;
 
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
-using GielinorAdventures.Graphics;
 using GielinorAdventures.Graphics.CustomSpriteEffects;
 using GielinorAdventures.Gui.GuiElements;
 using GielinorAdventures.Input.Events;
-using GielinorAdventures.Primitives;
 
 namespace GielinorAdventures.Gui.Screens
 {
