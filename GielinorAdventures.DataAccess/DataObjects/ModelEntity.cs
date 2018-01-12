@@ -1,7 +1,8 @@
-﻿namespace GielinorAdventures.DataAccess.DataObjects
+﻿using NuciXNA.DataAccess.DataObjects;
+
+namespace GielinorAdventures.DataAccess.DataObjects
 {
-    public class ModelEntity
+    public class ModelEntity : EntityBase
     {
-        public string Id { get; set; }
     }
 }

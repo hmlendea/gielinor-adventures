@@ -4,12 +4,12 @@ using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.Input;
+using NuciXNA.Input.Events;
 using NuciXNA.Primitives;
 using NuciXNA.Primitives.Mapping;
 
 using GielinorAdventures.Graphics;
-using GielinorAdventures.Input;
-using GielinorAdventures.Input.Events;
 
 namespace GielinorAdventures.Gui.Screens
 {

@@ -1,13 +1,9 @@
-﻿namespace GielinorAdventures.DataAccess.DataObjects
-{
-    public class MobEntity
-    {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>The identifier.</value>
-        public string Id { get; set; }
+﻿using NuciXNA.DataAccess.DataObjects;
 
+namespace GielinorAdventures.DataAccess.DataObjects
+{
+    public class MobEntity : EntityBase
+    {
         /// <summary>
         /// Gets or sets the name.
         /// </summary>

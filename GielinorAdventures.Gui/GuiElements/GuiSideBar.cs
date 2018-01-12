@@ -1,4 +1,5 @@
-﻿using NuciXNA.Primitives;
+﻿using NuciXNA.Input.Events;
+using NuciXNA.Primitives;
 
 using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Settings;
@@ -193,7 +194,7 @@ namespace GielinorAdventures.Gui.GuiElements
             exitButton.Clicked -= ExitButton_Clicked;
         }
 
-        void CombatButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void CombatButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 
@@ -201,7 +202,7 @@ namespace GielinorAdventures.Gui.GuiElements
             combatPanel.Show();
         }
 
-        void SkillsButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void SkillsButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 
@@ -209,21 +210,21 @@ namespace GielinorAdventures.Gui.GuiElements
             skillsPanel.Show();
         }
 
-        void QuestsButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void QuestsButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 
             questsButton.Toggled = true;
         }
 
-        void TasksButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void TasksButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 
             tasksButton.Toggled = true;
         }
 
-        void InventoryButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void InventoryButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 
@@ -231,28 +232,28 @@ namespace GielinorAdventures.Gui.GuiElements
             inventoryPanel.Show();
         }
 
-        void EquipmentButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void EquipmentButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 
             equipmentButton.Toggled = true;
         }
 
-        void PrayerButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void PrayerButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 
             prayerButton.Toggled = true;
         }
 
-        void SpellsButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void SpellsButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 
             spellsButton.Toggled = true;
         }
 
-        void ExitButton_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void ExitButton_Clicked(object sender, MouseButtonEventArgs e)
         {
             UnselectEverything();
 

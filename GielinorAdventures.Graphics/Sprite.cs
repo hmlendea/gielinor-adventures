@@ -4,10 +4,10 @@ using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.DataAccess.Resources;
 using NuciXNA.Primitives;
 using NuciXNA.Primitives.Mapping;
 
-using GielinorAdventures.DataAccess.Resources;
 using GielinorAdventures.Graphics.CustomSpriteEffects;
 using GielinorAdventures.Graphics.Enumerations;
 using GielinorAdventures.Graphics.Helpers;

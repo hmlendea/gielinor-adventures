@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
+using NuciXNA.DataAccess.DataObjects;
+
 namespace GielinorAdventures.DataAccess.DataObjects
 {
-    public class PlayerEntity
+    public class PlayerEntity : EntityBase
     {
-        public string Id { get; set; }
-
         public string Name { get; set; }
 
         public string World { get; set; }

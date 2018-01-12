@@ -1,9 +1,11 @@
-﻿namespace GielinorAdventures.DataAccess.DataObjects
+﻿using NuciXNA.DataAccess.DataObjects;
+
+namespace GielinorAdventures.DataAccess.DataObjects
 {
     /// <summary>
     /// Prayer entity.
     /// </summary>
-    public class PrayerEntity
+    public class PrayerEntity : EntityBase
     {
         /// <summary>
         /// Gets or sets the identifier.

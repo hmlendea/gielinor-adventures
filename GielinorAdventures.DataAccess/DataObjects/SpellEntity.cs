@@ -1,16 +1,12 @@
-﻿namespace GielinorAdventures.DataAccess.DataObjects
+﻿using NuciXNA.DataAccess.DataObjects;
+
+namespace GielinorAdventures.DataAccess.DataObjects
 {
     /// <summary>
     /// Spell entity.
     /// </summary>
-    public class SpellEntity
+    public class SpellEntity : EntityBase
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>The identifier.</value>
-        public string Id { get; set; }
-
         /// <summary>
         /// Gets or sets the name.
         /// </summary>

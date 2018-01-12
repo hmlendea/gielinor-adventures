@@ -1,16 +1,12 @@
-﻿namespace GielinorAdventures.DataAccess.DataObjects
+﻿using NuciXNA.DataAccess.DataObjects;
+
+namespace GielinorAdventures.DataAccess.DataObjects
 {
     /// <summary>
     /// Item drop entity.
     /// </summary>
-    public class ItemDropEntity
+    public class ItemDropEntity : EntityBase
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>The identifier.</value>
-        public string Id { get; set; }
-
         /// <summary>
         /// Gets or sets the item identifier.
         /// </summary>

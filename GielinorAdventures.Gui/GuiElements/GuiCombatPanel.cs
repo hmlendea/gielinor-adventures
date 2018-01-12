@@ -1,5 +1,5 @@
-﻿using NuciXNA.Primitives;
-
+﻿using NuciXNA.Input.Events;
+using NuciXNA.Primitives;
 
 using GielinorAdventures.GameLogic.GameManagers;
 using GielinorAdventures.Models;
@@ -143,22 +143,22 @@ namespace GielinorAdventures.Gui.GuiElements
             defensiveStyleCard.Clicked -= DefensiveStyleCard_Clicked;
         }
 
-        void ControlledStyleCard_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void ControlledStyleCard_Clicked(object sender, MouseButtonEventArgs e)
         {
             game.GetPlayer().CombatStyle = CombatStyle.Controlled;
         }
 
-        void AggressiveStyleCard_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void AggressiveStyleCard_Clicked(object sender, MouseButtonEventArgs e)
         {
             game.GetPlayer().CombatStyle = CombatStyle.Aggressive;
         }
 
-        void AccurateStyleCard_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void AccurateStyleCard_Clicked(object sender, MouseButtonEventArgs e)
         {
             game.GetPlayer().CombatStyle = CombatStyle.Accurate;
         }
 
-        void DefensiveStyleCard_Clicked(object sender, Input.Events.MouseButtonEventArgs e)
+        void DefensiveStyleCard_Clicked(object sender, MouseButtonEventArgs e)
         {
             game.GetPlayer().CombatStyle = CombatStyle.Defensive;
         }

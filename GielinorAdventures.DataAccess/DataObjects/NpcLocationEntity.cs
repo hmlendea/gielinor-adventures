@@ -1,9 +1,9 @@
-﻿namespace GielinorAdventures.DataAccess.DataObjects
-{
-    public class NpcLocationEntity
-    {
-        public string Id { get; set; }
+﻿using NuciXNA.DataAccess.DataObjects;
 
+namespace GielinorAdventures.DataAccess.DataObjects
+{
+    public class NpcLocationEntity : EntityBase
+    {
         public int InitialX { get; set; }
 
         public int InitialY { get; set; }

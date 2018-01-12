@@ -2,8 +2,8 @@
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.DataAccess.Resources;
 
-using GielinorAdventures.DataAccess.Resources;
 using GielinorAdventures.Gui.Helpers;
 using GielinorAdventures.Settings;
 

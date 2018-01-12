@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
+using NuciXNA.Input.Enumerations;
+using NuciXNA.Input.Events;
 using NuciXNA.Primitives;
 
-using GielinorAdventures.Input.Enumerations;
-using GielinorAdventures.Input.Events;
 using GielinorAdventures.Settings;
 
 namespace GielinorAdventures.Gui.GuiElements

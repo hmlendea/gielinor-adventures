@@ -89,10 +89,6 @@
       <Project>{d7f47fa0-d9bc-4702-9a21-40697dff128a}</Project>
       <Name>GielinorAdventures.Gui</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GielinorAdventures.Input\GielinorAdventures.Input.csproj">
-      <Project>{FF805103-A40E-4154-8ED6-C70623AF471C}</Project>
-      <Name>GielinorAdventures.Input</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GielinorAdventures.Models\GielinorAdventures.Models.csproj">
       <Project>{0FB5C790-78F3-44EA-AF6C-2D5B7C8E82BE}</Project>
       <Name>GielinorAdventures.Models</Name>

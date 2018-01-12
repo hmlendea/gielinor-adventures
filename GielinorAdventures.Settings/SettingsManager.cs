@@ -1,6 +1,7 @@
 ﻿using System.IO;
 
-using GielinorAdventures.DataAccess.IO;
+using NuciXNA.DataAccess.IO;
+
 using GielinorAdventures.Graphics;
 
 namespace GielinorAdventures.Settings
@@ -68,7 +69,7 @@ namespace GielinorAdventures.Settings
                 return;
             }
 
-            XmlManager<SettingsManager> xmlManager = new XmlManager<SettingsManager>();
+            XmlFileObject<SettingsManager> xmlManager = new XmlFileObject<SettingsManager>();
             SettingsManager storedSettings = xmlManager.Read(ApplicationPaths.SettingsFile);
 
             instance = storedSettings;
@@ -79,7 +80,7 @@ namespace GielinorAdventures.Settings
         /// </summary>
         public void SaveContent()
         {
-            XmlManager<SettingsManager> xmlManager = new XmlManager<SettingsManager>();
+            XmlFileObject<SettingsManager> xmlManager = new XmlFileObject<SettingsManager>();
             xmlManager.Write(ApplicationPaths.SettingsFile, this);
         }
 

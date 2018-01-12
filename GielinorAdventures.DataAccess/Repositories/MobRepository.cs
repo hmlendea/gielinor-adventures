@@ -1,98 +1,39 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Linq;
+
+using NuciXNA.DataAccess.Exceptions;
+using NuciXNA.DataAccess.Repositories;
 
 using GielinorAdventures.DataAccess.DataObjects;
-using GielinorAdventures.DataAccess.Exceptions;
 
 namespace GielinorAdventures.DataAccess.Repositories
 {
     /// <summary>
     /// Mob repository implementation.
     /// </summary>
-    public class MobRepository
+    public class MobRepository : XmlRepository<MobEntity>
     {
-        readonly XmlDatabase<MobEntity> xmlDatabase;
-        List<MobEntity> mobEntities;
-        bool loadedEntities;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MobRepository"/> class.
         /// </summary>
         /// <param name="fileName">File name.</param>
-        public MobRepository(string fileName)
+        public MobRepository(string fileName) : base(fileName)
         {
-            xmlDatabase = new XmlDatabase<MobEntity>(fileName);
-            mobEntities = new List<MobEntity>();
+
         }
-
-        public void ApplyChanges()
-        {
-            try
-            {
-                xmlDatabase.SaveEntities(mobEntities);
-            }
-            catch
-            {
-                // TODO: Better exception message
-                throw new IOException("Cannot save the changes");
-            }
-        }
-
-        /// <summary>
-        /// Adds the specified mob.
-        /// </summary>
-        /// <param name="mobEntity">Mob.</param>
-        public void Add(MobEntity mobEntity)
-        {
-            LoadEntitiesIfNeeded();
-
-            mobEntities.Add(mobEntity);
-        }
-
-        /// <summary>
-        /// Get the mob with the specified identifier.
-        /// </summary>
-        /// <returns>The mob.</returns>
-        /// <param name="id">Identifier.</param>
-        public MobEntity Get(string id)
-        {
-            LoadEntitiesIfNeeded();
-
-            MobEntity mobEntity = mobEntities.FirstOrDefault(x => x.Id == id);
-
-            if (mobEntity == null)
-            {
-                throw new EntityNotFoundException(id, nameof(MobEntity).Replace("Entity", ""));
-            }
-
-            return mobEntity;
-        }
-
-        /// <summary>
-        /// Gets all the mobs.
-        /// </summary>
-        /// <returns>The mobs</returns>
-        public IEnumerable<MobEntity> GetAll()
-        {
-            LoadEntitiesIfNeeded();
-
-            return mobEntities;
-        }
-
+        
         /// <summary>
         /// Updates the specified mob.
         /// </summary>
         /// <param name="mobEntity">Mob.</param>
-        public void Update(MobEntity mobEntity)
+        public override void Update(MobEntity mobEntity)
         {
             LoadEntitiesIfNeeded();
 
-            MobEntity mobEntityToUpdate = mobEntities.FirstOrDefault(x => x.Id == mobEntity.Id);
+            MobEntity mobEntityToUpdate = Entities.FirstOrDefault(x => x.Id == mobEntity.Id);
 
             if (mobEntityToUpdate == null)
             {
-                throw new EntityNotFoundException(mobEntity.Id, nameof(MobEntity).Replace("Entity", ""));
+                throw new EntityNotFoundException(mobEntity.Id, nameof(MobEntity));
             }
 
             mobEntityToUpdate.Name = mobEntity.Name;
@@ -113,38 +54,7 @@ namespace GielinorAdventures.DataAccess.Repositories
             mobEntityToUpdate.RangedLevel = mobEntity.RangedLevel;
             mobEntityToUpdate.MagicLevel = mobEntity.MagicLevel;
 
-            xmlDatabase.SaveEntities(mobEntities);
-        }
-
-        /// <summary>
-        /// Removes the mob with the specified identifier.
-        /// </summary>
-        /// <param name="id">Identifier.</param>
-        public void Remove(string id)
-        {
-            LoadEntitiesIfNeeded();
-
-            mobEntities.RemoveAll(x => x.Id == id);
-
-            try
-            {
-                xmlDatabase.SaveEntities(mobEntities);
-            }
-            catch
-            {
-                throw new DuplicateEntityException(id, nameof(MobEntity).Replace("Entity", ""));
-            }
-        }
-
-        void LoadEntitiesIfNeeded()
-        {
-            if (loadedEntities)
-            {
-                return;
-            }
-
-            mobEntities = xmlDatabase.LoadEntities().ToList();
-            loadedEntities = true;
+            XmlFile.SaveEntities(Entities);
         }
     }
 }

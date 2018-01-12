@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+using NuciXNA.DataAccess.IO;
+
 using GielinorAdventures.DataAccess.DataObjects;
-using GielinorAdventures.DataAccess.IO;
 using GielinorAdventures.DataAccess.Repositories;
 using GielinorAdventures.GameLogic.Mapping;
 using GielinorAdventures.Models;
@@ -66,7 +67,7 @@ namespace GielinorAdventures.GameLogic.GameManagers
         /// <returns>The player.</returns>
         public Player GetPlayer()
         {
-            XmlManager<PlayerEntity> xml = new XmlManager<PlayerEntity>();
+            XmlFileObject<PlayerEntity> xml = new XmlFileObject<PlayerEntity>();
             string path = Path.Combine(ApplicationPaths.UserDataDirectory, "Player.xml");
 
             PlayerEntity playerEntity = xml.Read(path);

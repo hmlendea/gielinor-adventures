@@ -3,9 +3,9 @@ using System.Linq;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.Input;
 
 using GielinorAdventures.Gui.GuiElements;
-using GielinorAdventures.Input;
 
 namespace GielinorAdventures.Gui
 {

@@ -1,16 +1,12 @@
-﻿namespace GielinorAdventures.DataAccess.DataObjects
+﻿using NuciXNA.DataAccess.DataObjects;
+
+namespace GielinorAdventures.DataAccess.DataObjects
 {
     /// <summary>
     /// Elevation entity.
     /// </summary>
-    public class ElevationEntity
+    public class ElevationEntity : EntityBase
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>The identifier.</value>
-        public string Id { get; set; }
-
         public int Roof { get; set; }
 
         public int Unknown { get; set; }

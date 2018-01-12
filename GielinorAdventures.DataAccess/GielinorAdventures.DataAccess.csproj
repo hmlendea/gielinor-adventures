@@ -28,6 +28,10 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NuciXNA.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\nucixna\NuciXNA.DataAccess\bin\Debug\NuciXNA.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
@@ -43,19 +47,12 @@
     <Compile Include="DataObjects\NpcLocationEntity.cs" />
     <Compile Include="DataObjects\GameObjectLocationEntity.cs" />
     <Compile Include="IO\RsWorldFile.cs" />
-    <Compile Include="IO\XmlManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GameObjectLocationRepository.cs" />
     <Compile Include="Repositories\ItemLocationRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\NpcLocationRepository.cs" />
-    <Compile Include="Resources\ResourceManager.cs" />
-    <Compile Include="XmlDatabase.cs" />
     <Compile Include="DataObjects\ItemEntity.cs" />
-    <Compile Include="Exceptions\DuplicateEntityException.cs" />
-    <Compile Include="Exceptions\EntityNotFoundException.cs" />
-    <Compile Include="Exceptions\InvalidEntityFieldException.cs" />
-    <Compile Include="Exceptions\InvalidTargetProvinceException.cs" />
     <Compile Include="DataObjects\PrayerEntity.cs" />
     <Compile Include="DataObjects\AnimationEntity.cs" />
     <Compile Include="DataObjects\ElevationEntity.cs" />
@@ -83,7 +80,6 @@
     <Compile Include="DataObjects\MobEntity.cs" />
     <Compile Include="DataObjects\WorldTileEntity.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
