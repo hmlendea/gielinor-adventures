@@ -1,11 +1,11 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.DataAccess.Resources;
+using NuciXNA.Input;
 
-using GielinorAdventures.DataAccess.Resources;
 using GielinorAdventures.Graphics;
 using GielinorAdventures.Gui;
 using GielinorAdventures.Gui.Screens;
-using GielinorAdventures.Input;
 using GielinorAdventures.Settings;
 
 namespace GielinorAdventures

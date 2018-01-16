@@ -29,8 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NuciXNA.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\nucixna\NuciXNA.DataAccess\bin\Debug\NuciXNA.DataAccess.dll</HintPath>
+      <HintPath>..\packages\NuciXNA.DataAccess.1.0.0\lib\net45\NuciXNA.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="MonoGame.Framework">
