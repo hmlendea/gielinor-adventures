@@ -34,6 +34,9 @@
     <Reference Include="NuciXNA.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NuciXNA.DataAccess.1.0.0\lib\net45\NuciXNA.DataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="NuciXNA.Graphics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuciXNA.Graphics.1.0.0\lib\net45\NuciXNA.Graphics.dll</HintPath>
+    </Reference>
     <Reference Include="NuciXNA.Input, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NuciXNA.Input.1.0.1\lib\net45\NuciXNA.Input.dll</HintPath>
     </Reference>
@@ -86,10 +89,6 @@
     <ProjectReference Include="..\GielinorAdventures.DataAccess\GielinorAdventures.DataAccess.csproj">
       <Project>{dfa1e1e9-afeb-4565-ba38-ecdbafc9d47b}</Project>
       <Name>GielinorAdventures.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GielinorAdventures.Graphics\GielinorAdventures.Graphics.csproj">
-      <Project>{512eac2f-fd40-4143-b52a-c250fba51e4f}</Project>
-      <Name>GielinorAdventures.Graphics</Name>
     </ProjectReference>
     <ProjectReference Include="..\GielinorAdventures.Settings\GielinorAdventures.Settings.csproj">
       <Project>{f863eb40-1193-4067-8eef-405caf9f2fc9}</Project>

@@ -33,8 +33,14 @@
     <Reference Include="NuciXNA.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NuciXNA.DataAccess.1.0.0\lib\net45\NuciXNA.DataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="NuciXNA.Graphics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuciXNA.Graphics.1.0.0\lib\net45\NuciXNA.Graphics.dll</HintPath>
+    </Reference>
     <Reference Include="NuciXNA.Input, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NuciXNA.Input.1.0.1\lib\net45\NuciXNA.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="NuciXNA.Primitives, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuciXNA.Primitives.1.0.1\lib\net45\NuciXNA.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="MonoGame.Framework">
@@ -86,10 +92,6 @@
     <ProjectReference Include="..\GielinorAdventures.GameLogic\GielinorAdventures.GameLogic.csproj">
       <Project>{24363cdb-0a6a-4fcc-ad2e-52cc98c7f49f}</Project>
       <Name>GielinorAdventures.GameLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GielinorAdventures.Graphics\GielinorAdventures.Graphics.csproj">
-      <Project>{512eac2f-fd40-4143-b52a-c250fba51e4f}</Project>
-      <Name>GielinorAdventures.Graphics</Name>
     </ProjectReference>
     <ProjectReference Include="..\GielinorAdventures.Gui\GielinorAdventures.Gui.csproj">
       <Project>{d7f47fa0-d9bc-4702-9a21-40697dff128a}</Project>

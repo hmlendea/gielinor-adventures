@@ -1,8 +1,7 @@
 ﻿using System.IO;
 
 using NuciXNA.DataAccess.IO;
-
-using GielinorAdventures.Graphics;
+using NuciXNA.Graphics;
 
 namespace GielinorAdventures.Settings
 {

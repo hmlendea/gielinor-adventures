@@ -1,9 +1,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using NuciXNA.DataAccess.Resources;
+using NuciXNA.Graphics;
 using NuciXNA.Input;
 
-using GielinorAdventures.Graphics;
 using GielinorAdventures.Gui;
 using GielinorAdventures.Gui.Screens;
 using GielinorAdventures.Settings;

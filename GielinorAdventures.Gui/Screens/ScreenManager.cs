@@ -3,11 +3,11 @@ using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.Graphics;
+using NuciXNA.Graphics.Enumerations;
+using NuciXNA.Graphics.SpriteEffects;
 using NuciXNA.Primitives;
 
-using GielinorAdventures.Graphics;
-using GielinorAdventures.Graphics.CustomSpriteEffects;
-using GielinorAdventures.Graphics.Enumerations;
 using GielinorAdventures.Settings;
 
 namespace GielinorAdventures.Gui.Screens

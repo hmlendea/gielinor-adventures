@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NuciXNA.Graphics;
 using NuciXNA.Primitives;
 
-using GielinorAdventures.Graphics;
 using GielinorAdventures.Gui.MobAnimationEffects;
 using GielinorAdventures.Settings;
 

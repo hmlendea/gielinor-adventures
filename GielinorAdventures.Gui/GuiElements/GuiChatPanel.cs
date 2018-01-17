@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 
+using NuciXNA.Graphics.Enumerations;
 using NuciXNA.Primitives;
-
-using GielinorAdventures.Graphics.Enumerations;
 
 namespace GielinorAdventures.Gui.GuiElements
 {

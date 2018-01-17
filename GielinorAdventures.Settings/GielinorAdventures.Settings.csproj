@@ -34,6 +34,9 @@
     <Reference Include="NuciXNA.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NuciXNA.DataAccess.1.0.0\lib\net45\NuciXNA.DataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="NuciXNA.Graphics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuciXNA.Graphics.1.0.0\lib\net45\NuciXNA.Graphics.dll</HintPath>
+    </Reference>
     <Reference Include="NuciXNA.Primitives, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NuciXNA.Primitives.1.0.1\lib\net45\NuciXNA.Primitives.dll</HintPath>
     </Reference>
@@ -54,10 +57,6 @@
     <ProjectReference Include="..\GielinorAdventures.DataAccess\GielinorAdventures.DataAccess.csproj">
       <Project>{dfa1e1e9-afeb-4565-ba38-ecdbafc9d47b}</Project>
       <Name>GielinorAdventures.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GielinorAdventures.Graphics\GielinorAdventures.Graphics.csproj">
-      <Project>{512EAC2F-FD40-4143-B52A-C250FBA51E4F}</Project>
-      <Name>GielinorAdventures.Graphics</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

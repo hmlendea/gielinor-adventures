@@ -1,9 +1,8 @@
 ﻿using System;
 
 using NuciXNA.Primitives;
+using NuciXNA.Graphics.Enumerations;
 using NuciXNA.Input.Events;
-
-using GielinorAdventures.Graphics.Enumerations;
 
 namespace GielinorAdventures.Gui.GuiElements
 {
