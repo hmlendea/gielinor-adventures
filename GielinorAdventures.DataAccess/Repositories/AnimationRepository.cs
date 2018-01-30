@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Linq;
 
 using NuciXNA.DataAccess.Exceptions;
 using NuciXNA.DataAccess.Repositories;
